@@ -28,55 +28,55 @@ drop table member;
 
 -- 회원(member) 1
 create table member (
-id VARCHAR2(20) primary key,   	  -- 회원 번호(PK)
-pw VARCHAR2(20),           		  -- 비밀번호
-email VARCHAR2(30),               -- 이메일
-name VARCHAR2(20),                -- 이름
-gender VARCHAR2(20),              -- 성별
-tel VARCHAR2(20),                 -- 전화번호
-addr VARCHAR2(100),               -- 주소
-addrDe VARCHAR2(20),              -- 상세주소
-mileage number,                   -- 마일리지
-del VARCHAR2(1),                  -- 탈퇴여부
-reg_date date		              -- 가입 날짜
+m_id VARCHAR2(20) primary key,   	 	-- 회원 번호(PK)
+m_pw VARCHAR2(20),           		 	-- 비밀번호
+m_email VARCHAR2(30),               	-- 이메일
+m_name VARCHAR2(20),                	-- 이름
+gender VARCHAR2(20),              		-- 성별
+m_tel VARCHAR2(20),                 	-- 전화번호
+m_addr VARCHAR2(100),             		-- 주소
+m_addrDe VARCHAR2(20),            		-- 상세주소
+mileage number,                  		-- 마일리지
+m_del VARCHAR2(1),                 		-- 탈퇴여부
+m_rdate date		             		-- 가입 날짜
 );
 
 -- 주문(buy) 2
 create table buy (
-orderKey number primary key,     -- 주문번호(PK)
-id VARCHAR2(20),                 -- 회원번호(FK)
-totalPrice number,               -- 총 결제 금액
-rdate date,                      -- 주문 날짜
-orderSatus VARCHAR2(20),         -- 주문 현황
-name VARCHAR2(20),               -- 받는분 성함
-address VARCHAR2(100),           -- 받는분 주소
-deAdir VARCHAR2(50),             -- 상세 주소
-tel VARCHAR2(20),                -- 받는분 전화번호
-orderRequset VARCHAR2(50),       -- 요청사항
-cnt number,						 -- 주문 상품 개수
-foreign key(id) references member(id)
+b_num number primary key,     			-- 주문번호(PK)
+b_id VARCHAR2(20),                 		-- 회원번호(FK)
+totalPrice number,               		-- 총 결제 금액
+b_rdate date,                      		-- 주문 날짜
+b_Satus VARCHAR2(20),        			-- 주문 현황
+b_name VARCHAR2(20),               		-- 받는분 성함
+b_addr VARCHAR2(100),           		-- 받는분 주소
+b_addrDe VARCHAR2(50),           		-- 상세 주소
+b_tel VARCHAR2(20),             		-- 받는분 전화번호
+b_request VARCHAR2(50),     			-- 요청사항
+b_cnt number,							-- 주문 상품 개수
+foreign key(b_id) references member(b_id)
 );
 -- 주문(buy) 2 시퀀스
 create sequence order_seq start with 1 increment by 1 maxvalue 9999;
 
 -- 카테고리 (category) 3
 create table category (
-categoryNum number primary key,		--카테고리번호
-cName number						--카테고리명 	
+c_Num number primary key,				--카테고리번호
+c_Name number							--카테고리명 	
 );
 
 -- 상품(goods) 4 
 create table goods (
-p_no number primary key,      -- 상품 번호(PK)
-categoryNum number,			  -- 카테고리 번호(FK)
-p_name VARCHAR2(20),          -- 상품명
-p_price number,               -- 가격
-sale number,                  -- 할인율
-p_img1 VARCHAR2(100),         -- 이미지1
-p_img2 VARCHAR2(100),         -- 이미지2
-p_cnt number,                 -- 수량
-p_date date,				  -- 등록일
-foreign key(categoryNum) references category(categoryNum)
+p_no number primary key,			  -- 상품 번호(PK)
+c_Num number,						  -- 카테고리 번호(FK)
+p_name VARCHAR2(20),        		  -- 상품명
+p_price number,            			  -- 가격
+p_sale number,             		  	  -- 할인율
+p_img1 VARCHAR2(100),       		  -- 이미지1
+p_img2 VARCHAR2(100),       		  -- 이미지2
+p_cnt number,               		  -- 수량
+p_date date,						  -- 등록일
+foreign key(c_Num) references category(c_Num)
 );
 -- 상품(goods) 4 시퀀스
 create sequence goods_seq start with 1 increment by 1 maxvalue 9999;
@@ -95,12 +95,12 @@ foreign key(p_no) references goods(p_no)
 -- 주문상세(detailorder) 6
 create table detailorder (
 orderDetKey number primary key,       -- 상세주문 번호(PK)
-orderKey number,                      -- 주문 번호(FK)
+b_Num number,                    	  -- 주문 번호(FK)
 p_no number,                          -- 상품 번호(FK)
 optionNum number,					  -- 옵션번호(FK)
 price number,                         -- 가격
-cnt number,							  -- 개수
-foreign key(orderKey) references buy(orderKey),
+d_cnt number,						  -- 개수
+foreign key(b_Num) references buy(b_Num),
 foreign key(p_no) references goods(p_no),
 foreign key(optionNum) references goodsOption(optionNum)
 );
@@ -111,9 +111,9 @@ create sequence detailorder_seq start with 1 increment by 1 maxvalue 9999;
 create table wish (
 wishKey number primary key,      -- 찜 고유번호(PK)
 p_no number,                     -- 상품 번호(FK)
-id VARCHAR2(20),				 -- 회원 번호(FK)
+m_id VARCHAR2(20),				 -- 회원 번호(FK)
 foreign key(p_no) references goods(p_no),
-foreign key(id) references member(id)
+foreign key(m_id) references member(m_id)
 );
 -- 찜(wish) 7 시퀀스
 create sequence wish_seq start with 1 increment by 1 maxvalue 9999;
@@ -123,10 +123,10 @@ create table basket (
 cartKey number primary key,       -- 장바구니 번호(PK)
 p_no number,                      -- 상품 번호(FK)
 optionNum number,				  -- 옵션번호(FK)
-id VARCHAR2(20),                  -- 회원 번호(FK)
-cnt number,						  -- 수량
+m_id VARCHAR2(20),                -- 회원 번호(FK)
+c_cnt number,					  -- 수량
 foreign key(p_no) references goods(p_no),
-foreign key(id) references member(id),
+foreign key(m_id) references member(m_id),
 foreign key(optionNum) references goodsOption(optionNum)
 );
 -- 장바구니(basket) 8 시퀀스
@@ -134,15 +134,15 @@ create sequence basket_seq start with 1 increment by 1 maxvalue 9999;
 
 -- 회원 배송지(memberaddress) 9
 create table memberaddress (
-addrNum number primary key,        -- 배송지 코드(PK)
-id VARCHAR2(20),                  -- 회원 번호(FK)
-name VARCHAR2(20),                -- 받는분 성함
-address VARCHAR2(100),            -- 받는분 주소
-post VARCHAR2(20),                -- 우편번호
-deAdr VARCHAR2(20),               -- 상세 주소
-orderRequset VARCHAR2(50),        -- 요청사항
-basicAdr VARCHAR2(1),			  -- 기본 배송지 여부
-foreign key(id) references member(id)
+addrNum number primary key,       	-- 배송지 코드(PK)
+m_id VARCHAR2(20),               	-- 회원 번호(FK)
+a_name VARCHAR2(20),                -- 받는분 성함
+a_addr VARCHAR2(100),            	-- 받는분 주소
+post VARCHAR2(20),                	-- 우편번호
+a_addrDe VARCHAR2(20),              -- 상세 주소
+a_request VARCHAR2(50),        		-- 요청사항
+basicAddr VARCHAR2(1),				-- 기본 배송지 여부
+foreign key(m_id) references member(m_id)
 );
 -- 회원 배송지(memberaddress) 9 시퀀스
 create sequence memberaddress_seq start with 1 increment by 1 maxvalue 9999;
@@ -150,14 +150,14 @@ create sequence memberaddress_seq start with 1 increment by 1 maxvalue 9999;
 -- 문의 및 후기 (review) 10
 create table review (
 boardKey number primary key,       -- 게시글 번호(PK)
-id VARCHAR2(20),                   -- 회원 번호(FK)
+m_id VARCHAR2(20),                 -- 회원 번호(FK)
 p_no number,                       -- 상품 번호(FK)
-kind VARCHAR2(20),                 -- 종류
-title VARCHAR2(20),                -- 제목
-rdate date,                        -- 등록일
-content VARCHAR2(100),             -- 내용
+r_kind VARCHAR2(20),               -- 종류
+r_title VARCHAR2(20),              -- 제목
+r_rdate date,                      -- 등록일
+r_content VARCHAR2(100),           -- 내용
 scope number,					   -- 별점
-foreign key(id) references member(id),
+foreign key(m_id) references member(m_id),
 foreign key(p_no) references goods(p_no)
 );
 -- 문의 및 후기 (review) 10 시퀀스
@@ -167,14 +167,14 @@ create sequence review_seq start with 1 increment by 1 maxvalue 9999;
 create table reply (
 replyKey number primary key,        -- 댓글 번호(PK)
 boardKey number,                    -- 게시글 번호(FK)
-id VARCHAR2(20),                   	-- 회원 번호(FK)
+m_id VARCHAR2(20),                  -- 회원 번호(FK)
 re_level number,                    -- 답글 레벨
 re_step number,                     -- 답글 스텝
-content VARCHAR2(100),              -- 내용
-rdate date,                         -- 등록일
-del VARCHAR2(1),					-- 삭제 여부
+re_content VARCHAR2(100),           -- 내용
+re_rdate date,                      -- 등록일
+re_del VARCHAR2(1),					-- 삭제 여부
 foreign key(boardKey) references review(boardKey),
-foreign key(id) references member(id)
+foreign key(m_id) references member(m_id)
 );
 -- 댓글 (comment) 11 시퀀스
 create sequence reply_seq start with 1 increment by 1 maxvalue 9999;
@@ -189,13 +189,13 @@ adminPw VARCHAR2(20)	             -- 관리자 비밀번호
 create table notification (
 noticeKey number primary key,        -- 공지번호(PK)
 adminId VARCHAR2(20),                -- 관리자 아이디(FK)
-title VARCHAR2(20),                  -- 제목
-content VARCHAR2(100),               -- 내용
-rdate date,                          -- 등록일
+n_title VARCHAR2(20),                -- 제목
+n_content VARCHAR2(100),             -- 내용
+n_rdate date,                        -- 등록일
 hit number,							 -- 조회수
 foreign key(adminId) references admin(adminId)
 );
--- 공지번호 (notification) 13 시퀀스
+-- 공지번호 (notice) 13 시퀀스
 create sequence notification_seq start with 1 increment by 1 maxvalue 9999;
 
 
