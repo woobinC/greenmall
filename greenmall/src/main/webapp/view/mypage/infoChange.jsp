@@ -7,8 +7,8 @@
 <title>Insert title here</title>
  <style>
     @import url("/greenmall/css/index.css");
-    @import url("/greenmall/css/member/mypage.css");
-    @import url("/greenmall/css/member/drawal.css");
+    @import url("/greenmall/css/mypage/mypage.css");
+    @import url("/greenmall/css/mypage/drawal.css");
   </style>
 </head>
 

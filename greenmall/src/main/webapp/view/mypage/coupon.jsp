@@ -7,7 +7,7 @@
 <title>Insert title here</title>
   <style>
     @import url("/greenmall/css/index.css");
-    @import url("/greenmall/css/member/mypage.css");
+    @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
 
@@ -16,11 +16,11 @@
     <div id="contents">
       <div class="sub_content">
         <div class="location_cont">
-          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 마일리지</em>
+          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 쿠폰</em>
         </div>
         <div class="side_cont">
           <div class="sub_menu_box">
-           <h2>마이페이지</h2>
+						<h2>마이페이지</h2>
             <ul class="sub_menu_mypage">
               <li>
                 쇼핑정보
@@ -100,7 +100,7 @@
 
             <div class="mypage_lately_info">
               <div class="mypage_zone_title">
-                <h3>마일리지</h3>
+                <h3>쿠폰</h3>
               </div>
               <div class="date_check_box">
                 <form action="#" method="get" name="frmDateSearch">
@@ -125,30 +125,26 @@
               </div>
               <div class="mypage_lately_info_cont">
                 <span class="pick_list_day">
-                  <strong>2024-07-12 ~ 2024-07-18</strong> 까지의 마일리지 사용내역 총 <strong>0</strong>건
+                  <strong>2024-07-12 ~ 2024-07-18</strong> 까지의 쿠폰내역
                 </span>
                 <div class="mypage_table_type">
                   <table>
                     <colgroup>
-                      <col style="width: 12%;">
-                      <col style="width: 12%;">
                       <col>
-                      <col style="width: 18%;">
-                      <col style="width: 12%;">
-                      <col style="width: 12%;">
+                      <col style="width: 17%;">
+                      <col style="width: 13%;">
+                      <col style="width: 13%;">
+                      <col style="width: 20%;">
+                      <col style="width: 10%;">
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>날짜</th>
-                        <th>유형</th>
-                        <th>내용</th>
+                        <th>쿠폰명</th>
+                        <th>혜택</th>
+                        <th>사용조건</th>
+                        <th>제한조건</th>
                         <th>유효기간</th>
-                        <th class="td_cash">
-                          <span>마일리지 내역</span>
-                        </th>
-                        <th class="td_cash">
-                          <span>잔여 마일리지</span>
-                        </th>
+                        <th>발급일</th>
                       </tr>
                     </thead>
                     <tbody>

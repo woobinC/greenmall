@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <style>
+ <style>
     @import url("/greenmall/css/index.css");
-    @import url("/greenmall/css/member/mypage.css");
+    @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
 
@@ -16,11 +16,11 @@
     <div id="contents">
       <div class="sub_content">
         <div class="location_cont">
-          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 쿠폰</em>
+          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 상품문의</em>
         </div>
         <div class="side_cont">
           <div class="sub_menu_box">
-						<h2>마이페이지</h2>
+           <h2>마이페이지</h2>
             <ul class="sub_menu_mypage">
               <li>
                 쇼핑정보
@@ -28,7 +28,7 @@
                   <li><a href="/greenmall/view/member/tracking.wb">- 주문목록/배송조회</a></li>
                   <li><a href="/greenmall/view/member/goodsReturn.wb">- 취소/반품/교환 내역</a></li>
                   <li><a href="/greenmall/view/member/refund.wb">- 환불/입금 내역</a></li>
-                 <li><a href="/greenmall/view/member/wishList.wb">- 찜리스트</a></li>
+                  <li><a href="/greenmall/view/member/wishList.wb">- 찜리스트</a></li>
                 </ul>
               </li>
               <li>
@@ -68,39 +68,12 @@
             </ul>
           </div>
         </div>
+
         <div class="content">
           <div class="mypage_cont">
-            <div class="mypage_top_info">
-              <div class="mypage_top_txt">
-                <p>천우빈님의</p>
-                <p>마이페이지 입니다</p>
-              </div>
-              <div class="mypage_top_wallet">
-                <ul>
-                  <li>
-                    <span><img src="/greenmall/images/icon_coupon.png" alt="쿠폰"></span>
-                    <span>
-                      <em>쿠폰</em>
-                      <a href="#"><strong>0</strong></a>장
-                    </span>
-                  </li>
-                  <li>
-                    <span><img src="/greenmall/images/icon_mileage.png" alt="마일리지"></span>
-                    <span>
-                      <em>마일리지
-                        <em>(구매확정 후 지급)</em>
-                      </em>
-                      <a href="#"><strong>0</strong></a>원
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-
             <div class="mypage_lately_info">
               <div class="mypage_zone_title">
-                <h3>쿠폰</h3>
+                <h3>상품문의</h3>
               </div>
               <div class="date_check_box">
                 <form action="#" method="get" name="frmDateSearch">
@@ -123,42 +96,42 @@
                   </button>
                 </form>
               </div>
-              <div class="mypage_lately_info_cont">
-                <span class="pick_list_day">
-                  <strong>2024-07-12 ~ 2024-07-18</strong> 까지의 쿠폰내역
-                </span>
-                <div class="mypage_table_type">
+
+              <div class="board_list_qa" align="center">
+                <div class="mypage_table_type" style="width: 100%;">
                   <table>
                     <colgroup>
+                      <col style="width: 10%;">
+                      <col style="width: 15%;">
                       <col>
-                      <col style="width: 17%;">
-                      <col style="width: 13%;">
-                      <col style="width: 13%;">
-                      <col style="width: 20%;">
+                      <col style="width: 10%;">
                       <col style="width: 10%;">
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>쿠폰명</th>
-                        <th>혜택</th>
-                        <th>사용조건</th>
-                        <th>제한조건</th>
-                        <th>유효기간</th>
-                        <th>발급일</th>
+                        <th>문의날짜</th>
+                        <th>카테고리</th>
+                        <th>제목</th>
+                        <th>문의상태</th>
+                        <th>답변시간</th>
                       </tr>
                     </thead>
                     <tbody>
+                      <tr>
+                        <td colspan="5">
+                          <p class="no_data">게시글이 존재하지않습니다.</p>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
+
               </div>
-              <div class="pagination">
-                <div class="pagination">
-                  <ul>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
+            </div>
+            <div class="btn_right_box">
+              <button class="btn_write">
+                <strong>1:1 문의하기</strong>
+              </button>
             </div>
           </div>
         </div>

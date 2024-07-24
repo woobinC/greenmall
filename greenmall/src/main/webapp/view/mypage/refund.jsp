@@ -7,7 +7,7 @@
 <title>Insert title here</title>
   <style>
     @import url("/greenmall/css/index.css");
-    @import url("/greenmall/css/member/mypage.css");
+    @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
 
@@ -16,7 +16,7 @@
     <div id="contents">
       <div class="sub_content">
         <div class="location_cont">
-          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 상품후기</em>
+          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 환불리스트</em>
         </div>
         <div class="side_cont">
           <div class="sub_menu_box">
@@ -68,37 +68,87 @@
             </ul>
           </div>
         </div>
-
         <div class="content">
-          <div class="board_cont">
+          <div class="mypage_cont">
+            <div class="mypage_top_info">
+              <div class="mypage_top_txt">
+                <p>천우빈님의</p>
+                <p>마이페이지 입니다</p>
+              </div>
+              <div class="mypage_top_wallet">
+                <ul>
+                  <li>
+                    <span><img src="/greenmall/images/icon_coupon.png" alt="쿠폰"></span>
+                    <span>
+                      <em>쿠폰</em>
+                      <a href="#"><strong>0</strong></a>장
+                    </span>
+                  </li>
+                  <li>
+                    <span><img src="/greenmall/images/icon_mileage.png" alt="마일리지"></span>
+                    <span>
+                      <em>마일리지
+                        <em>(구매확정 후 지급)</em>
+                      </em>
+                      <a href="#"><strong>0</strong></a>원
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
             <div class="mypage_lately_info">
               <div class="mypage_zone_title">
-                <h3>이용후기</h3>
+                <h3>환불/입금 내역</h3>
               </div>
-
-              <div class="board_list_qa" align="center">
-                <div class="board_table_type" style="width: 100%;">
+              <div class="date_check_box">
+                <form action="#" method="get" name="frmDateSearch">
+                  <h3>조회기간</h3>
+                  <div class="date_check_list" data-target-name="wDate[]">
+                    <button data-value="0">오늘</button>
+                    <button data-value="7">7일</button>
+                    <button data-value="15">15일</button>
+                    <button data-value="30">1개월</button>
+                    <button data-value="90">3개월</button>
+                    <button class="oneYear" data-value="365">1년</button>
+                  </div>
+                  <div class="date_check_calendar">
+                    <input type="text" id="picker2" name="wDate[]"
+                    class="anniversary" value="2024-07-10"> ~ 
+                    <input type="text" name="wDate[]" class="anniversary" value="2024-07-17">
+                  </div>
+                  <button type="submit" class="btn_date_check">
+                    <em>조회</em>
+                  </button>
+                </form>
+              </div>
+              <div class="mypage_lately_info_cont">
+                <span class="pick_list_num">
+                  환불/입금 내역 총 <strong>0</strong>건
+                </span>
+                <div class="mypage_table_type">
                   <table>
                     <colgroup>
-                      <col style="width: 60px;">
+                      <col style="width: 15%;">
                       <col>
-                      <col style="width: 100px;">
-                      <col style="width: 80px;">
-                      <col style="width: 60px;">
+                      <col style="width: 15%;">
+                      <col style="width: 15%;">
+                      <col style="width: 15%;">
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>번호</th>
-                        <th>제목</th>
-                        <th>날짜</th>
-                        <th>작성자</th>
-                        <th>조회</th>
+                        <th>날짜/주문번호</th>
+                        <th>상품명/옵션</th>
+                        <th>상품금액/수량</th>
+                        <th>주문상태</th>
+                        <th>확인/리뷰</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td colspan="5">
-                          <p class="no_data">게시글이 존재하지않습니다.</p>
+                        <td colspan="6">
+                          <p class="no_data">조회내역이 없습니다.</p>
                         </td>
                       </tr>
                     </tbody>
@@ -106,45 +156,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="board_search_box">
-            <form action="#" name="frmList" id="frmList">
-              <input type="hidden" name="Id">
-              <input type="hidden" name="No">
-              <input type="hidden" name="nogeader">
-              <input type="hidden" name="mypageFl">
-            </form>
-            <select name="serchField" class="chosen-select" style="display: none;">
-              <option value="subject">제목</option>
-              <option value="contents">내용</option>
-              <option value="writerNm">작성자</option>
-            </select>
-            <div class="chosen-container chosen-container-single chosen-container-single-nosearch" title
-              style="width: 90px;">
-              <a class="chosen-single">
-                <span>제목</span>
-                <div><b></b></div>
-              </a>
-              <div class="chosen-drop">
-                <div class="chosen-search">
-                  <input class="chosen-search-input" type="text" autocomplete="off" readonly>
-                </div>
-                <ul class="chosen-results">
-                  <li class="active-result result-selected" data-option-array-index="0">제목</li>
-                  <li class="active-result" data-option-array-index="2">내용</li>
-                  <li class="active-result" data-option-array-index="2">작성자</li>
-                </ul>
-              </div>
-            </div>
-            <input type="text" class="text" name="searchWord">
-            <button class="btn_board_search">
-              <em>검색</em>
-            </button>
-          </div>
-          <div class="btn_right_box">
-            <button class="btn_write">
-              <strong>글쓰기</strong>
-            </button>
           </div>
         </div>
       </div>

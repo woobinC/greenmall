@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <style>
+  <style>
     @import url("/greenmall/css/index.css");
-    @import url("/greenmall/css/member/mypage.css");
+    @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
 
@@ -16,11 +16,11 @@
     <div id="contents">
       <div class="sub_content">
         <div class="location_cont">
-          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 배송지 관리</em>
+          <em><a href="#" class="local_home">HOME</a> > 마이페이지 > 찜리스트</em>
         </div>
         <div class="side_cont">
           <div class="sub_menu_box">
-           <h2>마이페이지</h2>
+            <h2>마이페이지</h2>
             <ul class="sub_menu_mypage">
               <li>
                 쇼핑정보
@@ -28,7 +28,7 @@
                   <li><a href="/greenmall/view/member/tracking.wb">- 주문목록/배송조회</a></li>
                   <li><a href="/greenmall/view/member/goodsReturn.wb">- 취소/반품/교환 내역</a></li>
                   <li><a href="/greenmall/view/member/refund.wb">- 환불/입금 내역</a></li>
-                 <li><a href="/greenmall/view/member/wishList.wb">- 찜리스트</a></li>
+                  <li><a href="/greenmall/view/member/wishList.wb">- 찜리스트</a></li>
                 </ul>
               </li>
               <li>
@@ -97,51 +97,59 @@
               </div>
             </div>
 
-
-            <div class="mypage_shipping mypage_lately_info">
+            <div class="mypage_wish_list">
               <div class="mypage_zone_tit">
-                <h3>배송지 관리</h3>
-                <span class="pick_list_num">
-                  배송지 관리 내역 총 <strong>0</strong>건
-                </span>
-                <div class="mypage_table_type">
+                <h3>찜리스트</h3>
+              </div>
+              <div class="mypage_table_type">
+                <form id="frmWish" name="frmWish" method="post">
+                  <input type="hidden" name="mode">
+                  <input type="hidden" name="isCart">
                   <table>
                     <colgroup>
-                      <col style="width: 12%;">
-                      <col style="width: 12%;">
+                      <col style="width: 8%;">
                       <col>
-                      <col style="width: 20%;">
-                      <col style="width: 12%;">
+                      <col style="width: 15%;">
+                      <col style="width: 15%;">
+                      <col style="width: 10%;">
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>배송지이름</th>
-                        <th>받으실 분</th>
-                        <th>주소</th>
-                        <th>연락처</th>
-                        <th>수정/삭제</th>
+                        <th>
+                          <div class="form_element">
+                            <input type="checkbox" id="allCheck" name="allCheck" class="gd_checkbox_all"
+                              data-target-name="sno[]" data-target-form="#frmWish">
+                            <label for="allCheck" class="check_s"></label>
+                          </div>
+                        </th>
+                        <th>상품명/옵션</th>
+                        <th>상품금액/수량</th>
+                        <th>혜택</th>
+                        <th>합계</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td colspan="5">
-                          <p class="no_data">배송지 목록이 없습니다.</p>
+                          <p class="no_data">찜리스트에 상품이 없습니다.</p>
                         </td>
                       </tr>
                     </tbody>
                   </table>
-                </div>
-                <div class="btn_right_box">
-                  <button class="btn_write">
-                    <strong>+ 새 배송지 추가</strong>
+                  <button class="btn_wish_choice_del">
+                    <em>선택 상품 삭제</em>
                   </button>
-                </div>
+                  <button class="btn_wish_choice_cart">
+                    <em>선택 상품 장바구니</em>
+                  </button>
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </body>
 

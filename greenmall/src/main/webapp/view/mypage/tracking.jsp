@@ -7,16 +7,15 @@
 <title>Insert title here</title>
   <style>
     @import url("/greenmall/css/index.css");
-    @import url("/greenmall/css/member/mypage.css");
+    @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
-
 <body>
   <div id="container">
     <div id="contents">
       <div class="sub_content">
         <div class="location_cont">
-          <em><a href="#" class="local_home">HOME</a> > 마이페이지 > 찜리스트</em>
+          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 주문목록 / 배송조회</em>
         </div>
         <div class="side_cont">
           <div class="sub_menu_box">
@@ -97,52 +96,63 @@
               </div>
             </div>
 
-            <div class="mypage_wish_list">
-              <div class="mypage_zone_tit">
-                <h3>찜리스트</h3>
+
+            <div class="mypage_lately_info">
+              <div class="mypage_zone_title">
+                <h3>주문목록/배송조회</h3>
               </div>
-              <div class="mypage_table_type">
-                <form id="frmWish" name="frmWish" method="post">
-                  <input type="hidden" name="mode">
-                  <input type="hidden" name="isCart">
+              <div class="date_check_box">
+                <form action="#" method="get" name="frmDateSearch">
+                  <h3>조회기간</h3>
+                  <div class="date_check_list" data-target-name="wDate[]">
+                    <button data-value="0">오늘</button>
+                    <button data-value="7">7일</button>
+                    <button data-value="15">15일</button>
+                    <button data-value="30">1개월</button>
+                    <button data-value="90">3개월</button>
+                    <button class="oneYear" data-value="365">1년</button>
+                  </div>
+                  <div class="date_check_calendar">
+                    <input type="text" id="picker2" name="wDate[]"
+                    class="anniversary" value="2024-07-10"> ~ 
+                    <input type="text" name="wDate[]" class="anniversary" value="2024-07-17">
+                  </div>
+                  <button type="submit" class="btn_date_check">
+                    <em>조회</em>
+                  </button>
+                </form>
+              </div>
+              <div class="mypage_lately_info_cont">
+                <span class="pick_list_num">
+                  주문목록 / 배송조회 내역 총 <strong>0</strong>건
+                </span>
+                <div class="mypage_table_type">
                   <table>
                     <colgroup>
-                      <col style="width: 8%;">
+                      <col style="width: 15%;">
                       <col>
                       <col style="width: 15%;">
                       <col style="width: 15%;">
-                      <col style="width: 10%;">
+                      <col style="width: 15%;">
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>
-                          <div class="form_element">
-                            <input type="checkbox" id="allCheck" name="allCheck" class="gd_checkbox_all"
-                              data-target-name="sno[]" data-target-form="#frmWish">
-                            <label for="allCheck" class="check_s"></label>
-                          </div>
-                        </th>
+                        <th>날짜/주문번호</th>
                         <th>상품명/옵션</th>
                         <th>상품금액/수량</th>
-                        <th>혜택</th>
-                        <th>합계</th>
+                        <th>주문상태</th>
+                        <th>확인/리뷰</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td colspan="5">
-                          <p class="no_data">찜리스트에 상품이 없습니다.</p>
+                        <td colspan="6">
+                          <p class="no_data">조회내역이 없습니다.</p>
                         </td>
                       </tr>
                     </tbody>
                   </table>
-                  <button class="btn_wish_choice_del">
-                    <em>선택 상품 삭제</em>
-                  </button>
-                  <button class="btn_wish_choice_cart">
-                    <em>선택 상품 장바구니</em>
-                  </button>
-                </form>
+                </div>
               </div>
             </div>
           </div>
@@ -150,7 +160,5 @@
       </div>
     </div>
   </div>
-  </div>
 </body>
-
 </html>

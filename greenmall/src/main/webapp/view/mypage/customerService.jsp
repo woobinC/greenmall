@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <style>
+  <style>
     @import url("/greenmall/css/index.css");
-    @import url("/greenmall/css/member/mypage.css");
+    @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
 
@@ -16,11 +16,11 @@
     <div id="contents">
       <div class="sub_content">
         <div class="location_cont">
-          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 상품문의</em>
+          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 1:1문의</em>
         </div>
         <div class="side_cont">
           <div class="sub_menu_box">
-           <h2>마이페이지</h2>
+            <h2>마이페이지</h2>
             <ul class="sub_menu_mypage">
               <li>
                 쇼핑정보
@@ -28,7 +28,7 @@
                   <li><a href="/greenmall/view/member/tracking.wb">- 주문목록/배송조회</a></li>
                   <li><a href="/greenmall/view/member/goodsReturn.wb">- 취소/반품/교환 내역</a></li>
                   <li><a href="/greenmall/view/member/refund.wb">- 환불/입금 내역</a></li>
-                  <li><a href="/greenmall/view/member/wishList.wb">- 찜리스트</a></li>
+                 <li><a href="/greenmall/view/member/wishList.wb">- 찜리스트</a></li>
                 </ul>
               </li>
               <li>
@@ -73,7 +73,7 @@
           <div class="mypage_cont">
             <div class="mypage_lately_info">
               <div class="mypage_zone_title">
-                <h3>상품문의</h3>
+                <h3>묻고답하기</h3>
               </div>
               <div class="date_check_box">
                 <form action="#" method="get" name="frmDateSearch">

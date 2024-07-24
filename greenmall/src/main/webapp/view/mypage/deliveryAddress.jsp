@@ -5,21 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <style>
+ <style>
     @import url("/greenmall/css/index.css");
-    @import url("/greenmall/css/member/mypage.css");
+    @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
+
 <body>
   <div id="container">
     <div id="contents">
       <div class="sub_content">
         <div class="location_cont">
-          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 주문목록 / 배송조회</em>
+          <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 배송지 관리</em>
         </div>
         <div class="side_cont">
           <div class="sub_menu_box">
-            <h2>마이페이지</h2>
+           <h2>마이페이지</h2>
             <ul class="sub_menu_mypage">
               <li>
                 쇼핑정보
@@ -27,7 +28,7 @@
                   <li><a href="/greenmall/view/member/tracking.wb">- 주문목록/배송조회</a></li>
                   <li><a href="/greenmall/view/member/goodsReturn.wb">- 취소/반품/교환 내역</a></li>
                   <li><a href="/greenmall/view/member/refund.wb">- 환불/입금 내역</a></li>
-                  <li><a href="/greenmall/view/member/wishList.wb">- 찜리스트</a></li>
+                 <li><a href="/greenmall/view/member/wishList.wb">- 찜리스트</a></li>
                 </ul>
               </li>
               <li>
@@ -97,61 +98,43 @@
             </div>
 
 
-            <div class="mypage_lately_info">
-              <div class="mypage_zone_title">
-                <h3>주문목록/배송조회</h3>
-              </div>
-              <div class="date_check_box">
-                <form action="#" method="get" name="frmDateSearch">
-                  <h3>조회기간</h3>
-                  <div class="date_check_list" data-target-name="wDate[]">
-                    <button data-value="0">오늘</button>
-                    <button data-value="7">7일</button>
-                    <button data-value="15">15일</button>
-                    <button data-value="30">1개월</button>
-                    <button data-value="90">3개월</button>
-                    <button class="oneYear" data-value="365">1년</button>
-                  </div>
-                  <div class="date_check_calendar">
-                    <input type="text" id="picker2" name="wDate[]"
-                    class="anniversary" value="2024-07-10"> ~ 
-                    <input type="text" name="wDate[]" class="anniversary" value="2024-07-17">
-                  </div>
-                  <button type="submit" class="btn_date_check">
-                    <em>조회</em>
-                  </button>
-                </form>
-              </div>
-              <div class="mypage_lately_info_cont">
+            <div class="mypage_shipping mypage_lately_info">
+              <div class="mypage_zone_tit">
+                <h3>배송지 관리</h3>
                 <span class="pick_list_num">
-                  주문목록 / 배송조회 내역 총 <strong>0</strong>건
+                  배송지 관리 내역 총 <strong>0</strong>건
                 </span>
                 <div class="mypage_table_type">
                   <table>
                     <colgroup>
-                      <col style="width: 15%;">
+                      <col style="width: 12%;">
+                      <col style="width: 12%;">
                       <col>
-                      <col style="width: 15%;">
-                      <col style="width: 15%;">
-                      <col style="width: 15%;">
+                      <col style="width: 20%;">
+                      <col style="width: 12%;">
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>날짜/주문번호</th>
-                        <th>상품명/옵션</th>
-                        <th>상품금액/수량</th>
-                        <th>주문상태</th>
-                        <th>확인/리뷰</th>
+                        <th>배송지이름</th>
+                        <th>받으실 분</th>
+                        <th>주소</th>
+                        <th>연락처</th>
+                        <th>수정/삭제</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td colspan="6">
-                          <p class="no_data">조회내역이 없습니다.</p>
+                        <td colspan="5">
+                          <p class="no_data">배송지 목록이 없습니다.</p>
                         </td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
+                <div class="btn_right_box">
+                  <button class="btn_write">
+                    <strong>+ 새 배송지 추가</strong>
+                  </button>
                 </div>
               </div>
             </div>
@@ -161,4 +144,5 @@
     </div>
   </div>
 </body>
+
 </html>
