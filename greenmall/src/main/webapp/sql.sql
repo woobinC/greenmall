@@ -1,0 +1,201 @@
+create user greenmall identified by g1234;
+grant dba to greenmall;
+
+drop sequence basket_seq;
+drop sequence order_seq;
+drop sequence reply_seq;
+drop sequence detailorder_seq;
+drop sequence goods_seq;
+drop sequence memberaddress_seq;
+drop sequence notification_seq;
+drop sequence order_seq;
+drop sequence review_seq;
+drop sequence wish_seq;
+
+drop table notification;
+drop table admin;
+drop table reply;
+drop table review;
+drop table memberaddress;
+drop table basket;
+drop table wish;
+drop table detailorder;
+drop table goodsOption;
+drop table goods;
+drop table category;
+drop table buy;
+drop table member;
+
+-- 회원(member) 1
+create table member (
+id VARCHAR2(20) primary key,   	  -- 회원 번호(PK)
+pw VARCHAR2(20),           		  -- 비밀번호
+email VARCHAR2(30),               -- 이메일
+name VARCHAR2(20),                -- 이름
+gender VARCHAR2(20),              -- 성별
+tel VARCHAR2(20),                 -- 전화번호
+addr VARCHAR2(100),               -- 주소
+addrDe VARCHAR2(20),              -- 상세주소
+mileage number,                   -- 마일리지
+del VARCHAR2(1),                  -- 탈퇴여부
+reg_date date		              -- 가입 날짜
+);
+
+-- 주문(buy) 2
+create table buy (
+orderKey number primary key,     -- 주문번호(PK)
+id VARCHAR2(20),                 -- 회원번호(FK)
+totalPrice number,               -- 총 결제 금액
+rdate date,                      -- 주문 날짜
+orderSatus VARCHAR2(20),         -- 주문 현황
+name VARCHAR2(20),               -- 받는분 성함
+address VARCHAR2(100),           -- 받는분 주소
+deAdir VARCHAR2(50),             -- 상세 주소
+tel VARCHAR2(20),                -- 받는분 전화번호
+orderRequset VARCHAR2(50),       -- 요청사항
+cnt number,						 -- 주문 상품 개수
+foreign key(id) references member(id)
+);
+-- 주문(buy) 2 시퀀스
+create sequence order_seq start with 1 increment by 1 maxvalue 9999;
+
+-- 카테고리 (category) 3
+create table category (
+categoryNum number primary key,		--카테고리번호
+cName number						--카테고리명 	
+);
+
+-- 상품(goods) 4 
+create table goods (
+p_no number primary key,      -- 상품 번호(PK)
+categoryNum number,			  -- 카테고리 번호(FK)
+p_name VARCHAR2(20),          -- 상품명
+p_price number,               -- 가격
+sale number,                  -- 할인율
+p_img1 VARCHAR2(100),         -- 이미지1
+p_img2 VARCHAR2(100),         -- 이미지2
+p_cnt number,                 -- 수량
+p_date date,				  -- 등록일
+foreign key(categoryNum) references category(categoryNum)
+);
+-- 상품(goods) 4 시퀀스
+create sequence goods_seq start with 1 increment by 1 maxvalue 9999;
+
+-- 옵션(goodsOption) 5
+create table goodsOption (
+optionNum number primary key,			--옵션번호(PK)
+p_no number,							--상품 번호(FK)
+o_name VARCHAR2(20),					--옵션명
+o_price number,							--옵션가격
+o_sale number,							--옵션할인율
+o_cnt number,							--옵션갯수
+foreign key(p_no) references goods(p_no)
+);
+
+-- 주문상세(detailorder) 6
+create table detailorder (
+orderDetKey number primary key,       -- 상세주문 번호(PK)
+orderKey number,                      -- 주문 번호(FK)
+p_no number,                          -- 상품 번호(FK)
+optionNum number,					  -- 옵션번호(FK)
+price number,                         -- 가격
+cnt number,							  -- 개수
+foreign key(orderKey) references buy(orderKey),
+foreign key(p_no) references goods(p_no),
+foreign key(optionNum) references goodsOption(optionNum)
+);
+-- 주문상세(detailorder) 6 시퀀스
+create sequence detailorder_seq start with 1 increment by 1 maxvalue 9999;
+
+-- 찜(wish) 7
+create table wish (
+wishKey number primary key,      -- 찜 고유번호(PK)
+p_no number,                     -- 상품 번호(FK)
+id VARCHAR2(20),				 -- 회원 번호(FK)
+foreign key(p_no) references goods(p_no),
+foreign key(id) references member(id)
+);
+-- 찜(wish) 7 시퀀스
+create sequence wish_seq start with 1 increment by 1 maxvalue 9999;
+
+-- 장바구니(basket) 8
+create table basket (
+cartKey number primary key,       -- 장바구니 번호(PK)
+p_no number,                      -- 상품 번호(FK)
+optionNum number,				  -- 옵션번호(FK)
+id VARCHAR2(20),                  -- 회원 번호(FK)
+cnt number,						  -- 수량
+foreign key(p_no) references goods(p_no),
+foreign key(id) references member(id),
+foreign key(optionNum) references goodsOption(optionNum)
+);
+-- 장바구니(basket) 8 시퀀스
+create sequence basket_seq start with 1 increment by 1 maxvalue 9999;
+
+-- 회원 배송지(memberaddress) 9
+create table memberaddress (
+addrNum number primary key,        -- 배송지 코드(PK)
+id VARCHAR2(20),                  -- 회원 번호(FK)
+name VARCHAR2(20),                -- 받는분 성함
+address VARCHAR2(100),            -- 받는분 주소
+post VARCHAR2(20),                -- 우편번호
+deAdr VARCHAR2(20),               -- 상세 주소
+orderRequset VARCHAR2(50),        -- 요청사항
+basicAdr VARCHAR2(1),			  -- 기본 배송지 여부
+foreign key(id) references member(id)
+);
+-- 회원 배송지(memberaddress) 9 시퀀스
+create sequence memberaddress_seq start with 1 increment by 1 maxvalue 9999;
+
+-- 문의 및 후기 (review) 10
+create table review (
+boardKey number primary key,       -- 게시글 번호(PK)
+id VARCHAR2(20),                   -- 회원 번호(FK)
+p_no number,                       -- 상품 번호(FK)
+kind VARCHAR2(20),                 -- 종류
+title VARCHAR2(20),                -- 제목
+rdate date,                        -- 등록일
+content VARCHAR2(100),             -- 내용
+scope number,					   -- 별점
+foreign key(id) references member(id),
+foreign key(p_no) references goods(p_no)
+);
+-- 문의 및 후기 (review) 10 시퀀스
+create sequence review_seq start with 1 increment by 1 maxvalue 9999;
+
+-- 댓글 (reply) 11
+create table reply (
+replyKey number primary key,        -- 댓글 번호(PK)
+boardKey number,                    -- 게시글 번호(FK)
+id VARCHAR2(20),                   	-- 회원 번호(FK)
+re_level number,                    -- 답글 레벨
+re_step number,                     -- 답글 스텝
+content VARCHAR2(100),              -- 내용
+rdate date,                         -- 등록일
+del VARCHAR2(1),					-- 삭제 여부
+foreign key(boardKey) references review(boardKey),
+foreign key(id) references member(id)
+);
+-- 댓글 (comment) 11 시퀀스
+create sequence reply_seq start with 1 increment by 1 maxvalue 9999;
+
+-- 관리자 (admin) 12
+create table admin (
+adminId VARCHAR2(20) primary key,    -- 관리자 아이디(PK)
+adminPw VARCHAR2(20)	             -- 관리자 비밀번호
+);
+
+-- 공지번호 (notification) 13
+create table notification (
+noticeKey number primary key,        -- 공지번호(PK)
+adminId VARCHAR2(20),                -- 관리자 아이디(FK)
+title VARCHAR2(20),                  -- 제목
+content VARCHAR2(100),               -- 내용
+rdate date,                          -- 등록일
+hit number,							 -- 조회수
+foreign key(adminId) references admin(adminId)
+);
+-- 공지번호 (notification) 13 시퀀스
+create sequence notification_seq start with 1 increment by 1 maxvalue 9999;
+
+

@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Pretendard';
+  color: #333;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+a{
+  color: #333; text-decoration: none;
+  cursor: pointer;
+}
+
+dl,ul,ol,li{
+  list-style: none;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+fieldset, img {
+  border: 0 none;
+  vertical-align: top;
+}
+
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input[type="text"], input[type="password"] {
+  padding: 0 10px;
+  outline: none;
+  font-size: 12px;
+  height: 31px;
+  color: #333333;
+  border: 1px solid #d6d6d6;
+  line-height: 31px;
+  /* box-sizing: border-box; */
+}
+
+input, select, textarea, button {
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+  vertical-align: top;
+}
+
+input[type="radio"] {
+  width: 13px;
+  height: 13px;
+  vertical-align: top;
+}
+
+textarea {
+  padding: 5px;
+  color: #a9a9a9;
+  border: 1px solid #d6d6d6;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

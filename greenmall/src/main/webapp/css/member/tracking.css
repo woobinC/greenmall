@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+.date_check_box {
+  margin: 0 0 35px 0;
+  padding: 20px 20px 20px 30px;
+  border: 3px solid #eeeeee;
+}
+
+.date_check_box h3 {
+  float: left;
+  padding: 6px 15px 0 0;
+  color: #777777;
+  font-size: 13px;
+}
+
+.date_check_list {
+  float: left;
+  padding: 0 10px 0 0;
+}
+
+.date_check_list button {
+  float: left;
+  width: 54px;
+  height: 31px;
+  margin: 0 0 0 -1px;
+  color: #777777;
+  font-size: 12px;
+  border: 1px solid #d6d6d6;
+}
+
+.date_check_list button:hover, .date_check_list button.on {
+  color: #ffffff;
+  background: #aeaeae;
+}
+
+.date_check_calendar {
+  position: relative;
+  float: left;
+  width: 30.5%;
+}
+
+.date_check_calendar .anniversary {
+  width: 45%;
+  background: url(/greenmall/images/icon_calendar.png) no-repeat right center;
+}
+
+.mypage_cont .btn_date_check {
+  display: inline-block;
+  float: left;
+  min-width: 100px;
+  height: 31px;
+  color: #ffffff;
+  font-weight: bold;
+  border: 1px solid #ab3e55;
+  background: #ab3e55;
+  text-align: center;
+}
+
+.mypage_cont .btn_date_check em {
+  padding: 0 20px 0 0;
+  background-image: url(/greenmall/images/btn_goods_search.png);
+  background-position: right 3px;
+  background-repeat: no-repeat;
+  font-weight: bold;
+}
+
+.pick_list_num strong {
+  color: #ab3e55;
+}
+
+.mypage_table_type th .form_element {
+  vertical-align: middle;
+}
+
+.form_element {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+
+.form_element label {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  min-height: 20px;
+}
+
+.mypage_wish_list .btn_wish_choice_del, .mypage_wish_list .btn_wish_choice_cart {
+  margin: 10px 0 0 0;
+}
+
+.btn_wish_choice_del, .btn_wish_choice_cart {
+  display: inline-block;
+  min-width: 46px;
+  min-height: 18px;
+  margin: 5px 0 0 0;
+  padding: 3px 10px 4px 10px;
+  color: #626262;
+  border: 1px solid #a3a3a3;
+  background: #ffffff;
+  text-align: center;
+}
+
+.btn_right_box {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn_write {
+  display: inline-block;
+  min-width: 90px;
+  height: 31px;
+  margin: 0 0 0 5px;
+  padding: 0 10px 0 10px;
+  line-height: 29px;
+  color: #ffffff;
+  font-size: 12px;
+  border: 1px solid #979797;
+  background: #979797;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.date_check_box:after {
+  display: block;
+  clear: both;
+  content: "";
+}

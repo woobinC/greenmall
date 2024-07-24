@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+
+#wrap {
+  width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+header #wrap div {
+  display: inline-block;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.admin-log {
+  margin: 20px 0;
+  text-align: right;
+}
+
+.admin-log a{
+  margin-right: 20px;
+}
+
+.admin-menu {
+  text-align: right;
+}
+
+.admin-menu a {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 20px;
+}

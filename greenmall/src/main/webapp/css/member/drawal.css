@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+.hack_out {
+  margin: 0 0 50px 0;
+}
+
+.hack_out .mypage_zone_tit {
+  margin: 0 0 50px 0;
+  padding: 0 0 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #999999;
+}
+
+.hack_out .mypage_unregister .mypage_zone_tit {
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-size: 14px;
+  border-bottom: none 0;
+}
+
+.mypage_zone_tit h3 {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.hack_out .mypage_unregister .unregister_info {
+  margin: 0 0 40px 0;
+  padding: 15px 15px 15px 15px;
+  color: #717171;
+  border: 1px solid #dadada;
+}
+
+.hack_out .mypage_unregister .unregister_info {
+  margin: 0 0 40px 0;
+  padding: 15px 15px 15px 15px;
+  color: #717171;
+  border: 1px solid #dadada;
+}
+
+.hack_out .mypage_unregister .mypage_zone_tit {
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-size: 14px;
+  border-bottom: none 0;
+}
+
+.mypage_table_type .table_left {
+  border-top: 1px solid #999999;
+}
+
+.mypage_table_type table {
+  width: 100%;
+  border: 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.mypage_table_type .table_left th {
+  padding: 15px 10px 14px 20px;
+  border-top: none 0;
+  background: #f7f7f7;
+  text-align: left;
+}
+
+.mypage_table_type .table_left td {
+  height: 31px;
+  padding: 12px 10px 11px 15px;
+  text-align: left;
+}
+
+.hack_out .mypage_unregister .hack_out_list li {
+  float: left;
+  width: 35%;
+  padding: 0 0 7px 0;
+}
+
+.form_element label {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0 0 0 27px;
+}
+
+.hack_out .mypage_unregister textarea {
+  width: 98%;
+  height: 100px;
+}
+
+.join_base_wrap .member_cont h3 {
+  padding: 0 0 17px 0;
+  font-size: 18px;
+  color: #222222;
+}
+
+.base_info_box h3 {
+  display: inline-block;
+}
+
+.btn_center_box {
+  text-align: center;
+}
+
+.btn_claim_cancel {
+  display: inline-block;
+  min-width: 80px;
+  height: 42px;
+  padding: 0 10px 0 10px;
+  line-height: 40px;
+  color: #3e3d3c;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  text-align: center;
+}
+
+.btn_claim_ok {
+  min-width: 100px;
+  height: 44px;
+  padding: 0 10px 0 10px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  border: 1px solid #ab3e55;
+  background: #ab3e55;
+  text-align: center;
+  vertical-align: top;
+}
+
+.btn_claim_ok:hover {
+  border: 1px solid #9b344a;
+  background: #9b344a;
+}
+
+.my_page .mypage_zone_tit {
+  margin: 0 0 50px 0;
+  padding: 0 0 10px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.join_base_wrap .important {
+  background: url(/greenmall/images/icon_dot_03.png) no-repeat 0 center;
+}
+
+.base_info_box>span {
+  float: right;
+  padding: 0 0 0 10px;
+  line-height: 40px;
+  color: #ab3e55;
+}
+
+.base_info_box .base_info_sec {
+  border-top: 1px solid #999999;
+}
+
+.base_info_sec table {
+  width: 100%;
+}
+
+.base_info_sec table th:first-child,
+.base_info_sec table td:first-child {
+  border-left: none;
+}
+
+.base_info_sec table th {
+  text-align: left;
+  border-bottom: 1px solid #dcdcdc;
+  background: #fbfbfb;
+}
+
+.join_base_wrap table th {
+  padding: 10px 25px;
+}
+
+.join_base_wrap table th span {
+  padding: 0 0 0 10px;
+  margin: 0 0 0 -10px;
+}
+
+.base_info_sec table td {
+  padding: 15px 0 15px 15px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.member_password .btn_gray_list {
+  margin: 0 5px 0 0;
+}
+
+.layer_area {
+  position: relative;
+  z-index: 150;
+}
+
+.member_pw_change dl {
+  padding: 5px 0 5px 0;
+  font-size: 0;
+}
+
+.member_pw_change dt {
+  display: inline-block;
+  width: 120px;
+  padding: 5px 0 0 0;
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.member_pw_change dd {
+  display: inline-block;
+  font-size: 12px;
+}
+
+.member_warning {
+  display: inline;
+  position: relative;
+}
+
+.member_pw_change input[type="password"] {
+  width: 200px;
+}
+
+.form_element label {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0 0 0 27px;
+}
+
+.base_info_sec table .form_element {
+  display: block;
+  margin-top: 5px;
+}
+
+.form_element label.check_s {
+  padding: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.base_info_sec table td {
+  padding: 15px 0 15px 15px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.join_base_wrap .member_cont h3 {
+  padding: 0 0 17px 0;
+  font-size: 18px;
+  color: #222222;
+}
+
+.btn_center_box {
+  text-align: center;
+}
+
+#contents .member_address .address_postcode input {
+  width: 190px;
+}
+
+#contents .member_address .address_postcode .btn_post_search {
+  margin: 0 0 0 5px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid #989898;
+}
+
+#contents .member_address .address_input {
+  float: left;
+  width: 72%;
+}
+
+#contents .member_address .address_input input {
+  margin: 10px 0 0 0;
+}
+
+.base_info_sec table input[type="text"] {
+  width: 380px;
+}
+
+.site_info_box {
+  margin: 40px 0 0 0;
+}
+
+.site_sns_info {
+  padding: 30px 20px 30px 20px;
+  border: 1px solid #dadada;
+}
+
+.site_sns_info .site_sns_list_disconnect span {
+  display: inline-block;
+  margin: 0 6px 0 0;
+  vertical-align: middle;
+}
+
+.site_sns_info .site_sns_list_disconnect img {
+  margin: 0 8px 0 0;
+}
+
+.member_cont .btn_center_box, .member_warning + .btn_center_box {
+  margin: 35px 0 0 0;
+}
+
+.btn_member_cancel {
+  width: 150px;
+  height: 45px;
+  color: #3e3d3c;
+  font-weight: bold;
+  font-size: 13px;
+  border: 1px solid #cccccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.btn_center_box button + button, .btn_left_box button + button, .btn_right_box button + button {
+  margin-left: 6px;
+}
+
+.btn_comfirm {
+  width: 150px;
+  height: 45px;
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  border: 1px solid #ab3e55;
+  background: #ab3e55;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn_comfirm:hover {
+  border: 1px solid #9b344a;
+  color: #fff;
+  background: #9b344a;
+}
+

@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+body, th, td, input, select, textarea, button {
+  font-size: 14px;
+  line-height: 1.5;
+  font-family: 'Pretendard';
+  color: #333;
+}
+
+.cart_wrap img {
+  border: 0 none;
+  vertical-align: top;
+}
+
+.cart_wrap ol, .cart_wrap dl, .cart_wrap dt, .cart_wrap dd {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cart_wrap em {
+  font-style: normal;
+  font-weight: normal;
+}
+
+.cart_wrap div, .cart_wrap h2, .cart_wrap form {
+  margin: 0;
+  padding: 0;
+}
+
+.cart_wrap {
+  
+  min-width: 1450px;
+}
+
+.cart_wrap .sub_content {
+  width: 1280px;
+  padding-top: 50px;
+  margin: 0 auto;
+}
+
+.content_box {
+  width: 100%;
+}
+
+
+.order_title {
+  border-bottom: 1px solid #dbdbdb;
+  overflow: hidden;
+}
+
+.order_title h2 {
+  float: left;
+  font-size: 28px;
+  color: #222222;
+}
+
+.order_title li span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.order_title li span > img {
+  padding: 0 14px;
+  vertical-align: -1px;
+}
+
+.order_title ol {
+  float: right;
+  line-height: 62px;
+}
+
+.order_title ol li {
+  float: left;
+  color: #d1d1d1;
+}
+
+.order_title ol .page_on {
+  color: #ab3e55;
+  font-weight: bold;
+}
+
+.cart_content .no_data {
+  padding: 60px 0;
+  margin: 0 0 20px 0;
+  text-align: center;
+  border-bottom: 1px solid #dbdbdb;
+  color: #444;
+}
+
+.btn_left_box {
+  text-align: left;
+}
+
+.shop_go_link {
+  display: inline-block;
+  border-bottom: 1px solid #333333;
+  text-decoration: none;
+  color: #333;
+}
+
+.cart_content .price_sum {
+  margin: 30px 0 0 0;
+  padding: 20px 40px 25px 40px;
+  border: 2px solid #d6d6d6;
+}
+
+.price_sum:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.price_sum_content .price_sum_list {
+  position: relative;
+}
+
+.price_sum_content {
+  display: table;
+  float: right;
+  text-align: right;
+}
+
+.price_sum_content .tobe_mileage {
+  display: block;
+  width: 100%;
+}
+
+.price_sum_content .price_sum_list dl {
+  display: table-cell;
+  padding: 5px 10px 5px 10px;
+  font-size: 16px;
+  text-align: right;
+}
+
+.price_sum_content .price_sum_list dd {
+  color: #ab3e55;
+}
+
+.price_sum_content .price_sum_list span {
+  display: table-cell;
+  padding: 0 15px 0 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.price_sum_content .price_sum_list dd strong {
+  font-weight: 700;
+  font-size: 18px;
+  color: #ab3e55;
+}
+
+.price_sum_content .price_sum_list .price_total {
+  padding-right: 0;
+}
+
+.price_sum_content .price_sum_list .price_total dd {
+  font-size: 20px;
+}
+
+.cart_wrap em{
+  font-style: normal;
+  font-weight: normal;
+}
+
+.location_content em {
+  display: block;
+  float: left;
+  padding: 12px 0 10px 0;
+  color: #777777;
+}
+
+.location_content .local_home {
+  color: #777777;
+  text-decoration: none;
+}
+
+.sub_content .location_content {
+	padding:50px 0 ;
+}
