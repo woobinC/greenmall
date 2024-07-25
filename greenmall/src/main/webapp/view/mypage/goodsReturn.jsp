@@ -26,49 +26,49 @@
 						<ul class="sub_menu_mypage">
 							<li>쇼핑정보
 								<ul class="sub_depth1">
-									<li><a href="/greenmall/view/member/tracking.wb">-
+									<li><a href="/greenmall/view/mypage/tracking.wb">-
 											주문목록/배송조회</a></li>
-									<li><a href="/greenmall/view/member/goodsReturn.wb">-
+									<li><a href="/greenmall/view/mypage/goodsReturn.wb">-
 											취소/반품/교환 내역</a></li>
-									<li><a href="/greenmall/view/member/refund.wb">- 환불/입금
+									<li><a href="/greenmall/view/mypage/refund.wb">- 환불/입금
 											내역</a></li>
-									<li><a href="/greenmall/view/member/wishList.wb">-
+									<li><a href="/greenmall/view/mypage/wishList.wb">-
 											찜리스트</a></li>
 								</ul>
 							</li>
 							<li>혜택관리
 								<ul class="sub_depth1">
-									<li><a href="/greenmall/view/member/coupon.wb">- 쿠폰</a></li>
-									<li><a href="/greenmall/view/member/couponZone.wb">-
+									<li><a href="/greenmall/view/mypage/coupon.wb">- 쿠폰</a></li>
+									<li><a href="/greenmall/view/mypage/couponZone.wb">-
 											쿠폰존</a></li>
-									<li><a href="/greenmall/view/member/mileage.wb">- 마일리지</a></li>
+									<li><a href="/greenmall/view/mypage/mileage.wb">- 마일리지</a></li>
 								</ul>
 							</li>
 							<li>고객센터
 								<ul class="sub_depth1">
-									<li><a href="/greenmall/view/member/customerService.wb">-
+									<li><a href="/greenmall/view/mypage/customerService.wb">-
 											1:1 문의</a></li>
 								</ul>
 							</li>
 							<li>회원정보
 								<ul class="sub_depth1">
-									<li><a href="/greenmall/view/member/infoChange.wb">-
+									<li><a href="/greenmall/view/mypage/infoChange.wb">-
 											회원정보 변경</a></li>
-									<li><a href="/greenmall/view/member/withDrawal.wb">-
+									<li><a href="/greenmall/view/mypage/withDrawal.wb">-
 											회원 탈퇴</a></li>
-									<li><a href="/greenmall/view/member/deliveryAddress.wb">-
+									<li><a href="/greenmall/view/mypage/deliveryAddress.wb">-
 											배송지 관리</a></li>
 								</ul>
 							</li>
 							<li class="sub_depth1">나의 상품문의
 								<ul class="sub_depth1">
-									<li><a href="/greenmall/view/member/productInquiry.wb">-
+									<li><a href="/greenmall/view/mypage/productInquiry.wb">-
 											나의 상품문의</a></li>
 								</ul>
 							</li>
 							<li class="sub_depth1">나의 상품후기
 								<ul class="sub_depth1">
-									<li><a href="/greenmall/view/member/myGoodsReview.wb">-
+									<li><a href="/greenmall/view/mypage/myGoodsReview.wb">-
 											나의 상품후기</a></li>
 								</ul>
 							</li>

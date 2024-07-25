@@ -14,18 +14,18 @@
                     <div class="top_bar">
                         <div class="top_image top_logo">
                             <a href="#"><img
-                                    src="imag/G_R_E_E_N-removebg-preview.png"
+                                    src="/greenmall/images/greenmall_log.png"
                                     alt="로고"></a>
                         </div>
                         <div class="top_image top_member">
                             <ul>
                                 <li><a href="#"><i class="xi-log-in"></i>로그인</a></li>
                                 <li><a href="#"><i class="xi-user-plus-o"></i>회원가입</a></li>
-                                <li><a href="/greenmall/view/member/cartList.wb"><span>장바구니(
+                                <li><a href="/greenmall/view/mypage/cartList.wb"><span>장바구니(
                                             <strong>0</strong> )
                                         </span></a></li>
-                                <li><a href="/greenmall/view/member/tracking.wb"><span>주문배송</span></a></li>
-                                <li><a href="/greenmall/view/member/mypage.wb"><span>마이페이지</span></a></li>
+                                <li><a href="/greenmall/view/mypage/tracking.wb"><span>주문배송</span></a></li>
+                                <li><a href="/greenmall/view/mypage/mypage.wb"><span>마이페이지</span></a></li>
                             </ul>
                         </div>
                     </div>

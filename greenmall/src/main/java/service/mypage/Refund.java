@@ -1,15 +1,15 @@
-package service.member;
+package service.mypage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import service.CommandProcess;
 
-public class CouponZone implements CommandProcess{
+public class Refund implements CommandProcess{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "couponZone";
+		return "refund";
 	}
 
 }

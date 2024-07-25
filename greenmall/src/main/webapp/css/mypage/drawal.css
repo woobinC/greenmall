@@ -260,7 +260,7 @@
 }
 
 #contents .member_address .address_postcode input {
-  width: 190px;
+  width: 170px;
 }
 
 #contents .member_address .address_postcode .btn_post_search {
@@ -338,3 +338,6 @@
   background: #9b344a;
 }
 
+.member_email .member_warning #email {
+	width: 170px;
+}

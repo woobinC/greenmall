@@ -3,6 +3,8 @@
 	<decorator name="decorator" page="view.jsp">
 		 <pattern>/view/display/*</pattern> 
 		 <pattern>/view/member/*</pattern> 
+		 <pattern>/view/mypage/*</pattern> 
+		 <pattern>/view/board/*</pattern> 
 	</decorator>
 	<decorator name="decorator_admin" page="admin_view.jsp">
 		<pattern>/view/admin/*</pattern>

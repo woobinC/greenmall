@@ -7,17 +7,65 @@ public class Member {
 	private String mPw;
 	private String mEmail;
 	private String mName;
-	private String gender;
 	private String mTel;
+	private String mPostCode;
 	private String mAddr;
 	private String mAddrDe;
 	private int mileage;
 	private String mDel;
 	private Date mRdate;
+	private String compTitle;
+	private String compNum;
+	private String compName;
+	private String compPostCode;
+	private String compAddr;
+	private String compAddrDe;
 	
 	
 	public String getmId() {
 		return mId;
+	}
+	public String getmPostCode() {
+		return mPostCode;
+	}
+	public void setmPostCode(String mPostCode) {
+		this.mPostCode = mPostCode;
+	}
+	public String getCompTitle() {
+		return compTitle;
+	}
+	public void setCompTitle(String compTitle) {
+		this.compTitle = compTitle;
+	}
+	public String getCompNum() {
+		return compNum;
+	}
+	public void setCompNum(String compNum) {
+		this.compNum = compNum;
+	}
+	public String getCompName() {
+		return compName;
+	}
+	public void setCompName(String compName) {
+		this.compName = compName;
+	}
+	public String getCompPostCode() {
+		return compPostCode;
+	}
+	public void setCompPostCode(String compPostCode) {
+		this.compPostCode = compPostCode;
+	}
+	public String getCompAddr() {
+		return compAddr;
+	}
+	public void setCompAddr(String compAddr) {
+		this.compAddr = compAddr;
+	}
+	public String getCompAddrDe() {
+		return compAddrDe;
+	}
+	public void setCompAddrDe(String compAddrDe) {
+		this.compAddrDe = compAddrDe;
 	}
 	public void setmId(String mId) {
 		this.mId = mId;
@@ -39,12 +87,6 @@ public class Member {
 	}
 	public void setmName(String mName) {
 		this.mName = mName;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
 	}
 	public String getmTel() {
 		return mTel;
