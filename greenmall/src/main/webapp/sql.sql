@@ -32,13 +32,19 @@ m_id VARCHAR2(20) primary key,   	 	-- 회원 번호(PK)
 m_pw VARCHAR2(20),           		 	-- 비밀번호
 m_email VARCHAR2(30),               	-- 이메일
 m_name VARCHAR2(20),                	-- 이름
-gender VARCHAR2(20),              		-- 성별
 m_tel VARCHAR2(20),                 	-- 전화번호
+m_postCode varchar2(20),				-- 우편번호
 m_addr VARCHAR2(100),             		-- 주소
 m_addrDe VARCHAR2(20),            		-- 상세주소
 mileage number,                  		-- 마일리지
 m_del VARCHAR2(1),                 		-- 탈퇴여부
-m_rdate date		             		-- 가입 날짜
+m_rdate date,		             		-- 가입 날짜
+comp_title varchar2(20),				-- 사업자상호
+comp_Num varchar2(20),					-- 사업자번호
+comp_name varchar2(20),					-- 사업자대표
+comp_postCode varchar2(20),				-- 우편번호
+comp_addr varchar2(100)					-- 사업장주소
+comp_addrDe varchar2(20)				-- 상세주소
 );
 
 -- 주문(buy) 2
@@ -49,6 +55,7 @@ totalPrice number,               		-- 총 결제 금액
 b_rdate date,                      		-- 주문 날짜
 b_Satus VARCHAR2(20),        			-- 주문 현황
 b_name VARCHAR2(20),               		-- 받는분 성함
+b_postCode varchar2(20),				-- 우편번호
 b_addr VARCHAR2(100),           		-- 받는분 주소
 b_addrDe VARCHAR2(50),           		-- 상세 주소
 b_tel VARCHAR2(20),             		-- 받는분 전화번호
@@ -137,8 +144,8 @@ create table memberaddress (
 addrNum number primary key,       	-- 배송지 코드(PK)
 m_id VARCHAR2(20),               	-- 회원 번호(FK)
 a_name VARCHAR2(20),                -- 받는분 성함
+a_postcode VARCHAR2(20),            -- 우편번호
 a_addr VARCHAR2(100),            	-- 받는분 주소
-post VARCHAR2(20),                	-- 우편번호
 a_addrDe VARCHAR2(20),              -- 상세 주소
 a_request VARCHAR2(50),        		-- 요청사항
 basicAddr VARCHAR2(1),				-- 기본 배송지 여부

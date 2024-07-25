@@ -9,6 +9,7 @@ public class Buy {
 	private Date bRdate;
 	private String bSatus;
 	private String bName;
+	private String bPostCode;
 	private String bAddr;
 	private String bAddrDe;
 	private String bTel;
@@ -16,6 +17,12 @@ public class Buy {
 	private int bCnt;
 	
 	
+	public String getbPostCode() {
+		return bPostCode;
+	}
+	public void setbPostCode(String bPostCode) {
+		this.bPostCode = bPostCode;
+	}
 	public int getbNum() {
 		return bNum;
 	}

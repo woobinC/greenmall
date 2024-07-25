@@ -5,7 +5,7 @@ public class MemberAddress {
 	private String mId;
 	private String aName;
 	private String aAddr;
-	private String post;
+	private String aPostCode;
 	private String aAddrDe;
 	private String aRequest;
 	private String basicAddr;
@@ -36,10 +36,10 @@ public class MemberAddress {
 		this.aAddr = aAddr;
 	}
 	public String getPost() {
-		return post;
+		return aPostCode;
 	}
-	public void setPost(String post) {
-		this.post = post;
+	public void setPost(String aPostCode) {
+		this.aPostCode = aPostCode;
 	}
 	public String getaAddrDe() {
 		return aAddrDe;
