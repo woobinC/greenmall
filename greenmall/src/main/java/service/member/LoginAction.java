@@ -18,8 +18,10 @@ public class LoginAction implements CommandProcess {
 		MemberDao md = MemberDao.getInstance();
 		int result = 0;
 		Member member = md.select(mId); 
+		System.out.println(member);
 		System.out.println(member.getmDel());
-		if(member == null || member.getmDel().equals("y"))
+		System.out.println(mId);
+		if(member == null || "y".equals(member.getmDel()))
 			result = -1;
 		else if(member.getmPw().equals(password)) {
 			HttpSession session = request.getSession();
@@ -27,7 +29,7 @@ public class LoginAction implements CommandProcess {
 			result = 1;
 		}
 		request.setAttribute("result", result);
-		return "main";
+		return "login";
 	}
 
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
-<c:set var="mId" value="${sessionScope.id }"></c:set>    
+<c:set var="mId" value="${sessionScope.mId }"></c:set>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,14 +21,11 @@
                         </div>
                         <div class="top_image top_member">
                             <ul>
-                            <c:if test="${empty mId }">
+                            <c:if test="${mId == null}">
                                 <li><a href="../member/loginForm.wb"><i class="xi-log-in"></i>로그인</a></li>
                                 <li><a href="../member/join.wb"><i class="xi-user-plus-o"></i>회원가입</a></li>
-                                <li style="display: none"><a href="#"><i class="xi-log-out"></i>로그아웃</a></li>
                             </c:if>
-                            <c:if test="${not empty mId }">
- 								<li style="display: none"><a href="../member/loginForm.wb"><i class="xi-log-in"></i>로그인</a></li>
-                                <li style="display: none"><a href="../member/join.wb"><i class="xi-user-plus-o"></i>회원가입</a></li>
+                            <c:if test="${mId != null }">
                                 <li><a href="#"><i class="xi-log-out"></i>로그아웃</a></li>                           
                             </c:if>
                                 <li><a href="/greenmall/view/mypage/cartList.wb"><span>장바구니(
