@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberns">
+	<select id="select" parameterType="string" resultType="member">
+		select * from member where m_id=#{mId,jdbcType=VARCHAR}
+	</select>
+	<!-- <select id="getTotal" resultType="integer">
+		select count(*) from member
+	</select>
+	<select id="list" parameterType="map" resultType="member">
+		select * from (select rowNum rn, a.* from
+				(select * from member2 order by id desc)a) 
+				where rn between #{startRow} and #{endRow}
+	</select> -->
+	<insert id="insert" parameterType="member">
+		insert into member values
+		(#{mId,jdbcType=VARCHAR},#{mPw,jdbcType=VARCHAR},#{mEmail,jdbcType=VARCHAR},#{mName,jdbcType=VARCHAR},#{mTel,jdbcType=VARCHAR},#{mPostCode,jdbcType=VARCHAR},
+		#{mAddr,jdbcType=VARCHAR},#{mAddrDe,jdbcType=VARCHAR},0,'n',sysdate,#{compTitle,jdbcType=VARCHAR},#{compNum,jdbcType=VARCHAR}
+		,#{compName,jdbcType=VARCHAR},#{compPostCode,jdbcType=VARCHAR},#{compAddr,jdbcType=VARCHAR},#{compAddrDe,jdbcType=VARCHAR})
+	</insert>
+	<!-- <update id="update" parameterType="member">
+		update member2 set password=#{password}, name=#{name},
+		address=#{address}, tel=#{tel} where id=#{id}
+	</update>
+	<update id="delete" parameterType="string">
+		update member2 set del= 'y' where id=#{id}
+	</update>
+	 -->
+</mapper>

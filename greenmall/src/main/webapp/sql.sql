@@ -26,6 +26,8 @@ drop table category;
 drop table buy;
 drop table member;
 
+select * from member;
+
 -- 회원(member) 1
 create table member (
 m_id VARCHAR2(20) primary key,   	 	-- 회원 번호(PK)
@@ -43,7 +45,7 @@ comp_title varchar2(20),				-- 사업자상호
 comp_Num varchar2(20),					-- 사업자번호
 comp_name varchar2(20),					-- 사업자대표
 comp_postCode varchar2(20),				-- 우편번호
-comp_addr varchar2(100)					-- 사업장주소
+comp_addr varchar2(100),					-- 사업장주소
 comp_addrDe varchar2(20)				-- 상세주소
 );
 
