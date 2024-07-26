@@ -37,7 +37,7 @@ m_postCode varchar2(20),				-- 우편번호
 m_addr VARCHAR2(100),             		-- 주소
 m_addrDe VARCHAR2(20),            		-- 상세주소
 mileage number,                  		-- 마일리지
-m_del VARCHAR2(1),                 		-- 탈퇴여부
+m_del char(1) default 'n',              -- 탈퇴여부
 m_rdate date,		             		-- 가입 날짜
 comp_title varchar2(20),				-- 사업자상호
 comp_Num varchar2(20),					-- 사업자번호
@@ -148,7 +148,7 @@ a_postcode VARCHAR2(20),            -- 우편번호
 a_addr VARCHAR2(100),            	-- 받는분 주소
 a_addrDe VARCHAR2(20),              -- 상세 주소
 a_request VARCHAR2(50),        		-- 요청사항
-basicAddr VARCHAR2(1),				-- 기본 배송지 여부
+basicAddr char(1) default 'n',		-- 기본 배송지 여부
 foreign key(m_id) references member(m_id)
 );
 -- 회원 배송지(memberaddress) 9 시퀀스
@@ -172,6 +172,7 @@ create sequence review_seq start with 1 increment by 1 maxvalue 9999;
 
 -- 댓글 (reply) 11
 create table reply (
+
 replyKey number primary key,        -- 댓글 번호(PK)
 boardKey number,                    -- 게시글 번호(FK)
 m_id VARCHAR2(20),                  -- 회원 번호(FK)
@@ -179,7 +180,7 @@ re_level number,                    -- 답글 레벨
 re_step number,                     -- 답글 스텝
 re_content VARCHAR2(100),           -- 내용
 re_rdate date,                      -- 등록일
-re_del VARCHAR2(1),					-- 삭제 여부
+re_del char(1) default 'n',			-- 삭제 여부
 foreign key(boardKey) references review(boardKey),
 foreign key(m_id) references member(m_id)
 );
@@ -205,4 +206,4 @@ foreign key(adminId) references admin(adminId)
 -- 공지번호 (notice) 13 시퀀스
 create sequence notification_seq start with 1 increment by 1 maxvalue 9999;
 
-
+insert into admin values('master', '1234');

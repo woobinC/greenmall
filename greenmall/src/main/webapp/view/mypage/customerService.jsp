@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
     @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
-
+<c:set var="uri" value="${pageContext.request.requestURI }"></c:set>
 <body>
   <div id="container">
     <div id="contents">
@@ -42,7 +43,7 @@
               <li>
                 고객센터
                 <ul class="sub_depth1">
-                  <li><a href="/greenmall/view/mypage/customerService.wb">- 1:1 문의</a></li>
+                  <li><a href="/greenmall/view/mypage/customerService.wb" <c:if test="${uri == '/greenmall/view/mypage/customerService.jsp' }">class="active"</c:if>>- 1:1 문의</a></li>
                 </ul>
               </li>
               <li>

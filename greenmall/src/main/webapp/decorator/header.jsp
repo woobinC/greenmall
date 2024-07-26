@@ -13,7 +13,7 @@
                 <div class="header_div">
                     <div class="top_bar">
                         <div class="top_image top_logo">
-                            <a href="#"><img
+                            <a href="/greenmall/view/display/main.wb"><img
                                     src="/greenmall/images/greenmall_log.png"
                                     alt="로고"></a>
                         </div>

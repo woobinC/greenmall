@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="db.properties" />
+	<typeAliases>
+		<typeAlias alias="admin" type="dto.Admin" />
+		<typeAlias alias="basket" type="dto.Basket" />
+		<typeAlias alias="buy" type="dto.Buy" />
+		<typeAlias alias="category" type="dto.Category" />
+		<typeAlias alias="detailOrder" type="dto.DetailOrder" />
+		<typeAlias alias="goods" type="dto.Goods" />
+		<typeAlias alias="goodsOption" type="dto.GoodsOption" />
+		<typeAlias alias="member" type="dto.Member" />
+		<typeAlias alias="memberAddress" type="dto.MemberAddress" />
+		<typeAlias alias="notice" type="dto.Notice" />
+		<typeAlias alias="reply" type="dto.Reply" />
+		<typeAlias alias="review" type="dto.Review" />
+		<typeAlias alias="wish" type="dto.Wish" />
+
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="admin.xml" />
+	</mappers>
+</configuration>

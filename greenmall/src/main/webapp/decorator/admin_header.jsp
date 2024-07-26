@@ -16,12 +16,12 @@
       </div>
       <div>
         <div class="admin-log" style="display: block;">
-          <a href="#">로그아웃</a>
+          <a href="/greenmall/view/admin/adminLoginForm.wb">로그인</a>
           <a href="/greenmall/view/display/main.wb">홈페이지</a>
         </div>
         <div class="admin-menu">
           <a href="#">주문 관리</a>
-          <a href="/greenmall/view/admin/adminGoods.wb">상품 관리</a>
+          <a href="/greenmall/view/admin/adminGoodsList.wb">상품 관리</a>
           <a href="#">고객 관리</a>
           <a href="#">게시판 관리</a>
         </div>

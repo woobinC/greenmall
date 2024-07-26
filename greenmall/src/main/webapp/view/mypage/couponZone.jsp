@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
     @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
-
+<c:set var="uri" value="${pageContext.request.requestURI }"></c:set>
 <body>
   <div id="container">
     <div id="contents">
@@ -35,7 +36,7 @@
                 혜택관리
                 <ul class="sub_depth1">
                   <li><a href="/greenmall/view/mypage/coupon.wb">- 쿠폰</a></li>
-                  <li><a href="/greenmall/view/mypage/couponZone.wb">- 쿠폰존</a></li>
+                  <li><a href="/greenmall/view/mypage/couponZone.wb" <c:if test="${uri == '/greenmall/view/mypage/couponZone.jsp' }">class="active"</c:if>>- 쿠폰존</a></li>
                   <li><a href="/greenmall/view/mypage/mileage.wb">- 마일리지</a></li>
                 </ul>
               </li>

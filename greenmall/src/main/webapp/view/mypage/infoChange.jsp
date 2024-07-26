@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,7 @@
     @import url("/greenmall/css/mypage/drawal.css");
   </style>
 </head>
-
+<c:set var="uri" value="${pageContext.request.requestURI }"></c:set>
 <body>
   <div id="container">
     <div id="contents">
@@ -49,7 +50,7 @@
               <li>
                 회원정보
                 <ul class="sub_depth1">
-                  <li><a href="/greenmall/view/mypage/infoChange.wb">- 회원정보 변경</a></li>
+                  <li><a href="/greenmall/view/mypage/infoChange.wb" <c:if test="${uri == '/greenmall/view/mypage/infoChange.jsp' }">class="active"</c:if>>- 회원정보 변경</a></li>
                   <li><a href="/greenmall/view/mypage/withDrawal.wb">- 회원 탈퇴</a></li>
                   <li><a href="/greenmall/view/mypage/deliveryAddress.wb">- 배송지 관리</a></li>
                 </ul>

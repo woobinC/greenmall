@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
     @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
-
+<c:set var="uri" value="${pageContext.request.requestURI }"></c:set>
 <body>
   <div id="container">
     <div id="contents">
@@ -50,7 +51,7 @@
                 <ul class="sub_depth1">
                   <li><a href="/greenmall/view/mypage/infoChange.wb">- 회원정보 변경</a></li>
                   <li><a href="/greenmall/view/mypage/withDrawal.wb">- 회원 탈퇴</a></li>
-                  <li><a href="/greenmall/view/mypage/deliveryAddress.wb">- 배송지 관리</a></li>
+                  <li><a href="/greenmall/view/mypage/deliveryAddress.wb" <c:if test="${uri == '/greenmall/view/mypage/deliveryAddress.jsp' }">class="active"</c:if>>- 배송지 관리</a></li>
                 </ul>
               </li>
               <li class="sub_depth1">
@@ -132,7 +133,8 @@
                   </table>
                 </div>
                 <div class="btn_right_box">
-                  <button class="btn_write">
+                  <button class="btn_write" 
+                  	onclick="location.href='/greenmall/view/mypage/addressForm.wb'">
                     <strong>+ 새 배송지 추가</strong>
                   </button>
                 </div>

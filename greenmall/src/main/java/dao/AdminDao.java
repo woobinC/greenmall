@@ -2,6 +2,7 @@ package dao;
 
 import org.apache.ibatis.session.SqlSession;
 
+import dto.Admin;
 import mybatis.MyBatisSessionFactory;
 
 public class AdminDao {
@@ -16,10 +17,9 @@ public class AdminDao {
 	}
 
 	private static SqlSession session = MyBatisSessionFactory.getSession(true);
-	public void on() {
-		
-		
-		session.close();
+
+	public Admin select(String adminId) {
+			return (Admin) session.selectOne("admins.select", adminId);
 	}
 
 }

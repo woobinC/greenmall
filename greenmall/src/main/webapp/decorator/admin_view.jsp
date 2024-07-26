@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/greenmall/css/board/admin.css">
-<link rel="stylesheet" href="/greenmall/css/board/admin_header.css">
+<link rel="stylesheet" href="/greenmall/css/admin/admin.css">
+<link rel="stylesheet" href="/greenmall/css/admin/admin_header.css">
 <link rel="stylesheet" href="/greenmall/css/index.css">
 <deco:head></deco:head>
 </head>
