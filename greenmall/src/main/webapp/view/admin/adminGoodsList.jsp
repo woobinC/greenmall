@@ -120,7 +120,8 @@
 					</ul>
 				</div>
 				<div class="add_goods">
-					<button class="add_goods_btn">상품 추가</button>
+					<button class="add_goods_btn" 
+						onclick="location.href='/greenmall/view/admin/adminGoodsAddForm.wb'">상품 추가</button>
 				</div>
 			</div>
 		</div>

@@ -76,7 +76,7 @@ crossorigin="anonymous"></script>
                         <div class="btn_box">
                             <ul>
                                 <li>
-                                    <button class="btn_box_join" type="button" onclick="location.href='../display/main.wb'">회원가입</button>
+                                    <button class="btn_box_join" type="button" onclick="location.href='/greenmall/member/join.wb'">회원가입</button>
                                 </li>
                                 <li>
                                     <button class="btn_box_login" type="button" onclick="location.href='findId.wb'">아이디 찾기</button>
