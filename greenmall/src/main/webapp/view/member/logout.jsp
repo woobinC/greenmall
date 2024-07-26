@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,8 @@
 </head>
 <body>
 <script type="text/javascript">
-	location.href="../display/main.wb"
+	alert("로그아웃 되었습니다.")
+	location.href="/greenmall/view/display/main.wb"
 </script>
 </body>
 </html>

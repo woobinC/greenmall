@@ -33,7 +33,25 @@ $(document).ready(function() {
         }
     });
 });
-
+const chk = () => {
+	if (frm.mPw.value!=frm.confirmPw.value){
+		alert("암호와 암호확인이 다릅니다");
+		frm.mPw.focus();
+		frm.mPw.value = "";
+		frm.confirmPw.value = "";
+		return false;
+	}
+}
+const IdChk = () => {
+    if (!$('#mId').val()) {
+        alert("아이디를 입력하고 체크하시오");
+        $('#mId').focus();
+        return false;
+    }
+    $.post('confirm.wb', { id: $('#mId').val() }, function(data) {
+        $('#err').html(data);
+    });
+}
 function confirmNext() {
 	 let isValid = true;
 	if($('input[id="mId"]').val().length == 0){ // if( $('#id').val() == "" ) 도 가능
@@ -114,14 +132,14 @@ function confirmNext() {
 	                        extraAddr = ' (' + extraAddr + ')';
 	                    }
 	                } else {
-	                    document.getElementById("address").value = '';
+	                    document.getElementById("mAddr").value = '';
 	                }
 	
 	                // 선택된 우편번호와 주소 정보를 input 박스에 넣는다.
-	                document.getElementById('zipcode').value = data.zonecode;
-	                document.getElementById("address").value = addr;
-	                document.getElementById("address").value += extraAddr;
-	                document.getElementById("addressSub").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
+	                document.getElementById('mPostCode').value = data.zonecode;
+	                document.getElementById("mAddr").value = addr;
+	                document.getElementById("mAddr").value += extraAddr;
+	                document.getElementById("mAddrDe").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
 	            }
 	        }).open();
 	    }
@@ -150,14 +168,14 @@ function confirmNext() {
 	                        extraAddr = ' (' + extraAddr + ')';
 	                    }
 	                } else {
-	                    document.getElementById("address").value = '';
+	                    document.getElementById("compAddr").value = '';
 	                }
 	
 	                // 선택된 우편번호와 주소 정보를 input 박스에 넣는다.
-	                document.getElementById('comZipCode').value = data.zonecode;
-	                document.getElementById("comAddress").value = addr;
-	                document.getElementById("comAddress").value += extraAddr;
-	                document.getElementById("comAddressSub").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
+	                document.getElementById('compPostCode').value = data.zonecode;
+	                document.getElementById("compAddr").value = addr;
+	                document.getElementById("compAddr").value += extraAddr;
+	                document.getElementById("compAddrde").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
 	            }
 	        }).open();
 	    }
@@ -225,7 +243,7 @@ function confirmNext() {
                                             <th><span class="important">아이디</span></th>
                                             <td>
                                                 <div class="member_warning"><input type="text" name="mId"
-                                                        id="mId"></div>
+                                                        id="mId"><input type="button" onclick="IdChk()"></div>
                                                 <div id="memId_error" class="member_text" style="display: none">필수항목 입니다.</div>
                                             </td>
                                         </tr>

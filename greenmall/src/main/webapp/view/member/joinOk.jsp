@@ -40,10 +40,10 @@
                         <div class="member_btn_sec">
                             <ul>
                                 <li>
-                                    <button id="btn_home" onclick="location.href='main.wb'">홈으로</button>
+                                    <button id="btn_home" onclick="location.href='/greenmall/view/display/main.wb'">홈으로</button>
                                 </li>
                                 <li>
-                                    <button class="btn_login" onclick="location.href='loginForm.wb'">로그인</button>
+                                    <button class="btn_login" onclick="location.href='/greenmall/view/member/loginForm.wb'">로그인</button>
                                 </li>
                             </ul>
                         </div>
