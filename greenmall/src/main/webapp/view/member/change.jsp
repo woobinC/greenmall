@@ -10,9 +10,15 @@
 <body>
 	<c:if test="${result > 0 }">
 		<script type="text/javascript">
-			location.href = "/greenmall/view/display/main.wb"
+			alert("수정되었습니다.")
+			location.href = "/greenmall/view/mypage/mypage.wb"
 		</script>
 	</c:if>
-	
+	<c:if test="${result == 0 || result < 0}">
+		<script type="text/javascript">
+			alert("수정 실패")
+			history.back();
+		</script>
+	</c:if>
 </body>
 </html>

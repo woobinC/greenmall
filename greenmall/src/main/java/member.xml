@@ -22,7 +22,7 @@
 		<result property="compAddrDe" column="comp_addrDe" jdbcType="VARCHAR"/>
 	</resultMap>
 	<select id="select" parameterType="String" resultType="member" resultMap="memberResultMap">
-		select * from member where m_id = #{mId}
+		select * from member where m_id = #{mId,jdbcType=VARCHAR}
 	</select>
 	<insert id="insert" parameterType="member">
 		insert into member values
@@ -30,4 +30,11 @@
 		#{mAddr,jdbcType=VARCHAR},#{mAddrDe,jdbcType=VARCHAR},0,'n',sysdate,#{compTitle,jdbcType=VARCHAR},#{compNum,jdbcType=VARCHAR}
 		,#{compName,jdbcType=VARCHAR},#{compPostCode,jdbcType=VARCHAR},#{compAddr,jdbcType=VARCHAR},#{compAddrDe,jdbcType=VARCHAR})
 	</insert>
+	<update id="update" parameterType="member">
+		update member set m_pw=#{mPw,jdbcType=VARCHAR},m_email=#{mEmail,jdbcType=VARCHAR},m_name=#{mName,jdbcType=VARCHAR},m_tel=#{mTel,jdbcType=VARCHAR},m_postCode=#{mPostCode,jdbcType=VARCHAR},
+		m_addr=#{mAddr,jdbcType=VARCHAR},m_addrDe=#{mAddrDe,jdbcType=VARCHAR} where m_id = #{mId,jdbcType=VARCHAR}
+	</update>
+	<update id="delete" parameterType="string">
+		update member set m_del='y' where m_id=#{mId,jdbcType=VARCHAR}
+	</update>
 </mapper>

@@ -10,6 +10,83 @@
     @import url("/greenmall/css/mypage/mypage.css");
     @import url("/greenmall/css/mypage/drawal.css");
   </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <!-- CDN 방식 사용 -->
+    <script>
+	    function execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업을 통한 검색 결과 항목 클릭 시 실행
+	                var addr = ''; // 주소_결과값이 없을 경우 공백 
+	                var extraAddr = ''; // 참고항목
+	
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 도로명 주소를 선택
+	                    addr = data.roadAddress;
+	                } else { // 지번 주소를 선택
+	                    addr = data.jibunAddress;
+	                }
+	
+	                if(data.userSelectedType === 'R'){
+	                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                        extraAddr += data.bname;
+	                    }
+	                    if(data.buildingName !== '' && data.apartment === 'Y'){
+	                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                    }
+	                    if(extraAddr !== ''){
+	                        extraAddr = ' (' + extraAddr + ')';
+	                    }
+	                } else {
+	                    document.getElementById("mAddr").value = '';
+	                }
+	
+	                // 선택된 우편번호와 주소 정보를 input 박스에 넣는다.
+	                document.getElementById('mPostCode').value = data.zonecode;
+	                document.getElementById("mAddr").value = addr;
+	                document.getElementById("mAddr").value += extraAddr;
+	                document.getElementById("mAddrDe").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
+	            }
+	        }).open();
+	    }
+	    function execDaumPostcodeComp() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업을 통한 검색 결과 항목 클릭 시 실행
+	                var addr = ''; // 주소_결과값이 없을 경우 공백 
+	                var extraAddr = ''; // 참고항목
+	
+	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+	                if (data.userSelectedType === 'R') { // 도로명 주소를 선택
+	                    addr = data.roadAddress;
+	                } else { // 지번 주소를 선택
+	                    addr = data.jibunAddress;
+	                }
+	
+	                if(data.userSelectedType === 'R'){
+	                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                        extraAddr += data.bname;
+	                    }
+	                    if(data.buildingName !== '' && data.apartment === 'Y'){
+	                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                    }
+	                    if(extraAddr !== ''){
+	                        extraAddr = ' (' + extraAddr + ')';
+	                    }
+	                } else {
+	                    document.getElementById("compAddr").value = '';
+	                }
+	
+	                // 선택된 우편번호와 주소 정보를 input 박스에 넣는다.
+	                document.getElementById('compPostCode').value = data.zonecode;
+	                document.getElementById("compAddr").value = addr;
+	                document.getElementById("compAddr").value += extraAddr;
+	                document.getElementById("compAddrde").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
+	            }
+	        }).open();
+	    }
+	</script>  
 </head>
 
 <body>
@@ -81,7 +158,7 @@
               <div class="join_base_wrap">
 
                 <div class="member_cont">
-                  <form id="formJoin" name="formJoin" action="#" method="post">
+                  <form id="formJoin" name="formJoin" action="/greenmall/view/member/change.wb" method="post">
                     <input type="hidden" name="memNo" value="11816" />
                     <input type="hidden" name="memberFl" value="personal" />
                     <input type="hidden" name="dupeinfo" value="" />
@@ -102,8 +179,8 @@
                             <tr>
                               <th><span class="important">아이디</span></th>
                               <td>
-                                <input type="hidden" name="memId" value="dnqls966" />
-                                dnqls966
+                                <input type="hidden" name="mId" value="${member.mId }" />
+                                ${member.mId }
                               </td>
 
                             </tr>
@@ -116,7 +193,7 @@
                                     <dt>새 비밀번호</dt>
                                     <dd>
                                       <div class="member_warning">
-                                        <input type="password" id="newPassword" name="memPw" />
+                                        <input type="password" id="newPassword" name="mPw" />
                                       </div>
                                     </dd>
                                   </dl>
@@ -124,7 +201,7 @@
                                     <dt>새 비밀번호 확인</dt>
                                     <dd>
                                       <div class="member_warning">
-                                        <input type="password" id="newPasswordCheck" name="memPwRe" />
+                                        <input type="password" id="newPasswordCheck" name="confirmPw" />
                                       </div>
                                     </dd>
                                   </dl>
@@ -136,7 +213,7 @@
                               <th><span class="important">이름</span></th>
                               <td>
                                 <div class="member_warning">
-                                  <input type="text" name="memNm" data-pattern="gdMemberNmGlobal" value="천우빈"
+                                  <input type="text" name="mName" data-pattern="gdMemberNmGlobal" value="${member.mName }"
                                     maxlength="30" />
                                 </div>
                               </td>
@@ -145,7 +222,7 @@
                               <th><span>이메일</span></th>
                               <td class="member_email">
                                 <div class="member_warning">
-                                  <input type="text" name="email" id="email" value="dnqls966@naver.com" tabindex="-1" />
+                                  <input type="text" name="mEmail" id="email" value="${member.mEmail}" tabindex="-1" />
                                   <select id="emailDomain" name="emailDomain" class="chosen-select">
                                     <option value="self">직접입력</option>
                                     <option value="naver.com">naver.com</option>
@@ -168,8 +245,8 @@
                               <th><span>휴대폰번호</span></th>
                               <td class="member_address">
                                 <div class="address_postcode">
-                                  <input type="text" id="cellPhone" name="cellPhone" maxlength="12"
-                                    placeholder="- 없이 입력하세요." data-pattern="gdNum" value="01025503659" />
+                                  <input type="text" id="cellPhone" name="mTel" maxlength="12"
+                                    placeholder="- 없이 입력하세요." data-pattern="gdNum" value="${member.mTel }" />
                                 </div>
                                 <div class="form_element">
                                   <input type="checkbox" id="smsFl" name="smsFl" value="y" />
@@ -190,16 +267,16 @@
                               <th><span>주소</span></th>
                               <td class="member_address">
                                 <div class="address_postcode">
-                                  <input type="text" name="zonecode" readonly="readonly" value="" />
-                                  <button type="button" id="btnPostcode" class="btn_post_search">우편번호검색</button>
-                                  <input type="hidden" name="zipcode" value="" />
+                                  <input type="text" name="mPostCode" readonly="readonly" value="${member.mPostCode }" id="mPostCode" />
+                                  <button type="button" id="btnPostcode" class="btn_post_search" onclick="execDaumPostcode()">우편번호검색</button>
+                                  <input type="hidden" name="mPostCode" value="${member.mPostCode }" />
                                 </div>
                                 <div class="address_input">
                                   <div class="member_warning">
-                                    <input type="text" name="address" readonly="readonly" value="" />
+                                    <input type="text" name="mAddr" id="mAddr" readonly="readonly" value="${member.mAddr }" />
                                   </div>
                                   <div class="member_warning js_address_sub">
-                                    <input type="text" name="addressSub" value="" />
+                                    <input type="text" name="mAddrDe" id="mAddrDe" value="${member.mAddrDe }" />
                                   </div>
                                 </div>
                               </td>
@@ -230,7 +307,7 @@
 
                     <div class="btn_center_box">
                       <button type="button" class="btn_member_cancel">취소</button>
-                      <button type="button" class="btn_comfirm js_btn_join" value="정보수정">정보수정</button>
+                      <button type="submit" class="btn_comfirm js_btn_join" value="정보수정">정보수정</button>
                     </div>
                     <!-- //btn_center_box -->
                   </form>

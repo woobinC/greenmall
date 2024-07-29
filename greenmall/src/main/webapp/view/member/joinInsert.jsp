@@ -52,6 +52,9 @@ const IdChk = () => {
         $('#err').html(data);
     });
 }
+function emailSelect(selectEmail){
+	document.frm.mEmail.value  = selectEmail.value;
+}
 function confirmNext() {
 	 let isValid = true;
 	if($('input[id="mId"]').val().length == 0){ // if( $('#id').val() == "" ) 도 가능
@@ -276,13 +279,13 @@ function confirmNext() {
                                             <th><span class="important">이메일</span></th>
                                             <td class="member_email">
                                                 <div class="member_warning prior_wrong"><input type="text" name="mEmail" id="mEmail">
-                                                    <select name="selectEmail" id="selectEmail" class="select_domain">
+                                                    <select name="selectEmail" id="selectEmail" class="select_domain" onchange="emailSelect(selectEmail)">
                                                         <option value="self">직접입력</option>
-                                                        <option value="naver.com">naver.com</option>
-                                                        <option value="daum.com">daum.net</option>
-                                                        <option value="google.com">google.com</option>
-                                                        <option value="hanmail.com">hanmail.net</option>
-                                                        <option value="nate.com">nate.com</option>
+                                                        <option value="@naver.com">naver.com</option>
+                                                        <option value="@daum.com">daum.net</option>
+                                                        <option value="@google.com">google.com</option>
+                                                        <option value="@hanmail.com">hanmail.net</option>
+                                                        <option value="@nate.com">nate.com</option>
                                                     </select>
                                                     
                                                 </div>
