@@ -36,8 +36,10 @@ public class GoodsDao {
 			return (int) session.selectOne("goodsns.getTotal");
 		}
 		public int update(GoodsDao gd) {
-			// TODO Auto-generated method stub
 			return session.update("goodsns.update",gd);
+		}
+		public Goods select(String p_No) {
+			return session.selectOne("goodsns.select", p_No);
 		}
 		
 }

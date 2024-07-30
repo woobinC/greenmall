@@ -2,29 +2,39 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberns">
-	<select id="select" parameterType="string" resultType="member">
-		select * from member where m_id=#{mId,jdbcType=VARCHAR}
+	<resultMap type="member" id="memberResultMap">
+		<id property="mId" column="m_id"/>
+		<result property="mPw" column="m_pw" jdbcType="VARCHAR"/>
+		<result property="mEmail" column="m_email" jdbcType="VARCHAR"/>
+		<result property="mName" column="m_name" jdbcType="VARCHAR"/>
+		<result property="mTel" column="m_tel" jdbcType="VARCHAR"/>
+		<result property="mPostCode" column="m_postCode" jdbcType="VARCHAR"/>
+		<result property="mAddr" column="m_addr" jdbcType="VARCHAR"/>
+		<result property="mAddrDe" column="m_addrDe" jdbcType="VARCHAR"/>
+		<result property="mileage" column="mileage" jdbcType="INTEGER"/>
+		<result property="mDel" column="m_del" jdbcType="VARCHAR"/>
+		<result property="mRdate" column="m_rdate" jdbcType="DATE"/>
+		<result property="compTitle" column="comp_title" jdbcType="VARCHAR"/>
+		<result property="compNum" column="comp_Num" jdbcType="VARCHAR"/>
+		<result property="compName" column="comp_name" jdbcType="VARCHAR"/>
+		<result property="compPostCode" column="comp_postCode" jdbcType="VARCHAR"/>
+		<result property="compAddr" column="comp_addr" jdbcType="VARCHAR"/>
+		<result property="compAddrDe" column="comp_addrDe" jdbcType="VARCHAR"/>
+	</resultMap>
+	<select id="select" parameterType="String" resultType="member" resultMap="memberResultMap">
+		select * from member where m_id = #{mId,jdbcType=VARCHAR}
 	</select>
-	<!-- <select id="getTotal" resultType="integer">
-		select count(*) from member
-	</select>
-	<select id="list" parameterType="map" resultType="member">
-		select * from (select rowNum rn, a.* from
-				(select * from member2 order by id desc)a) 
-				where rn between #{startRow} and #{endRow}
-	</select> -->
 	<insert id="insert" parameterType="member">
 		insert into member values
 		(#{mId,jdbcType=VARCHAR},#{mPw,jdbcType=VARCHAR},#{mEmail,jdbcType=VARCHAR},#{mName,jdbcType=VARCHAR},#{mTel,jdbcType=VARCHAR},#{mPostCode,jdbcType=VARCHAR},
 		#{mAddr,jdbcType=VARCHAR},#{mAddrDe,jdbcType=VARCHAR},0,'n',sysdate,#{compTitle,jdbcType=VARCHAR},#{compNum,jdbcType=VARCHAR}
 		,#{compName,jdbcType=VARCHAR},#{compPostCode,jdbcType=VARCHAR},#{compAddr,jdbcType=VARCHAR},#{compAddrDe,jdbcType=VARCHAR})
 	</insert>
-	<!-- <update id="update" parameterType="member">
-		update member2 set password=#{password}, name=#{name},
-		address=#{address}, tel=#{tel} where id=#{id}
+	<update id="update" parameterType="member">
+		update member set m_pw=#{mPw,jdbcType=VARCHAR},m_email=#{mEmail,jdbcType=VARCHAR},m_name=#{mName,jdbcType=VARCHAR},m_tel=#{mTel,jdbcType=VARCHAR},m_postCode=#{mPostCode,jdbcType=VARCHAR},
+		m_addr=#{mAddr,jdbcType=VARCHAR},m_addrDe=#{mAddrDe,jdbcType=VARCHAR} where m_id = #{mId,jdbcType=VARCHAR}
 	</update>
 	<update id="delete" parameterType="string">
-		update member2 set del= 'y' where id=#{id}
+		update member set m_del='y' where m_id=#{mId,jdbcType=VARCHAR}
 	</update>
-	 -->
 </mapper>

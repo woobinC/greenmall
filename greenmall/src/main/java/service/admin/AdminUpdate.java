@@ -48,7 +48,8 @@ public class AdminUpdate implements CommandProcess{
 				System.out.println(e.getMessage());
 			}
 			GoodsDao gd = GoodsDao.getInstance();
-			int result = gd.update(gd);
+			int result = 0; 
+			result = gd.update(gd);
 			request.setAttribute("result", result);
 			return "AdminUpdate";
 		}

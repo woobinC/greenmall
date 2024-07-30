@@ -74,7 +74,7 @@
 
         <div class="content">
           <div class="mypage_cont">
-            <form id="formHackOut" name="formHackOut" action="../mypage/my_page_ps.php" method="post">
+            <form id="formHackOut" name="formHackOut" action="/greenmall/view/member/delete.wb" method="post">
               <input type="hidden" name="mode" value="hackOut" />
               <input type="hidden" name="snsType" value="naver" />
               <div class="hack_out">

@@ -11,7 +11,7 @@ public class JoinOk implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return null;
+		return "";
 	}
 
 }

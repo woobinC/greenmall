@@ -35,7 +35,7 @@
 											<tr>
 												<th>상품명</th>
 												<td><input type="text" name="pName" required="required"
-													autofocus="autofocus"></td>
+													autofocus="autofocus" value="${p_Name }"></td>
 											</tr>
 											<tr>
 												<th>카테고리</th>
@@ -76,7 +76,7 @@
 							<div class="btn_center_box">
 								<button type="button" class="btn_member_cancel"
 									onclick="location.href='/greenmall/view/admin/adminGoodsList'">취소</button>
-								<input type="submit" value="상품 추가"
+								<input type="submit" value="상품 수정"
 									class="btn_comfirm js_btn_join">
 							</div>
 

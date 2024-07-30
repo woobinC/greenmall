@@ -51,7 +51,7 @@
 								<td>${goods.p_Sale }</td>
 								<td>${goods.p_Date }</td>
 								<td>${goods.p_Cnt }</td>
-								<td><a href="/greenmall/admin/adminUpdate.min?p_No=${goods.p_No }"> <input type="button"
+								<td><a href="/greenmall/view/admin/adminUpdateForm.gw?p_No=${goods.p_No }"> <input type="button"
 										class="btn update" value="수정"></a></td>
 								<td><a onclick="del(${goods.p_No})"> <input
 										type="button" class="btn del" value="삭제"></a></td>

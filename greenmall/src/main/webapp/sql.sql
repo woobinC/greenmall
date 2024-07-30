@@ -29,6 +29,7 @@ drop table buy;
 drop table member;
 
 select * from member;
+select * from member where m_id = 'qwe';
 
 -- 회원(member) 1
 create table member (
@@ -39,7 +40,7 @@ m_name VARCHAR2(20),                	-- 이름
 m_tel VARCHAR2(20),                 	-- 전화번호
 m_postCode varchar2(20),				-- 우편번호
 m_addr VARCHAR2(100),             		-- 주소
-m_addrDe VARCHAR2(20),            		-- 상세주소
+m_addrDe VARCHAR2(100),            		-- 상세주소
 mileage number,                  		-- 마일리지
 m_del char(1) default 'n',              -- 탈퇴여부
 m_rdate date,		             		-- 가입 날짜
@@ -48,7 +49,7 @@ comp_Num varchar2(20),					-- 사업자번호
 comp_name varchar2(20),					-- 사업자대표
 comp_postCode varchar2(20),				-- 우편번호
 comp_addr varchar2(100),					-- 사업장주소
-comp_addrDe varchar2(20)				-- 상세주소
+comp_addrDe varchar2(100)				-- 상세주소
 );
 select * from goods;
 select * from category;
