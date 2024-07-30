@@ -14,7 +14,6 @@ public class WithDrawal implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("mId") == null) {
-			System.out.println(session.getAttribute("mId"));
 			return "notSession";
 		} else {
 			String mId = (String) session.getAttribute("mId");

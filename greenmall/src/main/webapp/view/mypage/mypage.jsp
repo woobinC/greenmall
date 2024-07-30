@@ -96,7 +96,7 @@
                       <em>마일리지
                         <em>(구매확정 후 지급)</em>
                       </em>
-                      <a href="#"><strong>0</strong></a>원
+                      <a href="#"><strong>${member.mileage}</strong></a>원
                     </span>
                   </li>
                 </ul>

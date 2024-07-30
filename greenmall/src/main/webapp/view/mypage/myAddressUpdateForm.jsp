@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,16 +60,12 @@
 	<div class="mypage_cont">
 		<div class="my_page">
 			<div class="mypage_zone_tit">
-<<<<<<< HEAD
-				<h2>배송지 변경</h2>
-			</div> 
-=======
-				<h2>배송지 추가</h2>
+				<h2>배송지 수정</h2>
 			</div>
->>>>>>> branch 'main' of https://github.com/woobinC/greenmall.git
 			<div class="join_base_wrap">
 				<div class="member_cont">
-					<form action="myAddress.wb" method="post">
+					<form action="myAddressUpdate.wb" method="post">
+						<input type="hidden" name="addrNum" value="${memberaddress.addrNum}">
 						<div class="base_info_box">
 							<h3>배송지정보</h3>
 							<div class="base_info_sec">
@@ -79,28 +76,28 @@
 									</colgroup>
 									<tbody>
 	<tr><th>받는분 성함</th><td><input type="text" name="aName" required="required"
-		autofocus="autofocus"></td></tr>
+		autofocus="autofocus" value="${memberaddress.aName}"></td></tr>
 	<tr><th>주소</th><td class="member_address">
         <div class="address_postcode">
-          	<input type="text" name="aPostCode" id="aPostCode" readonly="readonly" value="" />
+          	<input type="text" name="aPostCode" id="aPostCode" readonly="readonly" value="${memberaddress.aPostCode}" />
           	<button type="button" id="btnPostCode" class="btn_post_search" onclick="execDaumPostcode()">우편번호검색</button>
         </div>
         <div class="address_input">
           	<div class="member_warning">
-            	<input type="text" name="aAddr" id="aAddr" readonly="readonly" value="" />
+            	<input type="text" name="aAddr" id="aAddr" readonly="readonly" value="${memberaddress.aAddr}" />
           	</div>
           	<div class="member_warning js_address_sub">
-            	<input type="text" name="aAddrDe" id="aAddrDe" value="" />
+            	<input type="text" name="aAddrDe" id="aAddrDe" value="${memberaddress.aAddrDe}" />
           	</div>
         </div></td></tr>
-	<tr><th>요청사항</th><td><input type="text" name="aRequest" required="required" value="없음"></td></tr>
+	<tr><th>요청사항</th><td><input type="text" name="aRequest" required="required" value="${memberaddress.aRequest}"></td></tr>
 	<tr><th>기본 배송지</th><td>
 		<input type="radio" name="basicAddr" id="y" value="y"><label for="y"><span class="radio_text">Yes</span></label>
 		<input type="radio" name="basicAddr" id="n" value="n"><label for="n"><span class="radio_text">No</span></label>
 	</td></tr>
 	<tr><th colspan="2"><div class="btn_center_box">
                 	<button type="button" class="btn_member_cancel" onclick="location.href='deliveryAddress.wb'">취소</button>
-                    <button type="submit" class="btn_comfirm js_btn_join" onsubmit="location.href='myAddress.wb'">배송지추가</button>
+                    <button type="submit" class="btn_comfirm js_btn_join" onsubmit="location.href='myAddressUpdate.wb'">수정완료</button>
                	</div></th></tr>
 									</tbody>
 								</table>

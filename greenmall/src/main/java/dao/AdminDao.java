@@ -19,7 +19,7 @@ public class AdminDao {
 	private static SqlSession session = MyBatisSessionFactory.getSession(true);
 
 	public Admin select(String adminId) {
-			return (Admin) session.selectOne("admins.select", adminId);
+			return (Admin) session.selectOne("adminns.select", adminId);
 	}
 
 }
