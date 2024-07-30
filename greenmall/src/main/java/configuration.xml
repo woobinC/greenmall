@@ -6,6 +6,7 @@
 	
 	<typeAliases>
 		<typeAlias alias="member" type="dto.Member" />
+		<typeAlias alias="findMember" type="dto.FindMember" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">

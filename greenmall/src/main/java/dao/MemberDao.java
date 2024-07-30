@@ -1,13 +1,8 @@
 package dao;
 
-import java.io.IOException;
-import java.io.Reader;
-
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import dto.FindMember;
 import dto.Member;
 import mybatis.MyBatisSessionFactory;
 
@@ -37,6 +32,22 @@ public class MemberDao {
 
 	public int delete(String mId) {
 		return session.update("memberns.delete",mId);
+	}
+
+	public Member selectEmail(String mName, String mEmail) {
+		FindMember fm = new FindMember();
+        fm.setmName(mName);
+        fm.setmEmail(mEmail);
+        System.out.println("selectEmail: " + fm.getmName() + ", " + fm.getmEmail());
+		return (Member) session.selectOne("memberns.selectEmail",fm);
+	}
+
+	public Member selectTel(String mName, String mTel) {
+		FindMember fm = new FindMember();
+        fm.setmName(mName);
+        fm.setmTel(mTel);
+        System.out.println("selectTel: " + fm.getmName() + ", " + fm.getmTel());
+		return (Member) session.selectOne("memberns.selectTel",fm);
 	}
 	
 }

@@ -99,11 +99,11 @@
 								</li>
 								<li>
 									<button class="btn_box_login" type="button"
-										onclick="location.href='findId.wb'">아이디 찾기</button>
+										onclick="location.href='/greenmall/view/member/findId.wb'">아이디 찾기</button>
 								</li>
 								<li>
 									<button class="btn_box_login" type="button"
-										onclick="location.href='findPassword.wb'">비밀번호 찾기</button>
+										onclick="location.href='/greenmall/view/member/findPassword.wb'">비밀번호 찾기</button>
 								</li>
 							</ul>
 						</div>

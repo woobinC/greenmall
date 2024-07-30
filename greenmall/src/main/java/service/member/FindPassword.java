@@ -9,7 +9,7 @@ public class FindPassword implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "find_password";
+		return "findPassword";
 	}
 
 }

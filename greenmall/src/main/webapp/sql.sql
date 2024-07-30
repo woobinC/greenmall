@@ -28,6 +28,7 @@ drop table member;
 
 select * from member;
 select * from member where m_id = 'qwe';
+select * from member where m_name = 'test2' and m_email = 'test2@test2.com';
 
 -- 회원(member) 1
 create table member (
