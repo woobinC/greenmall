@@ -23,7 +23,7 @@
           <div class="sub_menu_box">
             <h2>마이페이지</h2>
             <ul class="sub_menu_mypage"> 
-              <li>
+              <li> 
               쇼핑정보
                 <ul class="sub_depth1">
                   <li><a href="/greenmall/view/mypage/tracking.wb" <c:if test="${uri == '/greenmall/view/mypage/tracking.jsp' }">class="active"</c:if>>- 주문목록/배송조회</a></li>

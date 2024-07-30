@@ -31,6 +31,8 @@
 	</environments>
 	<mappers>
 		<mapper resource="admin.xml" />
+		<mapper resource="goods.xml" />
+		<mapper resource="category.xml" />
 	</mappers>
 </configuration>
 

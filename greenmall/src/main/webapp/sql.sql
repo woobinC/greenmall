@@ -1,3 +1,5 @@
+
+
 create user greenmall identified by g1234;
 grant dba to greenmall;
 
@@ -48,7 +50,8 @@ comp_postCode varchar2(20),				-- 우편번호
 comp_addr varchar2(100),					-- 사업장주소
 comp_addrDe varchar2(20)				-- 상세주소
 );
-
+select * from goods;
+select * from category;
 -- 주문(buy) 2
 create table buy (
 b_num number primary key,     			-- 주문번호(PK)
@@ -69,11 +72,16 @@ foreign key(b_id) references member(b_id)
 create sequence order_seq start with 1 increment by 1 maxvalue 9999;
 
 -- 카테고리 (category) 3
-create table category (
-c_Num number primary key,				--카테고리번호
-c_Name number							--카테고리명 	
-);
+drop table category cascade constraints;
 
+create table category (
+c_num number primary key,				--카테고리번호
+c_name varchar2(100)							--카테고리명 	
+);
+select * from CATEGORY;
+--update category set c_num=101 where c_name='쌀';
+--truncate table category cascade constraints;
+select * from goods;
 -- 상품(goods) 4 
 create table goods (
 p_no number primary key,			  -- 상품 번호(PK)

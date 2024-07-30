@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="categoryns">
+	<resultMap type="category" id="categoryMap">
+		<result property="cnum" column="c_Num"/>
+		<result property="cname" column="c_Name"/>
+	</resultMap>
+	<select id="list" resultMap="categoryMap">
+		select * from category order by c_Num
+	</select>
+	<select id="select" parameterType="integer" resultMap="categoryMap">
+		select * from category where c_Num=#{cnum}
+	</select> 
+</mapper> 

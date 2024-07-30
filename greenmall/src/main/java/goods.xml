@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goodsns">
+	<insert id="insert" parameterType="goods">
+		<selectKey keyProperty="pNo" order="BEFORE" resultType="integer">
+			select nvl(max(p_no), 0) + 1 pNo from goods
+		</selectKey>
+		insert into goods values (#{pNo},#{cNum},#{pName},#{pPrice},#{pSale},#{pImg1},#{pImg2},#{pCnt},sysdate ) 
+	</insert>
+		<select id="getTotal" resultType="integer">
+		select count(*) from goods
+	</select>
+	
+	<select resultType="goods" id="list" parameterType="map" >
+select * from (select rowNum rn , a.* from(select * from goods order by p_no) a)
+		where rn between #{startRow} and #{endRow} 
+	</select>	
+	
+	<update id="update" parameterType="goods">
+		update goods set 
+			p_name=#{p_name},
+
+			<if test="p_img1!=null and p_img1!=''">
+				p_img1=#{p_img1},
+			</if>			
+			<if test="p_img2!=null and p_img2!=''">
+				p_img2=#{p_img2},
+			</if>			
+			c_Num=#{c_Num},p_name=#{p_Name},p_price=#{p_Price}, p_sale=#{pSale}, p_cnt=#{pCnt} ,
+				where p_no=#{p_No}
+	</update>
+</mapper> 
+
+
+p_no number primary key,			  -- 상품 번호(PK)
+c_Num number,						  -- 카테고리 번호(FK)
+p_name VARCHAR2(20),        		  -- 상품명
+p_price number,            			  -- 가격
+p_sale number,             		  	  -- 할인율
+p_img1 VARCHAR2(100),       		  -- 이미지1
+p_img2 VARCHAR2(100),       		  -- 이미지2
+p_cnt number,               		  -- 수량
+p_date date,						  -- 등록일

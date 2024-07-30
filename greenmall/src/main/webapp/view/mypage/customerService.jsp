@@ -21,7 +21,7 @@
         </div>
         <div class="side_cont">
           <div class="sub_menu_box">
-            <h2>마이페이지</h2>
+            <h2>마이페이지</h2> 
             <ul class="sub_menu_mypage">
               <li>
                 쇼핑정보

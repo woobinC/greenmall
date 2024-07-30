@@ -20,7 +20,7 @@
         <div class="location_cont">
           <em><a href="/greenmall/view/display/main.wb" class="local_home">HOME</a> > 마이페이지 > 회원탈퇴</em>
         </div>
-        <div class="side_cont">
+        <div class="side_cont"> 
           <div class="sub_menu_box">
           <h2>마이페이지</h2>
             <ul class="sub_menu_mypage">

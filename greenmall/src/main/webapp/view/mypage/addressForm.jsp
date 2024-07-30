@@ -18,7 +18,7 @@
 		<div class="my_page">
 			<div class="mypage_zone_tit">
 				<h2>배송지 변경</h2>
-			</div>
+			</div> 
 			<div class="join_base_wrap">
 				<div class="member_cont">
 					<form action="#" method="post">

@@ -24,7 +24,7 @@
            <h2>마이페이지</h2>
             <ul class="sub_menu_mypage">
               <li>
-                쇼핑정보
+                쇼핑정보 
                 <ul class="sub_depth1">
                   <li><a href="/greenmall/view/mypage/tracking.wb">- 주문목록/배송조회</a></li>
                   <li><a href="/greenmall/view/mypage/goodsReturn.wb">- 취소/반품/교환 내역</a></li>

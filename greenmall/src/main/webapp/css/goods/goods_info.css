@@ -1,0 +1,416 @@
+*{padding: 0; margin: 0; text-decoration: none;
+}
+
+.body{
+    line-height: 1.5;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; color:#333;
+    color: #333;
+}
+
+li{list-style: none; }
+.sub_content {
+    padding: 300px 0 0 0;
+    width: 1600px;
+    margin: 0 auto;
+}
+.content_box {
+    float: left;
+    width: 100%;
+}
+.container{
+    float: left;
+    padding: 0;
+}
+
+/* location 상단 소메뉴 */
+.location_wrap {
+    position: relative;
+    width: 100%;
+    
+}
+
+.location_cont em {
+    display: block;
+    float: left;
+    padding: 12px 0 10px 0;
+    color: #777777;
+    font-style: normal;
+    
+}
+
+.location_cont .local_home {
+    color: #777777;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.location_select {
+    display: inline-block;
+    position: relative;
+    min-width: 150px;
+    margin: 7px 0 0 0;
+    border: 1px solid #999999;
+    background: #ffffff;
+    z-index: 50;
+}
+
+.location_select .location_tit {
+    background: url(../../img/etc/select_arrow_down_11x7.png) no-repeat right center;
+}
+
+.location_select .location_tit a {
+    display: block;
+    padding: 3px 32px 3px 9px;
+    font-size: 11px;
+    color: #333;
+    text-decoration: none;
+
+}
+
+.location_select .location_tit span {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.location_select ul {
+    display: block;
+    position: absolute;
+    top: 22px;
+    left: 0px;
+    width: 100%;
+    margin-left: -1px;
+    padding: 6px 0 6px 0;
+    font-size: 0;
+    border: 1px solid #999999;
+    background: #ffffff;
+}
+
+.location_select ul li a span {
+    display: inline-block;
+
+}
+
+.location_select ul li a {
+    display: block;
+    padding: 4px 5px 5px 10px;
+    font-size: 11px;
+    color: #333;
+    text-decoration: none;
+}
+
+
+.location_wrap .location_cont:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.location_select li {
+    transition: all 0.5s ease;
+}
+
+.location_select li:hover {
+    transform: scale(1.1);
+    color: #fff;
+    background-color: skyblue;
+    box-shadow: 0px 26px 56px 0px rgba(0, 0, 0, 0.10), 0px 102px 102px 0px rgba(0, 0, 0, 0.09), 0px 230px 138px 0px rgba(0, 0, 0, 0.05), 0px 410px 164px 0px rgba(0, 0, 0, 0.01), 0px 640px 179px 0px rgba(0, 0, 0, 0.00);
+}
+
+/*사진 밑 제품 가격  */
+.item_mileage {
+    display: inline-block;
+    margin-top: -4px;
+    vertical-align: middle; /* 텍스트와 이미지 수직 정렬 */
+}.item_info_box h3 {
+    width: 405px;
+    font-size: 18px;
+    word-break: break-all;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; color:#333;
+    color: #333;
+}
+.item_photo_big {
+    display: table-cell;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ebebeb;
+}
+.item_photo_big span {
+    display: inline-block;
+    width: 600px;
+}
+.item_photo_slide img{
+    width: 80px;
+    height: 80px;
+}
+.item_photo_slide {
+    position: relative;
+    margin: 20px 0 0 0;
+}
+
+
+.item_info_box {
+    float: right;
+    position: relative;
+    width: 556px;
+}
+.item_detail_tit {
+    position: relative;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+.item_detail_list {
+    border-bottom: 1px solid #999999;
+    margin: 10px 0 0 0;
+}
+.item_choice_list {
+    margin: -2px 0 0 0;
+    word-break: break-all;
+}
+.item_detail_list + .item_choice_list table {
+    width: 100%;
+    border-bottom: 1px solid #999999;
+}
+.item_price_cont {
+    text-align: right;
+}
+.item_choice_list:after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.btn_choice_box {
+    clear: both;
+    width: 100%;
+    padding: 20px 0 0 0;
+    text-align: right;
+}
+
+#btn_add_cart, #btn_add_wish {
+    display: inline-block;
+    width: 100px;
+    height: 52px;
+    margin: 0 0 0 6px;
+    padding: 0 10px 0 10px;
+    color: #3e3d3c;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+.btn_choice_box #buy {
+    display: inline-block;
+    width: 230px;
+    height: 52px;
+    margin: 0 0 0 6px;
+    padding: 0 10px 0 10px;
+    color: #ffffff;
+    font-size: 16px;
+    border: 1px solid #ab3e55;
+    background: #ab3e55;
+    text-align: center;
+    font-weight: bold;
+}
+.item_photo_info_sec:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+/*  */
+.item_goods_sec h3 {
+    padding: 45px 0 10px 0;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; color:#333;
+    color: #333;
+}
+.item_goods_sec {
+    position: relative;
+    margin: 100px 0 0 0;
+    
+}
+.item_goods_tab {
+    padding: 80px 0 0 0;
+    border-bottom: 1px solid #bbbbbb;
+ 
+}
+.item_goods_tab ul {
+    float: none;
+    width: 870px;
+    height: 42px;
+    margin: 0 auto;
+    padding: 16px 0 0 0;
+    font-size: 0;
+    box-sizing: content-box;
+}
+.item_goods_tab li {
+    float: left;
+    position: relative;
+    width: 174px;
+    font-size: 12px;
+    text-align: center;
+    z-index: 10;
+    text-decoration: none;
+}
+.item_goods_tab li.on {
+    margin-top: -16px;
+    z-index: 20;
+}
+.item_goods_tab li.on a {
+    padding-top: 18px;
+    margin-top: 8px;
+    color: #333333;
+    font-weight: bold;
+    border: 1px solid #bbbbbb;
+    border-bottom: 1px solid #ffffff;
+    text-decoration: none;
+}
+.item_goods_tab li a {
+    display: block;
+    margin: 0 0 0 -1px;
+    padding: 10px 0 12px 0;
+    color: #999999;
+    font-size: 13px;
+    border: 1px solid #dadada;
+    border-bottom: 1px solid #bbbbbb;
+    background: #ffffff;
+    text-decoration: none;
+}
+
+
+/* reviews , qnq 
+리뷰작성 및 상품문의  */
+.item_goods_sec h3 {
+    padding: 45px 0 10px 0;
+    font-size: 18px;
+}
+.reviews_cont{
+    position: relative;
+    min-height: 200px;
+}
+
+
+.reviews_table_type {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-top: 1px solid #999999;
+    text-align: center;
+}
+.reviews_table_type thead {
+    display: none;
+}
+.reviews_table_type th {
+    padding: 10px 10px 10px 14px;
+    color: #555555;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+.content_box .no_data {
+    padding: 30px 30px 30px 30px;
+    text-align: center;
+}
+.reviews_table_type td {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 13px 10px 15px 18px;
+    line-height: 1.5;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; 
+    font-size: 14px;
+}
+.pagination {
+    margin: 20px 0 0 0;
+}
+.pagination ul {
+    padding: 20px 0 0;
+    text-align: center;
+}
+
+.btn_reviews_box, .btn_qna_box {
+    position: absolute;
+    top: 32px;
+    right: 0px;
+}
+
+.btn_reviews_more, .btn_qna_more {
+    display: inline-block;
+    min-width: 120px;
+    padding: 10px 10px 10px 10px;
+    color: #3e3d3c;
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn_reviews_write, .btn_qna_write {
+    display: inline-block;
+    min-width: 120px;
+    padding: 10px 10px 10px 10px;
+    color: #ffffff;
+    font-weight: bold;
+    border: 1px solid #ab3e55;
+    background: #ab3e55;
+    text-align: center;
+    text-decoration: none;
+}
+/*qna   */
+.item_goods_sec .qna_cont {
+    position: relative;
+    min-height: 200px;
+}
+
+.qna_table_type {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-top: 1px solid #999999;
+    text-align: center;
+}
+.qna_table_type {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-top: 1px solid #999999;
+    text-align: center;
+}
+.qna_table_type thead {
+    display: none;
+}
+.qna_table_type th {
+    padding: 10px 10px 10px 14px;
+    color: #555555;
+}
+.qna_table_type td {
+    padding: 13px 10px 15px 18px;
+    border-bottom: 1px solid #dbdbdb;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+.btn_qna_box {
+    position: absolute;
+    top: 32px;
+    right: 0px;
+}

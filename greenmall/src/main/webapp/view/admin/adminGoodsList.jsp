@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,97 +36,73 @@
 						</tr>
 					</thead>
 					<tbody>
+						<c:if test="${empty list }">
+							<tr>
+								<td colspan="8">상품이 없습니다.</td>
+							</tr>
+						</c:if>
+						<c:if test="${not empty list}">
+						<c:forEach var="goods" items="${list }">
+							<tr>
+								<td>${goods.p_No }</td>
+								<td align="center"><a href="#!">${goods.p_Name}</a></td>
+								<td>${goods.c_Name }</td>
+								<td>${goods.p_Price }</td>
+								<td>${goods.p_Sale }</td>
+								<td>${goods.p_Date }</td>
+								<td>${goods.p_Cnt }</td>
+								<td><a href="/greenmall/admin/adminUpdate.min?p_No=${goods.p_No }"> <input type="button"
+										class="btn update" value="수정"></a></td>
+								<td><a onclick="del(${goods.p_No})"> <input
+										type="button" class="btn del" value="삭제"></a></td>
+							</tr>
 
-						<tr>
-							<td>1</td>
-							<th><a href="#!">상품명</a></th>
-							<td>버섯</td>
-							<td>15000</td>
-							<td>10</td>
-							<td>2017.06.15</td>
-							<td>50</td>
-							<td>수정</td>
-							<td>삭제</td>
-						</tr>
-
-						<tr>
-							<td>1</td>
-							<th><a href="#!">상품명</a></th>
-							<td>버섯</td>
-							<td>15000</td>
-							<td>10</td>
-							<td>2017.06.15</td>
-							<td>50</td>
-							<td>수정</td>
-							<td>삭제</td>
-						</tr>
-
-						<tr>
-							<td>1</td>
-							<th><a href="#!">상품명</a></th>
-							<td>버섯</td>
-							<td>15000</td>
-							<td>10</td>
-							<td>2017.06.15</td>
-							<td>50</td>
-							<td>수정</td>
-							<td>삭제</td>
-						</tr>
-
-						<tr>
-							<td>1</td>
-							<th><a href="#!">상품명</a></th>
-							<td>버섯</td>
-							<td>15000</td>
-							<td>10</td>
-							<td>2017.06.15</td>
-							<td>50</td>
-							<td>수정</td>
-							<td>삭제</td>
-						</tr>
-
-						<tr>
-							<td>1</td>
-							<th><a href="#!">상품명</a></th>
-							<td>버섯</td>
-							<td>15000</td>
-							<td>10</td>
-							<td>2017.06.15</td>
-							<td>50</td>
-							<td>수정</td>
-							<td>삭제</td>
-						</tr>
-
-						<tr>
-							<td>1</td>
-							<th><a href="#!">상품명</a></th>
-							<td>버섯</td>
-							<td>15000</td>
-							<td>10</td>
-							<td>2017.06.15</td>
-							<td>50</td>
-							<td>수정</td>
-							<td>삭제</td>
-						</tr>
-
+						</c:forEach>
+						</c:if>
 					</tbody>
 				</table>
 
-				<div class="blink">
-					<ul>
+				<div align="center">
+					<!-- 앞에 보여줄게 남아있어 -->
+					<c:if test="${startPage > PAGE_PER_BLOCK }">
+						<button class="pageBtn"
+							onclick="location.href='adminCmProduct.ms?pageNum=1'">
+							<img alt="" src="/highbrix/images/paging11.png">
+						</button>
+						<button class="pageBtn"
+							onclick="location.href='adminCmProduct.ms?pageNum=${startPage - 1}'">
+							<img alt="" src="/highbrix/images/paging1.png">
+						</button>
+					</c:if>
+					<c:forEach var="i" begin="${startPage }" end="${endPage }">
+						<button class="pageBtn"
+							onclick="location.href='adminCmProduct.ms?pageNum=${i}'">${i }</button>
+					</c:forEach>
+					<!-- 아직 보여줄게 남아있다 -->
+					<c:if test="${endPage < totalPage }">
+						<button class="pageBtn"
+							onclick="location.href='adminCmProduct.ms?pageNum=${endPage + 1}'">
+							<img alt="" src="/highbrix/images/paging2.png">
+						</button>
+						<button class="pageBtn"
+							onclick="location.href='adminCmProduct.ms?pageNum=${totalPage}'">
+							<img alt="" src="/highbrix/images/paging22.png">
+						</button>
+					</c:if>
+					<!--  					<ul>
 						<li><a href="#"><span>1</span></a></li>
 						<li><a href="#"><span>2</span></a></li>
 						<li><a href="#"><span>3</span></a></li>
 						<li><a href="#"><span>4</span></a></li>
 					</ul>
-				</div>
-				<div class="add_goods">
-					<button class="add_goods_btn" 
-						onclick="location.href='/greenmall/view/admin/adminGoodsAddForm.wb'">상품 추가</button>
+				</div> -->
+					<div class="add_goods">
+						<button class="add_goods_btn"
+							onclick="location.href='/greenmall/view/admin/adminGoodsAddForm.wb'">상품
+							추가</button>
+					</div><br>
 				</div>
 			</div>
-		</div>
-
 	</section>
 </body>
 </html>
