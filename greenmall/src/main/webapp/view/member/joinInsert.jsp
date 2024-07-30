@@ -33,7 +33,28 @@ $(document).ready(function() {
         }
     });
 });
-
+const chk = () => {
+	if (frm.mPw.value!=frm.confirmPw.value){
+		alert("암호와 암호확인이 다릅니다");
+		frm.mPw.focus();
+		frm.mPw.value = "";
+		frm.confirmPw.value = "";
+		return false;
+	}
+}
+const IdChk = () => {
+    if (!$('#mId').val()) {
+        alert("아이디를 입력하고 체크하시오");
+        $('#mId').focus();
+        return false;
+    }
+    $.post('confirm.wb', { id: $('#mId').val() }, function(data) {
+        $('#err').html(data);
+    });
+}
+function emailSelect(selectEmail){
+	document.frm.mEmail.value  = selectEmail.value;
+}
 function confirmNext() {
 	 let isValid = true;
 	if($('input[id="mId"]').val().length == 0){ // if( $('#id').val() == "" ) 도 가능
@@ -150,14 +171,14 @@ function confirmNext() {
 	                        extraAddr = ' (' + extraAddr + ')';
 	                    }
 	                } else {
-	                    document.getElementById("address").value = '';
+	                    document.getElementById("compAddr").value = '';
 	                }
 	
 	                // 선택된 우편번호와 주소 정보를 input 박스에 넣는다.
-	                document.getElementById('comZipCode').value = data.zonecode;
-	                document.getElementById("comAddress").value = addr;
-	                document.getElementById("comAddress").value += extraAddr;
-	                document.getElementById("comAddressSub").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
+	                document.getElementById('compPostCode').value = data.zonecode;
+	                document.getElementById("compAddr").value = addr;
+	                document.getElementById("compAddr").value += extraAddr;
+	                document.getElementById("compAddrde").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
 	            }
 	        }).open();
 	    }
@@ -225,7 +246,7 @@ function confirmNext() {
                                             <th><span class="important">아이디</span></th>
                                             <td>
                                                 <div class="member_warning"><input type="text" name="mId"
-                                                        id="mId"></div>
+                                                        id="mId"><input type="button" onclick="IdChk()"></div>
                                                 <div id="memId_error" class="member_text" style="display: none">필수항목 입니다.</div>
                                             </td>
                                         </tr>
@@ -258,13 +279,13 @@ function confirmNext() {
                                             <th><span class="important">이메일</span></th>
                                             <td class="member_email">
                                                 <div class="member_warning prior_wrong"><input type="text" name="mEmail" id="mEmail">
-                                                    <select name="selectEmail" id="selectEmail" class="select_domain">
+                                                    <select name="selectEmail" id="selectEmail" class="select_domain" onchange="emailSelect(selectEmail)">
                                                         <option value="self">직접입력</option>
-                                                        <option value="naver.com">naver.com</option>
-                                                        <option value="daum.com">daum.net</option>
-                                                        <option value="google.com">google.com</option>
-                                                        <option value="hanmail.com">hanmail.net</option>
-                                                        <option value="nate.com">nate.com</option>
+                                                        <option value="@naver.com">naver.com</option>
+                                                        <option value="@daum.com">daum.net</option>
+                                                        <option value="@google.com">google.com</option>
+                                                        <option value="@hanmail.com">hanmail.net</option>
+                                                        <option value="@nate.com">nate.com</option>
                                                     </select>
                                                     
                                                 </div>

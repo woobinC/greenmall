@@ -88,7 +88,7 @@
             	<input type="text" name="aAddrDe" id="aAddrDe" value="" />
           	</div>
         </div></td></tr>
-	<tr><th>요청사항</th><td><input type="text" name="aRequest" required="required"></td></tr>
+	<tr><th>요청사항</th><td><input type="text" name="aRequest" required="required" value="없음"></td></tr>
 	<tr><th>기본 배송지</th><td>
 		<input type="radio" name="basicAddr" id="y" value="y"><label for="y"><span class="radio_text">Yes</span></label>
 		<input type="radio" name="basicAddr" id="n" value="n"><label for="n"><span class="radio_text">No</span></label>

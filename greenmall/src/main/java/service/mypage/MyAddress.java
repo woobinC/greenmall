@@ -35,7 +35,6 @@ public class MyAddress implements CommandProcess{
 		
 		MemberAddressDao myd = MemberAddressDao.getInstance();
 		int result = 0;
-		System.out.println(memberAddress);
 		result = myd.insert(memberAddress);
 		
 		request.setAttribute("result", result);

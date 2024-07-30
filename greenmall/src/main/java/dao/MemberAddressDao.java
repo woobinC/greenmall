@@ -34,5 +34,9 @@ public class MemberAddressDao {
 	public int delete(String addrNum) {
 		return session.delete("memberAddressns.delete", addrNum);
 	}
+
+	public int update(MemberAddress memberAddress) {
+		return session.update("memberAddressns.update", memberAddress);
+	}
 	
 }

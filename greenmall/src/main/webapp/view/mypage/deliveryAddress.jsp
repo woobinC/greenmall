@@ -111,7 +111,7 @@
               <div class="mypage_zone_tit">
                 <h3>배송지 관리</h3>
                 <span class="pick_list_num">
-                  배송지 관리 내역 총 <strong>0</strong>건
+                  배송지 관리 내역 총 <strong>${list.size()}</strong>건
                 </span>
                 <div class="mypage_table_type">
                   <table>

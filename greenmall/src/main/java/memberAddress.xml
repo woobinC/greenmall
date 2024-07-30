@@ -26,5 +26,10 @@
 	<delete id="delete" parameterType="string">
 		delete from memberAddress where addrNum=#{addrNum}
 	</delete>
+	<update id="update" parameterType="memberAddress">
+		update memberAddress set a_name=#{aName}, a_postcode=#{aPostCode},
+			a_addr=#{aAddr}, a_addrDe=#{aAddrDe}, a_request=#{aRequest},
+			basicAddr=#{basicAddr} where addrNum=#{addrNum}
+	</update>
 
 </mapper>

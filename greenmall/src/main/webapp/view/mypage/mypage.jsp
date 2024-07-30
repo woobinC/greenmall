@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,7 @@
     @import url("/greenmall/css/index.css");
     @import url("/greenmall/css/mypage/mypage.css");
   </style>
+
   <script type="text/javascript">
   	function() {
   		
@@ -194,7 +196,7 @@
               <div class="mypage_zone_title">
                 <h3>
                   최근 본 상품
-                  <span>천우빈님께서 본 최근 상품입니다.</span>
+                  <span>${member.mName }님께서 본 최근 상품입니다.</span>
                 </h3>
               </div>
               <div class="goods_list_cont">

@@ -12,7 +12,7 @@ import dto.Member;
 import dto.MemberAddress;
 import service.CommandProcess;
 
-public class DeliveryAddress implements CommandProcess{
+public class DeliveryAddress implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -27,6 +27,7 @@ public class DeliveryAddress implements CommandProcess{
 		request.setAttribute("list", list);
 		request.setAttribute("member", member);
 		return "deliveryAddress";
+
 	}
 
 }

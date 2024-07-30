@@ -35,7 +35,7 @@ m_name VARCHAR2(20),                	-- 이름
 m_tel VARCHAR2(20),                 	-- 전화번호
 m_postCode varchar2(20),				-- 우편번호
 m_addr VARCHAR2(100),             		-- 주소
-m_addrDe VARCHAR2(20),            		-- 상세주소
+m_addrDe VARCHAR2(100),            		-- 상세주소
 mileage number,                  		-- 마일리지
 m_del VARCHAR2(1) default 'n',          -- 탈퇴여부
 m_rdate date,		             		-- 가입 날짜

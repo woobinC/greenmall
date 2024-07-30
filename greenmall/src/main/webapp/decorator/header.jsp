@@ -22,11 +22,11 @@
                         <div class="top_image top_member">
                             <ul>
                             <c:if test="${mId == null}">
-                                <li><a href="../member/loginForm.wb"><i class="xi-log-in"></i>로그인</a></li>
-                                <li><a href="../member/join.wb"><i class="xi-user-plus-o"></i>회원가입</a></li>
+                                <li><a href="/greenmall/view/member/loginForm.wb"><i class="xi-log-in"></i>로그인</a></li>
+                                <li><a href="/greenmall/view/member/join.wb"><i class="xi-user-plus-o"></i>회원가입</a></li>
                             </c:if>
                             <c:if test="${mId != null }">
-                                <li><a href="#"><i class="xi-log-out"></i>로그아웃</a></li>                           
+                                <li><a href="/greenmall/view/member/logout.wb"><i class="xi-log-out"></i>로그아웃</a></li>                           
                             </c:if>
                                 <li><a href="/greenmall/view/mypage/cartList.wb"><span>장바구니(
                                             <strong>0</strong> )

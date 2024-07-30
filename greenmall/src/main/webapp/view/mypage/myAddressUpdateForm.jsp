@@ -65,6 +65,7 @@
 			<div class="join_base_wrap">
 				<div class="member_cont">
 					<form action="myAddressUpdate.wb" method="post">
+						<input type="hidden" name="addrNum" value="${memberaddress.addrNum}">
 						<div class="base_info_box">
 							<h3>배송지정보</h3>
 							<div class="base_info_sec">
@@ -78,15 +79,15 @@
 		autofocus="autofocus" value="${memberaddress.aName}"></td></tr>
 	<tr><th>주소</th><td class="member_address">
         <div class="address_postcode">
-          	<input type="text" name="aPostCode" id="aPostCode" readonly="readonly" value="" />
+          	<input type="text" name="aPostCode" id="aPostCode" readonly="readonly" value="${memberaddress.aPostCode}" />
           	<button type="button" id="btnPostCode" class="btn_post_search" onclick="execDaumPostcode()">우편번호검색</button>
         </div>
         <div class="address_input">
           	<div class="member_warning">
-            	<input type="text" name="aAddr" id="aAddr" readonly="readonly" value="" />
+            	<input type="text" name="aAddr" id="aAddr" readonly="readonly" value="${memberaddress.aAddr}" />
           	</div>
           	<div class="member_warning js_address_sub">
-            	<input type="text" name="aAddrDe" id="aAddrDe" value="" />
+            	<input type="text" name="aAddrDe" id="aAddrDe" value="${memberaddress.aAddrDe}" />
           	</div>
         </div></td></tr>
 	<tr><th>요청사항</th><td><input type="text" name="aRequest" required="required" value="${memberaddress.aRequest}"></td></tr>
