@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
     @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
-
+<c:set var="uri" value="${pageContext.request.requestURI }"></c:set>
 <body>
   <div id="container">
     <div id="contents">
@@ -27,7 +28,7 @@
                 <ul class="sub_depth1">
                   <li><a href="/greenmall/view/mypage/tracking.wb">- 주문목록/배송조회</a></li>
                   <li><a href="/greenmall/view/mypage/goodsReturn.wb">- 취소/반품/교환 내역</a></li>
-                  <li><a href="/greenmall/view/mypage/refund.wb">- 환불/입금 내역</a></li>
+                  <li><a href="/greenmall/view/mypage/refund.wb" <c:if test="${uri == '/greenmall/view/mypage/refund.jsp' }">class="active"</c:if>>- 환불/입금 내역</a></li>
                   <li><a href="/greenmall/view/mypage/wishList.wb">- 찜리스트</a></li>
                 </ul>
               </li>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
     @import url("/greenmall/css/mypage/mypage.css");
   </style>
 </head>
-
+<c:set var="uri" value="${pageContext.request.requestURI }"></c:set>
 <body>
   <div id="container">
     <div id="contents">
@@ -56,7 +57,7 @@
               <li class="sub_depth1">
                 나의 상품문의
                 <ul class="sub_depth1">
-                  <li><a href="/greenmall/view/mypage/productInquiry.wb">- 나의 상품문의</a></li>
+                  <li><a href="/greenmall/view/mypage/productInquiry.wb" <c:if test="${uri == '/greenmall/view/mypage/productInquiry.jsp' }">class="active"</c:if>>- 나의 상품문의</a></li>
                 </ul>
               </li>
               <li class="sub_depth1">

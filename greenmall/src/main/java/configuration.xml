@@ -3,8 +3,23 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="db.properties" />
-	
+<!-- 	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings> -->
 	<typeAliases>
+		<typeAlias alias="admin" type="dto.Admin" />
+		<typeAlias alias="basket" type="dto.Basket" />
+		<typeAlias alias="buy" type="dto.Buy" />
+		<typeAlias alias="category" type="dto.Category" />
+		<typeAlias alias="detailOrder" type="dto.DetailOrder" />
+		<typeAlias alias="goods" type="dto.Goods" />
+		<typeAlias alias="goodsOption" type="dto.GoodsOption" />
+		<typeAlias alias="member" type="dto.Member" />
+		<typeAlias alias="memberAddress" type="dto.MemberAddress" />
+		<typeAlias alias="notice" type="dto.Notice" />
+		<typeAlias alias="reply" type="dto.Reply" />
+		<typeAlias alias="review" type="dto.Review" />
+		<typeAlias alias="wish" type="dto.Wish" />
 		<typeAlias alias="member" type="dto.Member" />
 		<typeAlias alias="findMember" type="dto.FindMember" />
 	</typeAliases>
@@ -20,7 +35,10 @@
 		</environment>
 	</environments>
 	<mappers>
+		<mapper resource="admin.xml" />
 		<mapper resource="member.xml" />
+		<mapper resource="memberAddress.xml" />
 	</mappers>
-	
 </configuration>
+
+

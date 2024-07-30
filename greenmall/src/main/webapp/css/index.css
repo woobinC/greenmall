@@ -27,7 +27,6 @@ address, caption, cite, code, dfn, em, var {
 
 fieldset, img {
   border: 0 none;
-  vertical-align: top;
 }
 
 button {
@@ -36,7 +35,7 @@ button {
   cursor: pointer;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="number"] {
   padding: 0 10px;
   outline: none;
   font-size: 12px;

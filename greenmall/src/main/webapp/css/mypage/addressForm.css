@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+.content {
+	padding-top: 100px;
+}
+
+.mypage_cont {
+	width: 1080px;
+	margin: auto;
+}
+
+.base_info_box .base_info_sec table input[type="text"] {
+	width: 180px;
+}
+
+.member_address .address_input input {
+	margin-top: 10px;
+}
+
+.member_warning {
+	display: block;
+	position: relative;
+}
+
+.base_info_box .base_info_sec .member_warning input[type="text"] {
+	width: 330px;
+}
+
+.radio_text {
+	margin-left: 5px;
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+.base_info_box .base_info_sec table input[type="radio"] {
+	vertical-align: middle;
+}
+
+.member_address .address_postcode .btn_post_search {
+    margin: 0 0 0 5px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #989898;
+}
