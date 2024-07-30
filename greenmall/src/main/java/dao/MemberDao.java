@@ -23,6 +23,7 @@ public class MemberDao {
 	private static SqlSession session = MyBatisSessionFactory.getSession(true);
 	
 	public Member select(String mId) {
+		System.out.println(mId);
 		return (Member) session.selectOne("memberns.select", mId);
 	}
 

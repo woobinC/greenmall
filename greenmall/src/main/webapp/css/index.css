@@ -27,7 +27,6 @@ address, caption, cite, code, dfn, em, var {
 
 fieldset, img {
   border: 0 none;
-  vertical-align: top;
 }
 
 button {

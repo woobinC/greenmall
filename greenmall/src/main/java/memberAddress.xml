@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberAddressns">
+ 	<resultMap type="memberAddress" id="memberAddressResultMap">
+		<id property="addrNum" column="addrNum"/>
+		<result property="mId" column="m_id" jdbcType="VARCHAR"/>
+		<result property="aName" column="a_name" jdbcType="VARCHAR"/>
+		<result property="aPostCode" column="a_postcode" jdbcType="VARCHAR"/>
+		<result property="aAddr" column="a_addr" jdbcType="VARCHAR"/>
+		<result property="aAddrDe" column="a_addrDe" jdbcType="VARCHAR"/>
+		<result property="aRequest" column="a_request" jdbcType="VARCHAR"/>
+		<result property="basicAddr" column="basicAddr" jdbcType="CHAR"/>
+	</resultMap> 
+	<insert id="insert" parameterType="memberAddress">
+		insert into memberAddress values (memberaddress_seq.nextval, #{mId},
+			#{aName}, #{aPostCode}, #{aAddr}, #{aAddrDe}, #{aRequest},
+			#{basicAddr})
+	</insert>
+	<select id="select" parameterType="string" resultMap="memberAddressResultMap">
+		select * from memberAddress where addrNum=#{addrNum}
+	</select>
+	<select id="list" parameterType="string" resultMap="memberAddressResultMap">
+		select * from memberAddress where m_id=#{mId}
+	</select>
+	<delete id="delete" parameterType="string">
+		delete from memberAddress where addrNum=#{addrNum}
+	</delete>
+
+</mapper>

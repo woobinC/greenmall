@@ -4,8 +4,8 @@ public class MemberAddress {
 	private int addrNum;
 	private String mId;
 	private String aName;
-	private String aAddr;
 	private String aPostCode;
+	private String aAddr;
 	private String aAddrDe;
 	private String aRequest;
 	private String basicAddr;
@@ -35,10 +35,10 @@ public class MemberAddress {
 	public void setaAddr(String aAddr) {
 		this.aAddr = aAddr;
 	}
-	public String getPost() {
+	public String getaPostCode() {
 		return aPostCode;
 	}
-	public void setPost(String aPostCode) {
+	public void setaPostCode(String aPostCode) {
 		this.aPostCode = aPostCode;
 	}
 	public String getaAddrDe() {
@@ -59,6 +59,12 @@ public class MemberAddress {
 	public void setBasicAddr(String basicAddr) {
 		this.basicAddr = basicAddr;
 	}
+	@Override
+	public String toString() {
+		return "MemberAddress [addrNum=" + addrNum + ", mId=" + mId + ", aName=" + aName + ", aPostCode=" + aPostCode
+				+ ", aAddr=" + aAddr + ", aAddrDe=" + aAddrDe + ", aRequest=" + aRequest + ", basicAddr=" + basicAddr
+				+ "]";
+	}
 	
-
+	
 }

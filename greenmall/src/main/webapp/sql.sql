@@ -1,5 +1,5 @@
-create user greenmall identified by g1234;
-grant dba to greenmall;
+--create user greenmall identified by g1234;
+--grant dba to greenmall;
 
 drop sequence basket_seq;
 drop sequence order_seq;
@@ -26,8 +26,6 @@ drop table category;
 drop table buy;
 drop table member;
 
-select * from member;
-
 -- 회원(member) 1
 create table member (
 m_id VARCHAR2(20) primary key,   	 	-- 회원 번호(PK)
@@ -39,20 +37,20 @@ m_postCode varchar2(20),				-- 우편번호
 m_addr VARCHAR2(100),             		-- 주소
 m_addrDe VARCHAR2(20),            		-- 상세주소
 mileage number,                  		-- 마일리지
-m_del char(1) default 'n',              -- 탈퇴여부
+m_del VARCHAR2(1) default 'n',          -- 탈퇴여부
 m_rdate date,		             		-- 가입 날짜
 comp_title varchar2(20),				-- 사업자상호
 comp_Num varchar2(20),					-- 사업자번호
 comp_name varchar2(20),					-- 사업자대표
 comp_postCode varchar2(20),				-- 우편번호
-comp_addr varchar2(100),					-- 사업장주소
+comp_addr varchar2(100),				-- 사업장주소
 comp_addrDe varchar2(20)				-- 상세주소
 );
 
 -- 주문(buy) 2
 create table buy (
 b_num number primary key,     			-- 주문번호(PK)
-b_id VARCHAR2(20),                 		-- 회원번호(FK)
+m_id VARCHAR2(20),                 		-- 회원번호(FK)
 totalPrice number,               		-- 총 결제 금액
 b_rdate date,                      		-- 주문 날짜
 b_Satus VARCHAR2(20),        			-- 주문 현황
@@ -63,7 +61,7 @@ b_addrDe VARCHAR2(50),           		-- 상세 주소
 b_tel VARCHAR2(20),             		-- 받는분 전화번호
 b_request VARCHAR2(50),     			-- 요청사항
 b_cnt number,							-- 주문 상품 개수
-foreign key(b_id) references member(b_id)
+foreign key(m_id) references member(m_id)
 );
 -- 주문(buy) 2 시퀀스
 create sequence order_seq start with 1 increment by 1 maxvalue 9999;
@@ -71,7 +69,7 @@ create sequence order_seq start with 1 increment by 1 maxvalue 9999;
 -- 카테고리 (category) 3
 create table category (
 c_Num number primary key,				--카테고리번호
-c_Name number							--카테고리명 	
+c_Name VARCHAR2(20)						--카테고리명
 );
 
 -- 상품(goods) 4 
@@ -81,8 +79,8 @@ c_Num number,						  -- 카테고리 번호(FK)
 p_name VARCHAR2(20),        		  -- 상품명
 p_price number,            			  -- 가격
 p_sale number,             		  	  -- 할인율
-p_img1 VARCHAR2(100),       		  -- 이미지1
-p_img2 VARCHAR2(100),       		  -- 이미지2
+p_img1 VARCHAR2(50),       			  -- 이미지1
+p_img2 VARCHAR2(50),       		 	  -- 이미지2
 p_cnt number,               		  -- 수량
 p_date date,						  -- 등록일
 foreign key(c_Num) references category(c_Num)
@@ -146,11 +144,11 @@ create table memberaddress (
 addrNum number primary key,       	-- 배송지 코드(PK)
 m_id VARCHAR2(20),               	-- 회원 번호(FK)
 a_name VARCHAR2(20),                -- 받는분 성함
-a_postcode VARCHAR2(20),            -- 우편번호
+a_postcode VARCHAR2(50),            -- 우편번호
 a_addr VARCHAR2(100),            	-- 받는분 주소
 a_addrDe VARCHAR2(20),              -- 상세 주소
 a_request VARCHAR2(50),        		-- 요청사항
-basicAddr char(1) default 'n',		-- 기본 배송지 여부
+basicAddr char(1)					-- 기본 배송지 여부
 foreign key(m_id) references member(m_id)
 );
 -- 회원 배송지(memberaddress) 9 시퀀스
@@ -174,7 +172,6 @@ create sequence review_seq start with 1 increment by 1 maxvalue 9999;
 
 -- 댓글 (reply) 11
 create table reply (
-
 replyKey number primary key,        -- 댓글 번호(PK)
 boardKey number,                    -- 게시글 번호(FK)
 m_id VARCHAR2(20),                  -- 회원 번호(FK)
@@ -208,4 +205,28 @@ foreign key(adminId) references admin(adminId)
 -- 공지번호 (notice) 13 시퀀스
 create sequence notification_seq start with 1 increment by 1 maxvalue 9999;
 
+select * from member;
+select * from buy;
+select * from admin;
+select * from category;
+select * from member where m_id = 'qwe';
+
 insert into admin values('master', '1234');
+
+insert into category values('101', '쌀');
+insert into category values('102', '잡곡류');
+insert into category values('200', '버섯류');
+insert into category values('301', '사과');
+insert into category values('302', '배');
+insert into category values('303', '딸기');
+insert into category values('304', '기타');
+insert into category values('401', '뿌리채소');
+insert into category values('402', '열매채소');
+insert into category values('403', '잎줄기채소');
+insert into category values('404', '콩류');
+insert into category values('405', '기타');
+insert into category values('501', '건강즙');
+insert into category values('502', '환/분말/차');
+insert into category values('503', '꿀');
+insert into category values('504', '반찬류/간식류');
+insert into category values('505', '기타');

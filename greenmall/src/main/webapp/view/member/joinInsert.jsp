@@ -114,14 +114,14 @@ function confirmNext() {
 	                        extraAddr = ' (' + extraAddr + ')';
 	                    }
 	                } else {
-	                    document.getElementById("address").value = '';
+	                    document.getElementById("mAddr").value = '';
 	                }
 	
 	                // 선택된 우편번호와 주소 정보를 input 박스에 넣는다.
-	                document.getElementById('zipcode').value = data.zonecode;
-	                document.getElementById("address").value = addr;
-	                document.getElementById("address").value += extraAddr;
-	                document.getElementById("addressSub").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
+	                document.getElementById('mPostCode').value = data.zonecode;
+	                document.getElementById("mAddr").value = addr;
+	                document.getElementById("mAddr").value += extraAddr;
+	                document.getElementById("mAddrDe").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
 	            }
 	        }).open();
 	    }

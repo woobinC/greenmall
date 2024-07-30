@@ -3,6 +3,9 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="db.properties" />
+<!-- 	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings> -->
 	<typeAliases>
 		<typeAlias alias="admin" type="dto.Admin" />
 		<typeAlias alias="basket" type="dto.Basket" />
@@ -17,6 +20,7 @@
 		<typeAlias alias="reply" type="dto.Reply" />
 		<typeAlias alias="review" type="dto.Review" />
 		<typeAlias alias="wish" type="dto.Wish" />
+		<typeAlias alias="member" type="dto.Member" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -31,6 +35,8 @@
 	</environments>
 	<mappers>
 		<mapper resource="admin.xml" />
+		<mapper resource="member.xml" />
+		<mapper resource="memberAddress.xml" />
 	</mappers>
 </configuration>
 

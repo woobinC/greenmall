@@ -76,7 +76,7 @@
           <div class="mypage_main">
             <div class="mypage_top_info">
               <div class="mypage_top_txt">
-                <p>천우빈님의</p>
+                <p>${member.mName }님의</p>
                 <p>마이페이지 입니다</p>
               </div>
               <div class="mypage_top_wallet">
@@ -94,7 +94,7 @@
                       <em>마일리지
                         <em>(구매확정 후 지급)</em>
                       </em>
-                      <a href="#"><strong>0</strong></a>원
+                      <a href="#"><strong>${member.mileage}</strong></a>원
                     </span>
                   </li>
                 </ul>
