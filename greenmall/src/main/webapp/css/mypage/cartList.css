@@ -178,3 +178,237 @@ body, th, td, input, select, textarea, button {
 .sub_content .location_content {
 	padding:50px 0 ;
 }
+
+.cart_wrap .btn_order_box {
+    overflow: hidden;
+    padding: 30px 0 0 0;
+    text-align: right;
+}
+
+.btn_center_box button + button, .btn_left_box button + button, .btn_right_box button + button {
+    margin-left: 6px;
+}
+
+.btn_order_choice_del {
+    display: inline-block;
+    min-width: 120px;
+    height: 30px;
+    padding: 0 15px 0 15px;
+    color: #626262;
+    border: 1px solid #a3a3a3;
+    text-align: center;
+    line-height: 28px;
+}
+
+.btn_order_box .btn_left_box {
+    float: left;
+}
+
+.btn_left_box {
+    text-align: left;
+}
+
+.btn_order_box .btn_right_box {
+    float: right;
+}
+
+.btn_right_box {
+    text-align: right;
+}
+
+.btn_order_choice_buy {
+    min-width: 190px;
+    height: 55px;
+    padding: 0 20px 0 20px;
+    color: #3e3d3c;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    background: #fff;
+    cursor: pointer;
+}
+
+.btn_order_whole_buy {
+    min-width: 190px;
+    height: 55px;
+    padding: 0 20px 0 20px;
+    color: #ffffff;
+    font-size: 14px;
+    border: 1px solid #ab3e55;
+    background: #ab3e55;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cart_cont_list {
+    margin: 50px 0 10px 0;
+}
+
+#contents .order_table_type {
+    position: relative;
+}
+
+.order_table_type table {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.order_table_type th {
+    padding: 9px 10px 10px 10px;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #dbdbdb;
+    background: #f7f7f7;
+}
+
+.order_table_type thead .form_element, .order_table_type .td_chk .form_element {
+    height: 18px;
+}
+
+.order_table_type th .form_element {
+    vertical-align: middle;
+}
+
+.form_element {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.order_table_type .td_chk {
+    vertical-align: middle;
+}
+
+.order_table_type td {
+    height: 31px;
+    padding: 15px 10px 14px 10px;
+    color: #777777;
+    border-bottom: 1px solid #dbdbdb;
+    background: #ffffff;
+}
+
+.order_table_type thead .form_element, .order_table_type .td_chk .form_element {
+    height: 18px;
+}
+
+.order_table_type .td_left {
+    text-align: left;
+}
+
+.order_table_type .pick_add_cont {
+    display: table;
+    position: relative;
+    width: 100%;
+}
+
+.order_table_type .pick_add_cont .pick_add_img {
+    display: table-cell;
+    width: 38px;
+    padding: 0 10px 0 0;
+    vertical-align: top;
+}
+
+.order_table_type .pick_add_cont .pick_add_img img {
+    border: 1px solid #dbdbdb;
+    vertical-align: middle;
+}
+
+.order_table_type .pick_add_cont .pick_add_info {
+    display: table-cell;
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+    word-break: break-all;
+}
+
+.order_table_type .pick_add_cont .pick_btn_box {
+    padding: 0 0 2px 0;
+}
+
+.order_table_type .pick_add_cont .pick_add_info em {
+    display: block;
+    color: #333333;
+    font-weight: bold;
+}
+
+.order_table_type .td_order_amount {
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+.order_table_type .td_order_amount .order_goods_num {
+    width: 100%;
+}
+
+.order_table_type .td_order_amount .order_goods_num strong {
+    display: block;
+    width: 100px;
+    color: #333333;
+    font-size: 13px;
+}
+
+.order_table_type .order_sum_txt {
+    font-size: 13px;
+}
+
+.order_table_type td > strong {
+    color: #333333;
+}
+
+.order_table_type .td_benefit {
+    border-left: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+}
+
+.benefit_list {
+    display: inline-block;
+    min-width: 90px;
+    text-align: center;
+}
+
+.benefit_list .benefit_mileage {
+    margin: 10px 0 0 0;
+}
+
+.benefit_list li {
+    position: relative;
+    color: #888888;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.benefit_list .benefit_mileage em {
+    padding: 0 5px 1px 20px;
+    background: url(/greenmall/images/buy/icon_mileage.gif) no-repeat 0 2px;
+}
+
+.benefit_list li em {
+    display: inline-block;
+}
+
+.benefit_list li span {
+    display: block;
+}
+
+.benefit_list li strong {
+    padding: 0 0 0 5px;
+    color: #333333;
+}
+
+.order_table_type .order_sum_txt {
+    font-size: 13px;
+}
+
+.order_table_type td > strong {
+    color: #333333;
+}
+
+.order_table_type .td_delivery {
+    border-left: 1px solid #ebebeb;
+}
+
+.cart_content .btn_left_box {
+	margin-top: 15px;
+}

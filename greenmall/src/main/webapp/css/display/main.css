@@ -43,10 +43,6 @@ address {
 	width: 1395px;
 }
 
-dl, ul, ol, li {
-	list-style: none;
-}
-
 @media screen and (max-width: 1920px) {
 	.inner {
 		width: 1280px;

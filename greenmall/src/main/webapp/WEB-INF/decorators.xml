@@ -5,6 +5,7 @@
 		 <pattern>/view/member/*</pattern> 
 		 <pattern>/view/mypage/*</pattern> 
 		 <pattern>/view/board/*</pattern> 
+		 <pattern>/view/buy/*</pattern> 
 	</decorator>
 	<decorator name="decorator_admin" page="admin_view.jsp">
 		<pattern>/view/admin/*</pattern>
