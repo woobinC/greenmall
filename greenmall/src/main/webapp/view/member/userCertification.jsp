@@ -13,7 +13,7 @@
         <div class="location_wrap">
             <div class="location_cont">
                 <em>
-                    <a href="#">Home</a>> 본인인증 수단 선택
+                    <a href="/greenmall/view/display/main.wb">Home</a>> 본인인증 수단 선택
                 </em>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="member_cont">
                     <div class="user_certify_box">
-                        <form action="#" class="formAuth" id="formAuth">
+                        <form action="/greenmall/view/member/userCertificationConfirm.wb" class="formAuth" id="formAuth" method="post">
                             <div class="user_certify_title">
                                 <h3>인증수단 선택</h3>
                                 <p>본인인증 방법을 선택해주세요.</p>
@@ -33,9 +33,9 @@
                                 <div class="form_element">
                                     <ul class="user_certify_list">
                                         <li>
-                                            <input type="radio" id="authEmail" name="authType" value="authEmail">
-                                            <label for="authEmail" class="choise_on" id="rad_btn">이메일 인증</label>
-                                            <!-- <strong>가입된 이메일이 없습니다.</strong> -->
+                                            <input type="radio" id="mEmail" name="mEmail" value="${member.mEmail}">
+                                            <label for="mEmail" class="choise_on" id="rad_btn">이메일 인증 <strong>(${member.getMaskedEmail()})</strong></label>
+                                            <strong style="display: none">가입된 이메일이 없습니다.</strong>
                                             <span>가입시 입력한 이메일로 인증번호가 발송됩니다.</span>
                                         </li>
                                         <p class="dn" id="error_message"></p>

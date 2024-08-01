@@ -145,7 +145,7 @@ ul,ol,li {
 /* -----------------------------------------------------------로그인 시작 */
 .memberLogin {
     width: 471px;
-    height: 418px;
+    height: 300px;
 }
 .login_input,.order_input {
     display: flex;

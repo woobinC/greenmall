@@ -8,35 +8,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../css/member/font.css" />
 <link rel="stylesheet" href="../../css/member/loginJoin.css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"
-	integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4"
-	crossorigin="anonymous"></script>
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script type="text/javascript">
-    	Kakao.init('8d51aff084723b9cb2243bc6ed6a4c4c');
-    	console.log(Kakao.isInitialized());
-    	function kakaoLogin() {
-			Kakao.Auth.login({
-				success: function (response) {
-					Kakao.API.request({
-						 url: '/v1/api/talk/profile',
-				          success: function (response) {
-				        	  console.log(response)
-				          },
-				          fail: function (error) {
-				            console.log(error)
-				          },
-				        })
-				      },
-				      fail: function (error) {
-				        console.log(error)
-					})
-				}
-			})
-		};
-		</script>
 <script type="text/javascript">
     // jQuery가 문서가 준비되었을 때 실행됩니다.
     $(document).ready(function() {
@@ -83,14 +54,7 @@
 								</span>
 							</div>
 						</div>
-						<div class="sns_login">
-							<a href="javascript:void(0)"><img
-								src="../../images/member/pc_naver.png" alt=""
-								style="margin-top: 10px"></a> <a href="javascript:void(0)"
-								onclick="kakaoLogin()"><img
-								src="../../images/member/pc_kakao.png" alt="카카오 아이디로 로그인"
-								style="margin-top: 10px"></a>
-						</div>
+						
 						<div class="btn_box">
 							<ul>
 								<li>

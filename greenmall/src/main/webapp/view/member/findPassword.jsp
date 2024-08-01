@@ -13,12 +13,12 @@
         <div class="location_wrap">
             <div class="location_cont">
                 <em>
-                    <a href="#">Home</a>> 비밀번호 찾기
+                    <a href="/greenmall/view/display/main.wb">Home</a>> 비밀번호 찾기
                 </em>
             </div>
         </div>
         <div class="content_box">
-            <form action="#" class="formFind" id="formFind" method="post">
+            <form action="/greenmall/view/member/userCertification.wb" class="formFind" id="formFind" method="post">
                 <div class="member_wrap">
                     <div class="member_title">
                         <h2>비밀번호 찾기</h2>
@@ -29,9 +29,9 @@
                             <p>비밀번호를 찾고자 하는 아이디를 입력해 주세요.</p>
                             <div class="login_input" id="login_input_id">
                                 <div class="member_warning">
-                                    <input type="text" name="userId" id="userId" placeholder="아이디">
-                                    <input type="text" name="userNm" id="userNm" placeholder="이름">
-                                    <p class="info_again">아이디를 모르시나요 ? <a href="#" class="find_id_btn">아이디 찾기</a></p>
+                                    <input type="text" name="mId" id="mId" placeholder="아이디">
+                                    <input type="text" name="mName" id="mName" placeholder="이름">
+                                    <p class="info_again">아이디를 모르시나요 ? <a href="/greenmall/view/member/findId.wb" class="find_id_btn">아이디 찾기</a></p>
                                     <p class="dn" id="error_message" >아이디를 다시 입력해주세요.</p>
                                 </div>
                                 <div class="btn_center">

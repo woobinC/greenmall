@@ -1,5 +1,9 @@
 package dao;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
 import dto.FindMember;
@@ -18,7 +22,6 @@ public class MemberDao {
 	private static SqlSession session = MyBatisSessionFactory.getSession(true);
 	
 	public Member select(String mId) {
-		System.out.println(mId);
 		return (Member) session.selectOne("memberns.select", mId);
 	}
 
@@ -38,7 +41,6 @@ public class MemberDao {
 		FindMember fm = new FindMember();
         fm.setmName(mName);
         fm.setmEmail(mEmail);
-        System.out.println("selectEmail: " + fm.getmName() + ", " + fm.getmEmail());
 		return (Member) session.selectOne("memberns.selectEmail",fm);
 	}
 
@@ -46,8 +48,26 @@ public class MemberDao {
 		FindMember fm = new FindMember();
         fm.setmName(mName);
         fm.setmTel(mTel);
-        System.out.println("selectTel: " + fm.getmName() + ", " + fm.getmTel());
 		return (Member) session.selectOne("memberns.selectTel",fm);
+	}
+
+	public List<Member> list(int startRow, int endRow) {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("startRow", startRow);
+		map.put("endRow", endRow);
+		return session.selectList("memberns.list", map);
+	}
+
+	public int getTotal() {
+		return (int) session.selectOne("memberns.getTotal");
+	}
+
+	public int deleteMember(String mId) {
+		return session.delete("memberns.deleteMember",mId);
+	}
+
+	public int updatePw(Member member) {
+		return session.update("memberns.updatePw",member);
 	}
 	
 }
