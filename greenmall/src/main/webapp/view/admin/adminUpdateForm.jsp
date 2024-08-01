@@ -23,6 +23,7 @@
 				<div class="join_base_wrap">
 					<div class="member_cont">
 						<form action="adminUpdate.gw" method="post" enctype="multipart/form-data">
+						<input type="hidden" name="pNo" value="${goods.p_No}">
 							<div class="base_info_box">
 								<h3>상품 수정 </h3>
 								<div class="base_info_sec">
@@ -35,7 +36,7 @@
 											<tr>
 												<th>상품명</th>
 												<td><input type="text" name="pName" required="required"
-													autofocus="autofocus" value="${p_Name }"></td>
+													autofocus="autofocus" value="${goods.p_Name }"></td>
 											</tr>
 											<tr>
 												<th>카테고리</th>
@@ -48,17 +49,17 @@
 											<tr>
 												<th>가격</th>
 												<td><input type="number" name="pPrice"
-													required="required"> 원</td>
+													required="required" value="${goods.p_Price }" > 원</td>
 											</tr>
 											<tr>
 												<th>할인율</th>
 												<td><input type="number" name="pSale"
-													required="required"> %</td>
+													required="required" value="${goods.p_Sale }"> %</td>
 											</tr>
 											<tr>
 												<th>수량</th>
 												<td><input type="number" name="pCnt"
-													required="required"> 개</td>
+													required="required" value="${goods.p_Cnt }"> 개</td>
 											</tr>
 											<tr>
 												<th>이미지1</th>
@@ -77,7 +78,7 @@
 								<button type="button" class="btn_member_cancel"
 									onclick="location.href='/greenmall/view/admin/adminGoodsList'">취소</button>
 								<input type="submit" value="상품 수정"
-									class="btn_comfirm js_btn_join">
+									class="btn_comfirm js_btn_join" >
 							</div>
 
 						</form>

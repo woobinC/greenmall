@@ -501,4 +501,11 @@ border-radius: 8%;
   padding: 5px;
 }
 
+.ctg li a {
+	display: block;
+}
 
+.ctg li a:hover {
+	background-color: #363;
+	color:white;
+}

@@ -2,37 +2,79 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="goodsns">
+	<!-- 메인화면 상품리스트 -->
+	<select id="select_main1" resultType="goods" parameterType="map">
+		select * from
+		(select a.* ,rowNum rn from(select g.*,c.c_Name from goods g, category c where g.c_Num=c.c_Num  and g.c_Num=#{c_Num} order by p_no) a)
+		where rn between #{startRow} and #{endRow} 
+	</select>
+
+ 	<select id="select_main2" resultType="goods" parameterType="map">
+		select * from cm_product
+		where cm_discount > 0
+	</select>
+
+	<select id="select_main3" resultType="goods" parameterType="map">
+		select * from (select a.*
+		,rowNum rn from(select * from cm_product order by cm_date desc) a)
+		where rn between 1 and 4
+	</select>
+	<!--  일반 상품 조회  -->
+		<select id="select_no" parameterType="integer" resultType="goods">
+		select * from goods where p_No=#{p_No}
+	</select>
+
+	<!-- 관리자 페이지 상품 추가 */  --> 
 	<insert id="insert" parameterType="goods">
-		<selectKey keyProperty="p_No" order="BEFORE" resultType="integer">
+		<selectKey keyProperty="p_No" order="BEFORE"
+			resultType="integer">
 			select nvl(max(p_no), 0) + 1 pNo from goods
 		</selectKey>
-		insert into goods values (#{p_No},#{c_Num},#{p_Name},#{p_Price},#{p_Sale},#{p_Img1},#{p_Img2},#{p_Cnt},sysdate ) 
+		insert into goods values
+		(#{p_No},#{c_Num},#{p_Name},#{p_Price},#{p_Sale},#{p_Img1},#{p_Img2},#{p_Cnt},sysdate
+		)
 	</insert>
-		<select id="getTotal" resultType="integer">
+
+
+	<select id="getTotal" resultType="integer">
 		select count(*) from goods
 	</select>
 	
-	<select resultType="goods" id="list" parameterType="map" >
-select * from (select rowNum rn , a.* from(select * from goods order by p_no) a)
-		where rn between #{startRow} and #{endRow} 
-	</select>	
 	
-	<update id="update" parameterType="goods">
-		update goods set 
-			p_name=#{p_name},
 
-			<if test="p_img1!=null and p_img1!=''">
-				p_img1=#{p_img1},
-			</if>			
-			<if test="p_img2!=null and p_img2!=''">
-				p_img2=#{p_img2},
-			</if>			
-			c_Num=#{c_Num},p_price=#{p_Price}, p_sale=#{pSale}, p_cnt=#{pCnt} ,
-				where p_no=#{p_No}
+	<!-- 관리자 페이지 상품 수정 */  --> 
+	<update id="update" parameterType="goods">
+		update goods set
+		p_name=#{p_Name},
+
+		<if test="p_Img1!=null and p_Img1!=''">
+			p_img1=#{p_Img1},
+		</if>
+		<if test="p_Img2!=null and p_Img2!=''">
+			p_img2=#{p_Img2},
+		</if>
+		c_Num=#{c_Num},p_price=#{p_Price}, p_sale=#{p_Sale}, p_cnt=#{p_Cnt}
+		where p_no=#{p_No}
 	</update>
-	<select id="select" parameterType="integer" resultType="goods">
-		select * from goods where p_No=#{p_No}
+		<!-- 관리자 페이지 상품 선택 */  --> 
+	<select id="select" parameterType="map" resultType="goods">
+		select * from
+		goods where p_no=#{p_No}
+	</select>
+		<!-- 관리자 페이지 상품 삭제 */  --> 
+	<update id="delete" parameterType="map">
+		delete from goods where p_no=#{p_No}
+	</update>
+	
+	
+	<!--  관리자 상품 리스트 -->
+	<select resultType="goods" id="list" parameterType="map">
+		select * from (select rowNum rn , a.* from(select * from goods order by
+		p_no) a)
+		where rn between #{startRow} and #{endRow}
 	</select>
 	
+
+ 
 </mapper> 
 

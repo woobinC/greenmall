@@ -74,7 +74,13 @@ public class Goods {
 	}
 	public void setC_Name(String c_Name) {
 		this.c_Name = c_Name;
-	}	
-	
+	}
+	@Override
+	public String toString() {
+		return "Goods [p_No=" + p_No + ", c_Num=" + c_Num + ", p_Name=" + p_Name + ", p_Price=" + p_Price + ", p_Sale="
+				+ p_Sale + ", p_Img1=" + p_Img1 + ", p_Img2=" + p_Img2 + ", p_Cnt=" + p_Cnt + ", p_Date=" + p_Date
+				+ ", c_Name=" + c_Name + "]";
+	}
+
 
 }

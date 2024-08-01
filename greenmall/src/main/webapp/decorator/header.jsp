@@ -44,89 +44,69 @@
                                 <ul class="menu">
                                     <li>익산몰 소개</li>
                                     <li class="hover_ctg">
-                                        곡류
+                                        <a href="/greenmall/view/goods/goodsList.gw?c_Num=100">곡류</a>
                                         <ul class="ctg" >
-                                            <li style="color: black;">쌀</li>
-                                            <li style="color: black;">잡곡류</li>
+                                            <li style="color: black;"><a href="/greenmall/view/goods/goodsList.gw?c_Num=101">쌀</a></li>
+                                            <li style="color: black;"><a href="/greenmall/view/goods/goodsList.gw?c_Num=102">잡곡류</a></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        버섯류
+                                       <a href="/greenmall/view/goods/goodsList.gw?c_Num=200">버섯류</a>
                                     </li>
                                     <li class="hover_ctg">
-                                        과일류
+                                        <a href="/greenmall/view/goods/goodsList.gw?c_Num=300">과일류</a>
                                         <ul class="ctg">
                                             <li>
-                                                <a href="#">사과</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=301">사과</a>
                                             </li>
                                             <li>
-                                                <a href="#">배</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=302">배</a>
                                             </li>
                                             <li>
-                                                <a href="#">딸기</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=303">딸기</a>
                                             </li>
                                             <li>
-                                                <a href="#">기타</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=304">기타</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="hover_ctg">
-                                        채소/나물류
+                                        <a href="/greenmall/view/goods/goodsList.gw?c_Num=400">채소/나물류</a>
                                         <ul class="ctg">
                                             <li>
-                                                <a href="#">뿌리채소</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=401">뿌리채소</a>
                                             </li>
                                             <li>
-                                                <a href="#">열매채소</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=402">열매채소</a>
                                             </li>
                                             <li>
-                                                <a href="#">잎줄기채소</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=403">잎줄기채소</a>
                                             </li>
                                             <li>
-                                                <a href="#">콩류</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=404">콩류</a>
                                             </li>
                                             <li>
-                                                <a href="#">기타채소류</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=405">기타채소류</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li class="hover_ctg">
-                                        건강식품/기타
+                                        <a href="/greenmall/view/goods/goodsList.gw?c_Num=500">건강식품/기타</a>
                                         <ul class="ctg">
                                             <li>
-                                                <a href="#">건강즙</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=501">건강즙</a>
                                             </li>
                                             <li>
-                                                <a href="#">환/분말/차</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=502">환/분말/차</a>
                                             </li>
                                             <li>
-                                                <a href="#">꿀</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=503">꿀</a>
                                             </li>
                                             <li>
-                                                <a href="#">반찬류/간식류</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=504">반찬류/간식류</a>
                                             </li>
                                             <li>
-                                                <a href="#">기타</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="hover_ctg">
-                                        기획전
-                                        <ul class="ctg">
-                                            <li>
-                                                <a href="#">금주특가</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">건강음료</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">쌀 사는 날!</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">여름과일기획전</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">두릅</a>
+                                                <a href="/greenmall/view/goods/goodsList.gw?c_Num=505">기타</a>
                                             </li>
                                         </ul>
                                     </li>

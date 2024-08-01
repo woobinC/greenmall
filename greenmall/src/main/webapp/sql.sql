@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+select * from
+		(select a.* ,rowNum rn from(select g.*,c.c_Name from goods g, category c where g.c_Num=c.c_Num  and g.c_Num=101 order by p_no) a)
+		where rn between 1 and 8; 
 
 
 create user greenmall identified by g1234;
@@ -6,7 +8,6 @@ grant dba to greenmall;
 =======
 --create user greenmall identified by g1234;
 --grant dba to greenmall;
->>>>>>> branch 'main' of https://github.com/woobinC/greenmall.git
 
 drop sequence basket_seq;
 drop sequence order_seq;
@@ -44,18 +45,8 @@ m_postCode varchar2(20),				-- 우편번호
 m_addr VARCHAR2(100),             		-- 주소
 m_addrDe VARCHAR2(100),            		-- 상세주소
 mileage number,                  		-- 마일리지
-<<<<<<< HEAD
 m_del char(1) default 'n',              -- 탈퇴여부
-=======
-m_del VARCHAR2(1) default 'n',          -- 탈퇴여부
->>>>>>> branch 'main' of https://github.com/woobinC/greenmall.git
 m_rdate date,		             		-- 가입 날짜
-comp_title varchar2(20),				-- 사업자상호
-comp_Num varchar2(20),					-- 사업자번호
-comp_name varchar2(20),					-- 사업자대표
-comp_postCode varchar2(20),				-- 우편번호
-comp_addr varchar2(100),				-- 사업장주소
-comp_addrDe varchar2(20)				-- 상세주소
 );
 select * from goods;
 select * from category;
@@ -79,9 +70,7 @@ foreign key(m_id) references member(m_id)
 create sequence order_seq start with 1 increment by 1 maxvalue 9999;
 
 -- 카테고리 (category) 3
-<<<<<<< HEAD
 drop table category cascade constraints;
-=======
 create table category (
 c_Num number primary key,				--카테고리번호
 c_Name VARCHAR2(20)						--카테고리명
@@ -233,6 +222,7 @@ select * from member;
 select * from buy;
 select * from admin;
 select * from category;
+select * from goods;
 select * from member where m_id = 'qwe';
 
 insert into admin values('master', '1234');

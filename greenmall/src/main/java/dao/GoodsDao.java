@@ -24,7 +24,7 @@ public class GoodsDao {
 		public int insert(Goods goods) {			
 			return session.insert("goodsns.insert",goods);
 		}
-		
+
 		@SuppressWarnings("unchecked")
 		public List<Goods> list(int startRow, int endRow) {
 			Map<String, Integer> map = new HashMap<String, Integer>();
@@ -35,11 +35,36 @@ public class GoodsDao {
 		public int getTotal() {
 			return (int) session.selectOne("goodsns.getTotal");
 		}
-		public int update(GoodsDao gd) {
+		public int update(Goods gd) {
 			return session.update("goodsns.update",gd);
 		}
-		public Goods select(String p_No) {
-			return session.selectOne("goodsns.select", p_No);
+
+		public int delete(int p_No) {
+			return session.delete("goodsns.delete",p_No);
 		}
-		
+		/* 일반 상품 페이지 */
+		@SuppressWarnings("unchecked")
+		public List<Goods> select_main1(int startRow, int endRow, int c_Num) {
+			Map<String, Integer> map = new HashMap<String, Integer>();
+			map.put("startRow", startRow);
+			map.put("endRow", endRow);
+			map.put("c_Num", c_Num);
+			return session.selectList("goodsns.select_main1", map);
+		}
+		@SuppressWarnings("unchecked")
+		public List<Goods> select_main2() {
+			return session.selectList("goodns.select_main2");
+		}
+		@SuppressWarnings("unchecked")
+		public List<Goods> select_main3() {
+			return session.selectList("goodns.select_main3");
+		}
+		// 일반 상품 번호 조회
+		public Goods select_no(int p_No) {
+	
+			return (Goods) session.selectOne("goodsns.select_no", p_No);
+		}
+
+
+
 }

@@ -1,25 +1,20 @@
-*{padding: 0; margin: 0; text-decoration: none;
+/* *{padding: 0; margin: 0; text-decoration: none;
 }
 
 .body{
     line-height: 1.5;
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; color:#333;
     color: #333;
-}
+} */
 
 li{list-style: none; }
 .sub_content {
-    padding: 300px 0 0 0;
+    padding: 80px 0 0 0;
     width: 1600px;
     margin: 0 auto;
 }
 .content_box {
-    float: left;
     width: 100%;
-}
-.container{
-    float: left;
-    padding: 0;
 }
 
 /* location 상단 소메뉴 */
@@ -55,7 +50,7 @@ li{list-style: none; }
 }
 
 .location_select .location_tit {
-    background: url(../../img/etc/select_arrow_down_11x7.png) no-repeat right center;
+    background: url(greenmall/images//etc/select_arrow_down_11x7.png) no-repeat right center;
 }
 
 .location_select .location_tit a {

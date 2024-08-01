@@ -6,6 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	function del(p_No) {
+		let con = confirm("선택한 일반상품을 삭제하시겠습니까?");
+		if (con) {
+			location.href="/greenmall/view/admin/adminDelete.gw?p_No="+p_No;
+		}
+	}
+	
+</script>
 </head>
 <body>
 
@@ -66,12 +75,12 @@
 					<!-- 앞에 보여줄게 남아있어 -->
 					<c:if test="${startPage > PAGE_PER_BLOCK }">
 						<button class="pageBtn"
-							onclick="location.href='adminCmProduct.ms?pageNum=1'">
-							<img alt="" src="/highbrix/images/paging11.png">
+							onclick="location.href='adminGoodsList.wb?pageNum=1'">
+							<img alt="" src="">
 						</button>
 						<button class="pageBtn"
-							onclick="location.href='adminCmProduct.ms?pageNum=${startPage - 1}'">
-							<img alt="" src="/highbrix/images/paging1.png">
+							onclick="location.href='adminGoodsList.wb?pageNum=${startPage - 1}'">
+							<img alt="" src="">
 						</button>
 					</c:if>
 					<c:forEach var="i" begin="${startPage }" end="${endPage }">
@@ -81,12 +90,12 @@
 					<!-- 아직 보여줄게 남아있다 -->
 					<c:if test="${endPage < totalPage }">
 						<button class="pageBtn"
-							onclick="location.href='adminCmProduct.ms?pageNum=${endPage + 1}'">
-							<img alt="" src="/highbrix/images/paging2.png">
+							onclick="location.href='adminGoodsList.wb?pageNum=${endPage + 1}'">
+							<img alt="" src="">
 						</button>
 						<button class="pageBtn"
-							onclick="location.href='adminCmProduct.ms?pageNum=${totalPage}'">
-							<img alt="" src="/highbrix/images/paging22.png">
+							onclick="location.href='adminGoodsList.wb?pageNum=${totalPage}'">
+							<img alt="" src="">
 						</button>
 					</c:if>
 					<!--  					<ul>

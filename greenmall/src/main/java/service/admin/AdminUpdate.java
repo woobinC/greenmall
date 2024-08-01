@@ -21,37 +21,33 @@ public class AdminUpdate implements CommandProcess{
 			int maxSize = 1024 * 1024 * 10; // 10M
 			try {
 				MultipartRequest mr = new MultipartRequest(request, real, maxSize, "utf-8", new DefaultFileRenamePolicy());
-				String pImg1 = mr.getFilesystemName("p_Img1");
-				String pImg2 = mr.getFilesystemName("p_Img2");
-				int cNum = Integer.parseInt(mr.getParameter("c_Num"));
-				String pName = mr.getParameter("p_Name");
-				int pPrice = Integer.parseInt(mr.getParameter("p_Price"));
-				int pSale  = Integer.parseInt(mr.getParameter("p_Sale"));
-				int pCnt = Integer.parseInt(mr.getParameter("p_Cnt"));
+				int pNo = Integer.parseInt(mr.getParameter("pNo"));
+				System.out.println(pNo);
+				String pImg1 = mr.getFilesystemName("pImg1");
+				String pImg2 = mr.getFilesystemName("pImg2");
+				int cNum = Integer.parseInt(mr.getParameter("cNum"));
+				String pName = mr.getParameter("pName");
+				int pPrice = Integer.parseInt(mr.getParameter("pPrice"));
+				int pSale  = Integer.parseInt(mr.getParameter("pSale"));
+				int pCnt = Integer.parseInt(mr.getParameter("pCnt"));
+				gs.setP_No(pNo);
 				gs.setP_Img1(pImg1);
-				System.out.println("1"+gs.getP_Img1());
 				gs.setP_Img2(pImg2);
-				System.out.println("2"+gs.getP_Img2());
 				gs.setC_Num(cNum);
-				System.out.println("3"+gs.getC_Num());
 				gs.setP_Name(pName);
-				System.out.println("4"+gs.getP_Name());
 				gs.setP_Price(pPrice);
-				System.out.println("5"+gs.getP_Price());
 				gs.setP_Sale(pSale);
-				System.out.println("6"+gs.getP_Sale());
 				gs.setP_Cnt(pCnt);
-				System.out.println("7"+gs.getP_Cnt());
-	
+				System.out.println(gs);
 				
 			} catch (IOException e) {
 				System.out.println(e.getMessage());
 			}
 			GoodsDao gd = GoodsDao.getInstance();
 			int result = 0; 
-			result = gd.update(gd);
+			result = gd.update(gs);
 			request.setAttribute("result", result);
-			return "AdminUpdate";
+			return "adminUpdate";
 		}
 
 	

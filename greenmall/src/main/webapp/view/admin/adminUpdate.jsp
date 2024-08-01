@@ -19,13 +19,13 @@
 <body>
 	<c:if test="${result > 0 }">
 		<script type="text/javascript">
-			location.href = "/greenmall/view/admin/adminMain.wb";
+			location.href = "/greenmall/view/admin/adminGoodsList.wb";
 		</script>
 	</c:if>
 
 	<c:if test="${result <= 0 }">
 		<script type="text/javascript">
-			alert("로그인 실패");
+			alert("수정 실패");
 			history.go(-1);
 		</script>
 	</c:if>
