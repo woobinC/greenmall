@@ -208,28 +208,7 @@
                           <div class="img-box">
                             <div class="img-thum">
                               <div class="img-center">
-                                <img src="/greenmall/images/green.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="item_info_cont">
-                        <div class="item_tit_box">
-                          <span class="item_brand"> 화산마을 </span>
-                          <a href="#">
-                            <strong class="item_name">단단하고 저장성이 좋은 화산마을 양파 10kg(크기혼합)</strong>
-                          </a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="item_cont">
-                        <a href="#">
-                          <div class="img-box">
-                            <div class="img-thum">
-                              <div class="img-center">
-                                <img src="/greenmall/images/green.jpg" alt="">
+                                <img src="/greenmall/images/0.jpg" alt="">
                               </div>
                             </div>
                           </div>

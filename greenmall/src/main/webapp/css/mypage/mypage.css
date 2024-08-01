@@ -370,9 +370,6 @@
 }
 
 .img-box img {
-  position: absolute;
-  top: 0;
-  left: 0;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -418,17 +415,11 @@
   border-radius: 15px;
   display: block;
   position: relative;
-  padding-top: 90%;
   overflow: hidden;
 }
 
 .img-center {
   display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
   -webkit-transform: translate(50%, 50%);
   -ms-transform: translate(50%, 50%);
   transform: translate(50%, 50%);

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+.scroll_wrap {
+	position: absolute;
+	top: 806px;
+	left: 50%;
+	width: 1200px;
+	margin-left: -600px;
+	z-index: 100;
+}
+
+#scroll_right.ban_fixed {
+    position: fixed;
+    top: 400px;
+    right: 50%;
+    margin-right: -800px;
+}
+
+#scroll_right .right_banner img {
+    margin: 0 0 15px 0;
+}
+
+.scroll_right_cont {
+    float: left;
+    min-width: 76px;
+    padding: 18px;
+    background: #f9f9f9;
+}
+
+.scroll_right_cont h4 {
+    padding: 0;
+    color: #666666;
+    text-align: center;
+}
+
+.scroll_right_cont .scr_paging {
+    width: 74px;
+    margin: 0 auto;
+    color: #939393;
+    text-align: center;
+}
+
+.scroll_right_cont .scr_paging span {
+    padding: 0 2px 0 2px;
+}
+
+.scroll_right_cont .scr_paging strong {
+    padding: 0 2px 0 2px;
+    color: #ab3e55;
+}
+
+#scroll_right .btn_scroll_top {
+    display: block;
+    padding: 10px 0 0 0;
+    clear: both;
+    text-align: center;
+}
