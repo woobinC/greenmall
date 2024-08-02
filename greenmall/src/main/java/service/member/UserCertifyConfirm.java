@@ -1,5 +1,7 @@
 package service.member;
 
+
+
 import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
@@ -77,7 +79,7 @@ public class UserCertifyConfirm implements CommandProcess {
 
     // 이메일 인증을 위한 Authenticator 클래스
     class MyAuth extends Authenticator {
-        javax.mail.PasswordAuthentication account;
+        PasswordAuthentication account;
 
         public MyAuth() {
             String id = "pcw614";

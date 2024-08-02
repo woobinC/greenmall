@@ -22,7 +22,7 @@
 			<div class="my_page">
 				<div class="join_base_wrap">
 					<div class="member_cont">
-						<form action="adminGoodsInsert.gw" method="post" enctype="multipart/form-data">
+						<form action="/greenmall/view/admin/adminGoodsInsert.gw" method="post" enctype="multipart/form-data">
 							<div class="base_info_box">
 								<h3>상품추가</h3>
 								<div class="base_info_sec">
@@ -75,8 +75,8 @@
 
 							<div class="btn_center_box">
 								<button type="button" class="btn_member_cancel"
-									onclick="location.href='/greenmall/view/admin/adminGoodsList'">취소</button>
-								<input type="submit" value="상품 수정"
+									onclick="location.href='/greenmall/view/admin/adminGoodsList.wb'">취소</button>
+								<input type="submit" value="상품 추가"
 									class="btn_comfirm js_btn_join">
 							</div>
 

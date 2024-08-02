@@ -246,16 +246,16 @@ color:#417517;
 									<!-- 앞에 보여줄께 있어 -->
 									<c:if test="${startPage > PAGE_PER_BLOCK }">
 										<button class="pageBtn prevBtn"
-											onclick="location.href='cmproductList.mk?pageNum=${startPage-1}'">◀</button>
+											onclick="location.href='goodsList.gw?pageNum=${startPage-1}'">◀</button>
 									</c:if>
 									<c:forEach var="i" begin="${startPage}" end="${endPage}">
 										<button class="pageBtn"
-											onclick="location.href='cmproductList.mk?pageNum=${i}'">${i}</button>
+											onclick="location.href='goodsList.gw?pageNum=${i}'">${i}</button>
 									</c:forEach>
 									<!-- 아직 보여줄께 남아있다 -->
 									<c:if test="${endPage < totalPage}">
 										<button class="pageBtn nextBtn"
-											onclick="location.href='cmproductList.mk?pageNum=${endPage+1}'">▶</button>
+											onclick="location.href='goodsList.gw?pageNum=${endPage+1}'">▶</button>
 									</c:if>
 								</div>
 				

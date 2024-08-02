@@ -12,7 +12,7 @@ public class AdminGoodsInsert implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		int result = 0;
-		String real = request.getServletContext().getRealPath("/upload");
+			String real = request.getServletContext().getRealPath("/images/goods");
 		int maxSize = 1024 * 1024 * 10; // 10M
 		try {
 			MultipartRequest mr = new MultipartRequest(request, real, maxSize, "utf-8", new DefaultFileRenamePolicy());
@@ -33,12 +33,13 @@ public class AdminGoodsInsert implements CommandProcess {
 			goods.setP_Sale(pSale);
 			goods.setP_Cnt(pCnt);
 			GoodsDao gd = GoodsDao.getInstance();
+			System.out.println("g1" + goods);
 			result = gd.insert(goods);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		request.setAttribute("result", result);
-		System.out.println("result = "+result);
+		System.out.println("result1 = "+result);
 		return "adminGoodsInsert";
 	}
 

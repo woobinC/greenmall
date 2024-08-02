@@ -267,3 +267,56 @@ insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_r
 values ('test14','test14','test14@test14.com','테스트14','01011111114','15514','경기도 안산시','신길동',sysdate);
 insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
 values ('test15','test15','test15@test15.com','테스트15','01011111115','15515','경기도 안산시','반월동',sysdate);
+
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);
+insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
+	'0.jpg', '1.jpg', 50, sysdate);

@@ -72,11 +72,6 @@
 						<button onclick="location.href='/greenmall/view/admin/adminMemberList.wb?pageNum=${endPage+1}'">다음</button>
 					</c:if>
 				</div>
-				<div class="add_goods">
-					<button class="add_goods_btn"
-						onclick="location.href='/greenmall/view/admin/adminGoodsAddForm.wb'">상품
-						추가</button>
-				</div>
 			</div>
 		</div>
 

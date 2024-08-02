@@ -21,7 +21,8 @@ public class GoodsDao {
 		public void on() {			
 			session.close();
 		}
-		public int insert(Goods goods) {			
+		public int insert(Goods goods) {	
+			System.out.println(goods);
 			return session.insert("goodsns.insert",goods);
 		}
 

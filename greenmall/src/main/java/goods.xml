@@ -31,8 +31,7 @@
 			select nvl(max(p_no), 0) + 1 pNo from goods
 		</selectKey>
 		insert into goods values
-		(#{p_No},#{c_Num},#{p_Name},#{p_Price},#{p_Sale},#{p_Img1},#{p_Img2},#{p_Cnt},sysdate
-		)
+		(#{p_No},#{c_Num},#{p_Name},#{p_Price},#{p_Sale},#{p_Img1},#{p_Img2},#{p_Cnt},sysdate)
 	</insert>
 
 

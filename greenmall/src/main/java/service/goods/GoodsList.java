@@ -19,7 +19,6 @@ public class GoodsList implements CommandProcess{
 		final int PAGE_PER_BLOCK = 10; // 한블록의 페이지 갯수
 		int c_Num = Integer.parseInt(request.getParameter("c_Num"));
 		String pageNum = request.getParameter("pageNum");
-		System.out.println("pageNum :" +pageNum);
 		if (pageNum == null || pageNum.equals("")) {
 			pageNum = "1";
 		}
@@ -45,9 +44,6 @@ public class GoodsList implements CommandProcess{
 		
 		List<Goods> list = gd.select_main1(startRow, endRow, c_Num);
 		
-//		String img = "/highbrix/images/cart.jpg";
-//		String fimg = "/highbrix/images/cart2.jpg";
-//		
 		request.setAttribute("num", num);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
@@ -57,11 +53,6 @@ public class GoodsList implements CommandProcess{
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("currentPage", currentPage);
 		
-		/*
-		 * request.setAttribute("img", img); request.setAttribute("fimg", fimg);
-		 */
-		System.out.println("list = "+ list);
-		System.out.println("size " + list.size());
 		return "goodsList";
 	}
 

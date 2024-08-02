@@ -19,7 +19,7 @@ public class CategoryDao {
 		return session.selectList("categoryns.list");
 	}
 	public Category select(int c_Num) {
-		return session.selectOne("categoryns.select", c_Num);
+		return (Category) session.selectOne("categoryns.select", c_Num);
 	}
 
 }

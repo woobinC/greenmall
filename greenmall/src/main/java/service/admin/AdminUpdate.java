@@ -17,7 +17,7 @@ public class AdminUpdate implements CommandProcess{
 	@Override
 		public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		Goods gs = new Goods();
-		String real = request.getServletContext().getRealPath("/upload");
+		String real = request.getServletContext().getRealPath("/images/goods");
 			int maxSize = 1024 * 1024 * 10; // 10M
 			try {
 				MultipartRequest mr = new MultipartRequest(request, real, maxSize, "utf-8", new DefaultFileRenamePolicy());

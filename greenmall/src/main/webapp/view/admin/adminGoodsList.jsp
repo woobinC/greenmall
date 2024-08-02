@@ -85,7 +85,7 @@
 					</c:if>
 					<c:forEach var="i" begin="${startPage }" end="${endPage }">
 						<button class="pageBtn"
-							onclick="location.href='adminCmProduct.ms?pageNum=${i}'">${i }</button>
+							onclick="location.href='adminGoodsList.wb?pageNum=${i}'">${i }</button>
 					</c:forEach>
 					<!-- 아직 보여줄게 남아있다 -->
 					<c:if test="${endPage < totalPage }">
