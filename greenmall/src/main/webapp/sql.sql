@@ -101,28 +101,15 @@ foreign key(c_Num) references category(c_Num)
 -- 상품(goods) 4 시퀀스
 create sequence goods_seq start with 1 increment by 1 maxvalue 9999;
 
--- 옵션(goodsOption) 5
-create table goodsOption (
-optionNum number primary key,			--옵션번호(PK)
-p_no number,							--상품 번호(FK)
-o_name VARCHAR2(20),					--옵션명
-o_price number,							--옵션가격
-o_sale number,							--옵션할인율
-o_cnt number,							--옵션갯수
-foreign key(p_no) references goods(p_no)
-);
-
 -- 주문상세(detailorder) 6
 create table detailorder (
 orderDetKey number primary key,       -- 상세주문 번호(PK)
 b_Num number,                    	  -- 주문 번호(FK)
 p_no number,                          -- 상품 번호(FK)
-optionNum number,					  -- 옵션번호(FK)
 price number,                         -- 가격
 d_cnt number,						  -- 개수
 foreign key(b_Num) references buy(b_Num),
-foreign key(p_no) references goods(p_no),
-foreign key(optionNum) references goodsOption(optionNum)
+foreign key(p_no) references goods(p_no)
 );
 -- 주문상세(detailorder) 6 시퀀스
 create sequence detailorder_seq start with 1 increment by 1 maxvalue 9999;
@@ -142,12 +129,10 @@ create sequence wish_seq start with 1 increment by 1 maxvalue 9999;
 create table basket (
 cartKey number primary key,       -- 장바구니 번호(PK)
 p_no number,                      -- 상품 번호(FK)
-optionNum number,				  -- 옵션번호(FK)
-m_id VARCHAR2(20),                -- 회원 번호(FK)
+cartId VARCHAR2(20),  			  -- 장바구니 ID
+c_price number,					  -- 가격
 c_cnt number,					  -- 수량
-foreign key(p_no) references goods(p_no),
-foreign key(m_id) references member(m_id),
-foreign key(optionNum) references goodsOption(optionNum)
+foreign key(p_no) references goods(p_no)
 );
 -- 장바구니(basket) 8 시퀀스
 create sequence basket_seq start with 1 increment by 1 maxvalue 9999;

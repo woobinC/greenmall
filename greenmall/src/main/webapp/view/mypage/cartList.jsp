@@ -25,8 +25,75 @@
 					</ol>
 				</div>
 				<div class="cart_content">
-					<form action="#">
-						<input type="hidden" name="cartno">
+					<form action="#" name="frmCart">
+						<input type="hidden" name="cartKey">
+						<input type="hidden" name="p_No">
+						<input type="hidden" name="cartId">
+						<input type="hidden" name="cPrice">
+						<input type="hidden" name="cCnt">
+						<div class="cart_cont_list">
+							<div class="order_table_type">
+								<table>
+									<colgroup>
+										<col style="width:3%">
+										<col>
+										<col style="width:5%">
+										<col style="width:10%">
+										<col style="width:13%">
+										<col style="width:10%">
+										<col style="width:10%">
+									</colgroup>
+									<thead>
+									<tr><th><div class="form_element">
+											<input type="checkbox" class="gd_select_all_goods" checked="checked">
+										</div></th>
+										<th>상품/옵션 정보</th>
+										<th>수량</th>
+										<th>상품금액</th>
+										<th>할인/적립</th>
+										<th>합계금액</th>
+										<th>배송비</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td class="td_chk"><div class="form_element">
+											<input type="checkbox" value="상품번호">
+										</div></td>
+										<td class="td_left"><div class="pick_add_cont">
+											<span class="pick_add_img">
+												<a href="#"><img src="/greenmall/images/0.jpg" width="40" class="middle"></a>
+											</span>
+											<div class="pick_add_info">
+												<em><a href="#">상품이름</a></em>
+											</div>
+										</div></td>
+										<td class="td_order_amount">
+											<div class="order_goods_num"><strong>1개</strong></div>
+										</td>
+										<td>
+											<strong class="order_sum_txt price">8,000원</strong>
+										</td>
+										<td class="td_benefit">
+											<ul class="benefit_list">
+												<li class="benefit_mileage">
+												<em>적립</em>
+												<span>상품
+												<strong>+400원</strong>
+												</span>
+											</ul>
+										</td>
+										<td>
+											<strong class="order_sum_txt">8,000원</strong>
+										</td>
+										<td class="td_delivery">
+											배송비무료
+										</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 						<p class="no_data">장바구니에 담겨있는 상품이 없습니다.</p>
 					</form>
 					<div class="btn_left_box">
@@ -64,6 +131,15 @@
 								id="totalGoodsMileage">0</span>원
 							</em>
 						</div>
+					</div>
+					<div class="btn_order_box">
+						<span class="btn_left_box">
+							<button class="btn_order_choice_del">선택 상품 삭제</button>
+						</span>
+						<span class="btn_right_box">
+							<button class="btn_order_choice_buy" onclick="location.href='/greenmall/view/buy/orderForm.wb'">선택 상품 주문</button>
+							<button class="btn_order_whole_buy" onclick="location.href='/greenmall/view/buy/orderForm.wb'">전체 상품 주문</button>
+						</span>
 					</div>
 				</div>
 			</div>
