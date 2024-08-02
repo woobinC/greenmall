@@ -21,6 +21,7 @@
 		<typeAlias alias="review" type="dto.Review" />
 		<typeAlias alias="wish" type="dto.Wish" />
 		<typeAlias alias="member" type="dto.Member" />
+		<typeAlias alias="findMember" type="dto.FindMember" />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">

@@ -21,8 +21,22 @@
 		<result property="compAddr" column="comp_addr" jdbcType="VARCHAR"/>
 		<result property="compAddrDe" column="comp_addrDe" jdbcType="VARCHAR"/>
 	</resultMap>
-	<select id="select" parameterType="String" resultType="member" resultMap="memberResultMap">
+	<select id="select" parameterType="string" resultType="member" resultMap="memberResultMap">
 		select * from member where m_id = #{mId,jdbcType=VARCHAR}
+	</select>
+	 <select id="selectEmail" parameterType="findMember" resultMap="memberResultMap">
+        select * from member where m_name = #{mName} and m_email = #{mEmail}
+    </select>
+    <select id="selectTel" parameterType="findMember" resultMap="memberResultMap">
+        select * from member where m_name = #{mName} and m_tel = #{mTel}
+    </select>
+    <select id="getTotal" resultType="integer">
+		select count(*) from member
+	</select>
+	<select id="list" parameterType="map" resultMap="memberResultMap">
+		select * from (select rowNum rn, a.* from
+				(select * from member order by m_rdate desc)a) 
+				where rn between #{startRow} and #{endRow}
 	</select>
 	<insert id="insert" parameterType="member">
 		insert into member values
@@ -37,4 +51,10 @@
 	<update id="delete" parameterType="string">
 		update member set m_del='y' where m_id=#{mId,jdbcType=VARCHAR}
 	</update>
+	<update id="updatePw" parameterType="member">
+		update member set m_pw=#{mPw,jdbcType=VARCHAR} where m_id=#{mId,jdbcType=VARCHAR}
+	</update>
+	<delete id="deleteMember" parameterType="string" >
+		delete from member where m_id = #{mid}
+	</delete>
 </mapper>

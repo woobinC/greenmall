@@ -29,8 +29,6 @@ public class Change implements CommandProcess {
 		member.setmPostCode(mPostCode);
 		member.setmAddr(mAddr);
 		member.setmAddrDe(mAddrDe);
-		System.out.println(mName);
-		System.out.println(member);
 		int result = 0;
 		MemberDao md = MemberDao.getInstance();
 		Member member2 = md.select(mId);

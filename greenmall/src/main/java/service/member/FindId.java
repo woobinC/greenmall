@@ -9,7 +9,7 @@ public class FindId implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "find_id";
+		return "findId";
 	}
 
 }

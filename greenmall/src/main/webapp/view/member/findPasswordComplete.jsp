@@ -13,7 +13,7 @@
         <div class="location_wrap">
             <div class="location_cont">
                 <em>
-                    <a href="#">Home</a>> 비밀번호 새로 등록
+                    <a href="/greenmall/view/display/main.wb">Home</a>> 비밀번호 새로 등록
                 </em>
             </div>
         </div>
@@ -27,7 +27,7 @@
                         <p>비밀번호가 정상적으로 변경되었습니다.</p>
                     </div>
                     <div class="btn_center">
-                        <button type="button" id="btn_confirm" class="btn_next">로그인</button>
+                        <button type="button" id="btn_confirm" class="btn_next" onclick="location.href='/greenmall/view/member/loginForm.wb'">로그인</button>
                     </div>
                 </div>
             </div>

@@ -236,4 +236,17 @@ public class Member {
 				+ ", compAddrDe=" + compAddrDe + "]";
 	}
 	
+	public String getMaskedEmail() {
+        if (mEmail == null || mEmail.isEmpty()) {
+            return "";
+        }
+        int atPosition = mEmail.indexOf('@');
+        if (atPosition <= 1) {
+            return mEmail; // email이 너무 짧아서 마스킹할 수 없는 경우
+        }
+        String domain = mEmail.substring(atPosition);
+        String localPart = mEmail.substring(0, atPosition);
+        String maskedLocalPart = localPart.charAt(0) + "***" + localPart.charAt(localPart.length() - 1);
+        return maskedLocalPart + domain;
+    }
 }

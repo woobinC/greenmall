@@ -34,6 +34,11 @@ drop table category;
 drop table buy;
 drop table member;
 
+select * from member;
+select * from member where m_id = 'qwe';
+select * from member where m_name = 'test2' and m_email = 'test2@test2.com';
+
+
 -- 회원(member) 1
 create table member (
 m_id VARCHAR2(20) primary key,   	 	-- 회원 번호(PK)
@@ -229,3 +234,36 @@ insert into category values('502', '환/분말/차');
 insert into category values('503', '꿀');
 insert into category values('504', '반찬류/간식류');
 insert into category values('505', '기타');
+
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test','test','test@test.com','테스트','01011111100','15500','경기도 안산시','고잔동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test1','test1','test1@test1.com','테스트1','01011111101','15501','경기도 안산시','사동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test2','test2','test@test2.com','테스트2','01011111102','15502','경기도 안산시','이동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test3','test3','test@test3.com','테스트3','01011111103','15503','경기도 안산시','일동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test4','test4','test4@test4.com','테스트4','01011111104','15504','경기도 안산시','와동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test5','test5','test5@test5.com','테스트5','01011111105','15505','경기도 안산시','선부동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test6','test6','test6@test6.com','테스트6','01011111106','15506','경기도 안산시','본오동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test7','test7','test7@test7.com','테스트7','01011111107','15507','경기도 안산시','월피동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test8','test8','test8@test8.com','테스트8','01011111108','15508','경기도 안산시','성포동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test9','test9','test9@test9.com','테스트9','01011111109','15509','경기도 안산시','원곡동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test10','test10','test10@test.com10','테스트10','01011111110','15510','경기도 안산시','사이동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test11','test11','test11@test11.com','테스트11','01011111111','15511','경기도 안산시','해양동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test12','test12','test12@test12.com','테스트12','01011111112','15512','경기도 안산시','부곡동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test13','test13','test13@test13.com','테스트13','01011111113','15513','경기도 안산시','호수동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test14','test14','test14@test14.com','테스트14','01011111114','15514','경기도 안산시','신길동',sysdate);
+insert into member(m_id,m_pw,m_email,m_name,m_tel,m_postCode,m_addr,m_addrDe,m_rdate) 
+values ('test15','test15','test15@test15.com','테스트15','01011111115','15515','경기도 안산시','반월동',sysdate);

@@ -5,11 +5,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.CommandProcess;
 
-public class FindPassword implements CommandProcess {
+public class FindPasswordReset implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "findPassword";
+		String mId = request.getParameter("mId");
+		request.setAttribute("mId", mId);
+		return "findPasswordReset";
 	}
 
 }

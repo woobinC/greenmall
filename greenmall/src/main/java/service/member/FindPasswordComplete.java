@@ -5,11 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.CommandProcess;
 
-public class FindPassword implements CommandProcess {
+public class FindPasswordComplete implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-		return "findPassword";
+		return "findPasswordComplete";
 	}
 
 }
