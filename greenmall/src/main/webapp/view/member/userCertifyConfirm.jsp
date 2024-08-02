@@ -68,6 +68,7 @@
                 </div>
                 <div class="member_cont">
                     <form action="/greenmall/view/member/authAction.wb" class="formAuth" id="formAuth">
+                    	<input type="hidden" name="mId" id="mId" value="${mId}">
                         <div class="find_password_box">
                                 <h3>인증번호 입력</h3>
                                 <p>수신된 이메일의 인증번호를 입력해주세요.</p>

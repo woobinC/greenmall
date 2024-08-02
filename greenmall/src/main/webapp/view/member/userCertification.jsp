@@ -24,7 +24,8 @@
                 </div>
                 <div class="member_cont">
                     <div class="user_certify_box">
-                        <form action="/greenmall/view/member/userCertificationConfirm.wb" class="formAuth" id="formAuth" method="post">
+                        <form action="/greenmall/view/member/userCertifyConfirm.wb" class="formAuth" id="formAuth" method="post">
+                        	<input type="hidden" name="mId" id="mId" value="${mId}">
                             <div class="user_certify_title">
                                 <h3>인증수단 선택</h3>
                                 <p>본인인증 방법을 선택해주세요.</p>

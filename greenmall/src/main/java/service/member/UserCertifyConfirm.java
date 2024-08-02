@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.CommandProcess;
 
-public class UserCertificationConfirm implements CommandProcess {
+public class UserCertifyConfirm implements CommandProcess {
 
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) {
@@ -28,6 +28,7 @@ public class UserCertificationConfirm implements CommandProcess {
         p.put("mail.smtp.ssl.protocols", "TLSv1.2");
 
         String mEmail = request.getParameter("mEmail");
+        String mId = request.getParameter("mId");
         String myEmail = "pcw614@naver.com";
 
         // 이메일 인증을 위한 인증 객체 생성
@@ -51,6 +52,7 @@ public class UserCertificationConfirm implements CommandProcess {
 
             javax.mail.Transport.send(mm);
             request.setAttribute("msg", "전송 성공");
+            request.setAttribute("mId", mId);
             request.getSession().setAttribute("authCode", authCode); // 인증 코드를 세션에 저장
         } catch (Exception e) {
             e.printStackTrace();

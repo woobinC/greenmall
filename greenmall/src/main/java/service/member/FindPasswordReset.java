@@ -9,6 +9,8 @@ public class FindPasswordReset implements CommandProcess {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		String mId = request.getParameter("mId");
+		request.setAttribute("mId", mId);
 		return "findPasswordReset";
 	}
 

@@ -28,7 +28,7 @@ public class UserCertification implements CommandProcess {
 		}else {
 			result = 1;
 			request.setAttribute("member", member);
-			request.getSession().setAttribute("mId", mId);
+			request.setAttribute("mId", mId);
 			return "userCertification";
 		}
 	}

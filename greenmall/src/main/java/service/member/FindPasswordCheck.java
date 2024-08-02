@@ -12,7 +12,7 @@ public class FindPasswordCheck implements CommandProcess {
     @Override
     public String requestPro(HttpServletRequest request, HttpServletResponse response) {
         String mPw = request.getParameter("mPw");
-        String mId = (String) request.getSession().getAttribute("mId");
+        String mId = request.getParameter("mId");
         if (mId != null) {
             MemberDao md = MemberDao.getInstance();
             Member member = new Member(); 
@@ -22,7 +22,6 @@ public class FindPasswordCheck implements CommandProcess {
             int result = md.updatePw(member);
             request.setAttribute("result", result);
             
-            request.getSession().removeAttribute("mId");
         } else {
             request.setAttribute("result", -1); 
         }

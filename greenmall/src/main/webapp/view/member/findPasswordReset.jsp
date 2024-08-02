@@ -35,6 +35,7 @@ const chk = () => {
                 </div>
                 <div class="member_cont">
                     <form action="/greenmall/view/member/findPasswordCheck.wb" class="formReset" id="formReset" method="post">
+                    	<input type="hidden" name="mId" id="mId" value="${mId}">
                         <div class="find_password_reset_box">
                             <h3>비밀번호 변경</h3>
                             <p>새로운 비밀번호를 입력해주세요. </p>
