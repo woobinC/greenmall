@@ -134,10 +134,11 @@ create sequence wish_seq start with 1 increment by 1 maxvalue 9999;
 create table basket (
 cartKey number primary key,       -- 장바구니 번호(PK)
 p_no number,                      -- 상품 번호(FK)
-cartId VARCHAR2(20),  			  -- 장바구니 ID
+m_id VARCHAR2(20),  			  -- 회원 ID
 c_price number,					  -- 가격
 c_cnt number,					  -- 수량
-foreign key(p_no) references goods(p_no)
+foreign key(p_no) references goods(p_no),
+foreign key(m_id) references member(m_id)
 );
 -- 장바구니(basket) 8 시퀀스
 create sequence basket_seq start with 1 increment by 1 maxvalue 9999;
@@ -213,6 +214,7 @@ select * from buy;
 select * from admin;
 select * from category;
 select * from goods;
+select * from basket;
 select * from member where m_id = 'qwe';
 
 insert into admin values('master', '1234');

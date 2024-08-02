@@ -13,14 +13,14 @@ public class CartList implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession();
-		if (session.getAttribute("mId") == null) {
-			return "notSession";
-		} else {
-			String mId = (String) session.getAttribute("mId");
-			MemberDao md = MemberDao.getInstance();
-			Member member = md.select(mId);
-			request.setAttribute("member", member);
-			return "cartList";
-		}
+		
+		String mId = (String) session.getAttribute("mId");
+		MemberDao md = MemberDao.getInstance();
+		Member member = md.select(mId);
+		request.setAttribute("member", member);
+		
+		
+		
+		return "cartList";
 	}
 }

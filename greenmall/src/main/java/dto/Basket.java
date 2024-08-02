@@ -3,10 +3,9 @@ package dto;
 public class Basket {
 	private int cartKey;
 	private int pNo;
-	private int optionNum;
 	private String mId;
+	private	int cPrice; 
 	private int cCnt;
-	
 	
 	public int getCartKey() {
 		return cartKey;
@@ -20,12 +19,6 @@ public class Basket {
 	public void setpNo(int pNo) {
 		this.pNo = pNo;
 	}
-	public int getOptionNum() {
-		return optionNum;
-	}
-	public void setOptionNum(int optionNum) {
-		this.optionNum = optionNum;
-	}
 	public String getmId() {
 		return mId;
 	}
@@ -37,6 +30,19 @@ public class Basket {
 	}
 	public void setcCnt(int cCnt) {
 		this.cCnt = cCnt;
+	}
+	public int getcPrice() {
+		return cPrice;
+	}
+	public void setcPrice(int cPrice) {
+		this.cPrice = cPrice;
+	}
+	@Override
+	public String toString() {
+		return "Basket [cartKey=" + cartKey + ", pNo=" + pNo + ", mId=" + mId + ", cPrice=" + cPrice + ", cCnt=" + cCnt
+				+ ", getCartKey()=" + getCartKey() + ", getpNo()=" + getpNo() + ", getmId()=" + getmId()
+				+ ", getcCnt()=" + getcCnt() + ", getcPrice()=" + getcPrice() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
 }

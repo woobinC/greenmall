@@ -40,6 +40,7 @@
 		<mapper resource="category.xml" />
 		<mapper resource="member.xml" />
 		<mapper resource="memberAddress.xml" />
+		<mapper resource="basket.xml" />
 	</mappers>
 </configuration>
 
