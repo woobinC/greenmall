@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -95,43 +96,9 @@ a {
 									</div>
 								</div>
 								<div class="col-md-6">
-									<form name="frmView" id="frmView" method="post">
-										<input type="hidden" name="mode" value="cartIn"> <input
-											type="hidden" name="scmNo" value="1"> <input
-											type="hidden" name="cartMode" value=""> <input
-											type="hidden" name="set_goods_price" value="16500"> <input
-											type="hidden" id="set_goods_fixedPrice"
-											name="set_goods_fixedPrice" value="25000.00"> <input
-											type="hidden" name="set_goods_mileage" value="0"> <input
-											type="hidden" name="set_goods_stock" value="∞"> <input
-											type="hidden" name="set_coupon_dc_price" value="16500.00">
-										<input type="hidden" id="set_goods_total_price"
-											name="set_goods_total_price" value="0"> <input
-											type="hidden" id="set_option_price" name="set_option_price"
-											value="0"> <input type="hidden"
-											id="set_option_text_price" name="set_option_text_price"
-											value="0"> <input type="hidden"
-											id="set_add_goods_price" name="set_add_goods_price" value="0">
-										<input type="hidden" name="set_total_price" value="16500">
-										<input type="hidden" name="mileageFl" value="c"> <input
-											type="hidden" name="mileageGoods" value="0.00"> <input
-											type="hidden" name="mileageGoodsUnit" value="percent">
-										<input type="hidden" name="goodsDiscountFl" value="n">
-										<input type="hidden" name="goodsDiscount" value="0.00">
-										<input type="hidden" name="goodsDiscountUnit" value="percent">
-										<input type="hidden" name="taxFreeFl" value="f"> <input
-											type="hidden" name="taxPercent" value="10.0"> <input
-											type="hidden" name="scmNo" value="1"> <input
-											type="hidden" name="brandCd" value=""> <input
-											type="hidden" name="cateCd" value="001001"> <input
-											type="hidden" id="set_dc_price" value="0"> <input
-											type="hidden" id="goodsOptionCnt" value="1"> <input
-											type="hidden" name="optionFl" value="n"> <input
-											type="hidden" name="goodsDeliveryFl" value="y"> <input
-											type="hidden" name="sameGoodsDeliveryFl" value="n"> <input
-											type="hidden" name="useBundleGoods" value="1"> <input
-											type="hidden" name="ac_id" value=""> <input
-											type="hidden" name="event_id" value="">
+									<form action="/greenmall/view/mypage/cartList.wb" name="frmView" id="frmView" method="post">
+										<input type="hidden" name="p_No" value="${goods.p_No}"> 
+										<input type="hidden" name="salePrice" value="${salePrice}">
 
 										<div class="item_info_box">
 											<h3>${goods.p_Name}</h3>
@@ -180,7 +147,7 @@ a {
 														<tr>
 															<td>${goods.p_Name}</td>
 															<td><input type="number" id="quantity"
-																name="goodsCnt()" class="form-control" value="1" min="1">
+																name="p_Cnt" class="form-control" value="1" min="1">
 															</td>
 															<td id="totalPrice">${goods.p_Price - goods.p_Cnt * goods.p_Price / 100}원</td>
 														</tr>
@@ -210,7 +177,7 @@ a {
 											<div class="btn_choice_box mb-3">
 												<button id="btn_add_cart" type="button"
 													class="btn btn-primary me-2" data-bs-toggle="modal"
-													data-bs-target="#addCartLayer">장바구니</button>
+													data-bs-target="#addCartLayer" onclick="addCart()">장바구니</button>
 												<button id="btn_add_wish" type="button"
 													class="btn btn-secondary me-2" data-bs-toggle="modal"
 													data-bs-target="#addWishLayer">찜하기</button>
@@ -482,7 +449,7 @@ a {
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary"
 												data-bs-dismiss="modal">취소</button>
-											<button type="button" class="btn btn-primary btn_move_cart">확인</button>
+											<button type="button" class="btn btn-primary btn_move_cart" onclick="moveCart()">확인</button>
 										</div>
 									</div>
 								</div>
@@ -580,6 +547,7 @@ a {
 				});
 
 		document.addEventListener('click', function(event) {
+
 			if (!event.target.closest('.location_select')) {
 				document.querySelectorAll('.location_select ul').forEach(
 						function(ul) {
@@ -587,6 +555,29 @@ a {
 						});
 			}
 		});
+		function addCart() {
+			var form1 = $("#frmView").serialize();
+
+            console.log(form1);
+            $.ajax({
+                type: "post",
+                url: "/greenmall/AddCart",
+                data: form1,
+                dataType: 'json',
+                success: function (data) {
+                    alert("success");
+                    console.log(data);
+                },
+                error: function (request, status, error) {
+                    console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+
+                }
+            });
+		}
+		
+		function moveCart(){
+			location.href="/greenmall/view/mypage/cartList.wb";
+		}
 	</script>
 </body>
 </html>

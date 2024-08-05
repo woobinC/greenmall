@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <!DOCTYPE html>
 <html>
 <head> 
@@ -25,12 +26,8 @@
 					</ol>
 				</div>
 				<div class="cart_content">
-					<form action="#" name="frmCart">
-						<input type="hidden" name="cartKey">
-						<input type="hidden" name="p_No">
-						<input type="hidden" name="cartId">
-						<input type="hidden" name="cPrice">
-						<input type="hidden" name="cCnt">
+					<form action="orderForm" name="frmCart">
+						<input type="hidden" name="list" value="${list }">
 						<div class="cart_cont_list">
 							<div class="order_table_type">
 								<table>
@@ -56,45 +53,51 @@
 									</tr>
 									</thead>
 									<tbody>
+									<c:if test="${not empty list }">
+									<c:forEach var="basket" items="${list}">
 									<tr>
 										<td class="td_chk"><div class="form_element">
 											<input type="checkbox" value="상품번호">
 										</div></td>
 										<td class="td_left"><div class="pick_add_cont">
 											<span class="pick_add_img">
-												<a href="#"><img src="/greenmall/images/0.jpg" width="40" class="middle"></a>
+												<a href="#"><img src="/greenmall/images/${basket.pImg1}" width="40" class="middle"></a>
 											</span>
 											<div class="pick_add_info">
-												<em><a href="#">상품이름</a></em>
+												<em><a href="#">${basket.pName }</a></em>
 											</div>
 										</div></td>
 										<td class="td_order_amount">
-											<div class="order_goods_num"><strong>1개</strong></div>
+											<div class="order_goods_num"><strong>${basket.cCnt }개</strong></div>
 										</td>
 										<td>
-											<strong class="order_sum_txt price">8,000원</strong>
+											<strong class="order_sum_txt price">${basket.cPrice }원</strong>
 										</td>
 										<td class="td_benefit">
 											<ul class="benefit_list">
 												<li class="benefit_mileage">
 												<em>적립</em>
 												<span>상품
-												<strong>+400원</strong>
+												<strong>+${basket.cCnt * basket.cPrice * 0.05 }원</strong>
 												</span>
 											</ul>
 										</td>
 										<td>
-											<strong class="order_sum_txt">8,000원</strong>
+											<strong class="order_sum_txt">${basket.cCnt * basket.cPrice }원</strong>
 										</td>
 										<td class="td_delivery">
 											배송비무료
 										</td>
 									</tr>
+									</c:forEach>
+									</c:if>
 									</tbody>
 								</table>
 							</div>
 						</div>
-						<p class="no_data">장바구니에 담겨있는 상품이 없습니다.</p>
+						<c:if test="${empty list }">
+							<p class="no_data">장바구니에 담겨있는 상품이 없습니다.</p>
+						</c:if>
 					</form>
 					<div class="btn_left_box">
 						<a href="/greenmall/view/display/main.wb" class="shop_go_link"><em>&lt; 쇼핑 계속하기</em></a>
@@ -104,10 +107,10 @@
 							<div class="price_sum_list">
 								<dl>
 									<dt>
-										총<strong id="totalGoodsCnt">0</strong>개의 상품금액
+										총<strong id="totalGoodsCnt">${totalGoodsCnt }</strong>개의 상품금액
 									</dt>
 									<dd>
-										<strong id="totalGoodsPrice">0</strong>원
+										<strong id="totalGoodsPrice">${totalGoodsPrice }</strong>원
 									</dd>
 								</dl>
 								<span><img src="/greenmall/images/member/order_price_plus.png"
@@ -123,12 +126,12 @@
 								<dl class="price_total">
 									<dt>합계</dt>
 									<dd>
-										<strong id="totalSettlePrice">0</strong>원
+										<strong id="totalSettlePrice">${totalGoodsCnt * totalGoodsPrice}</strong>원
 									</dd>
 								</dl>
 							</div>
 							<em class="tobe_mileage"> 적립예정 마일리지 : <span
-								id="totalGoodsMileage">0</span>원
+								id="totalGoodsMileage">${totalGoodsCnt * totalGoodsPrice * 0.05 }</span>원
 							</em>
 						</div>
 					</div>
