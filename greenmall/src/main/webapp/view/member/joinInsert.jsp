@@ -56,8 +56,18 @@ function emailSelect(selectEmail){
 	document.frm.mEmail.value  = selectEmail.value;
 }
 function confirmNext() {
+	 const expIdText =/^[a-z]+[a-z0-9]{5,19}$/g;
+     const expPwText = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+     const expNameText= /^[가-힣]+$/; // + 반복
+     const expEmailText = /^[A-Za-z-0-9\-\.]+@[A-Ja-z-0-9\-\.]+\.[A-Ja-z-0-9]+$/;
 	 let isValid = true;
 	if($('input[id="mId"]').val().length == 0){ // if( $('#id').val() == "" ) 도 가능
+		$("#memId_error").show();
+		$('input[id="mId"]').css("border","1px solid #ab3e55");
+		isValid = false;
+	}
+	if(!expIdText.test($('input[id="mId"]').val())){
+		$("#memId_error").text('아이디는 4자 이상 20자 이하의 대소문자로 시작하는 조합입니다');
 		$("#memId_error").show();
 		$('input[id="mId"]').css("border","1px solid #ab3e55");
 		isValid = false;
@@ -67,7 +77,12 @@ function confirmNext() {
 		$('input[id="mName"]').css("border","1px solid #ab3e55");
 		isValid = false;
 	}
-	
+	if(!expNameText.test($('input[id="mName"]').val())){
+		$("#memNm_error").text('이름은 한글로 입력해주세요');
+		$("#memNm_error").show();
+		$('input[id="mName"]').css("border","1px solid #ab3e55");
+		isValid = false;
+	}
 	if($('input[id="mPw"]').val().length == 0){ // if( $('#id').val() == "" ) 도 가능
 		$("#memPw_error").show();
 		$('input[id="mPw"]').css("border","1px solid #ab3e55");
@@ -78,7 +93,19 @@ function confirmNext() {
 		$('input[id="confirmPw"]').css("border","1px solid #ab3e55");
 		isValid = false;
 	}
+	if(!expPwText.test($('input[id="mPw"]').val())){
+		$("#memPw_error").text('영문 대문자와 특수문자, 숫자를 포함하여 8자 이상 입력해주세요.');
+		$("#memPw_error").show();
+		$('input[id="mPw"]').css("border","1px solid #ab3e55");
+		isValid = false;
+	}
 	if($('input[id="mEmail"]').val().length == 0){ // if( $('#id').val() == "" ) 도 가능
+		$("#memEmail_error").show();
+		$('input[id="mEmail"]').css("border","1px solid #ab3e55");
+		isValid = false;
+	}
+	if(!expEmailText.test($('input[id="mEmail"]').val())){
+		$("#memEmail_error").text('이메일 형식에 맞게 입력해주세요.');
 		$("#memEmail_error").show();
 		$('input[id="mEmail"]').css("border","1px solid #ab3e55");
 		isValid = false;
@@ -96,11 +123,7 @@ function confirmNext() {
 		return false;
 	}
 	
-	/* if( $('input[name="email"]').val().indexOf('@') == -1 ){      // indexOf 사용
-		alert('이메일 형식이 아닙니다.');
-		$('input[name="email"]').select();
-		return false;
-	} */
+	
 	 if (!isValid) {
 	        return false;
 	    }
@@ -146,42 +169,6 @@ function confirmNext() {
 	            }
 	        }).open();
 	    }
-	    function execDaumPostcodeComp() {
-	        new daum.Postcode({
-	            oncomplete: function(data) {
-	                // 팝업을 통한 검색 결과 항목 클릭 시 실행
-	                var addr = ''; // 주소_결과값이 없을 경우 공백 
-	                var extraAddr = ''; // 참고항목
-	
-	                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
-	                if (data.userSelectedType === 'R') { // 도로명 주소를 선택
-	                    addr = data.roadAddress;
-	                } else { // 지번 주소를 선택
-	                    addr = data.jibunAddress;
-	                }
-	
-	                if(data.userSelectedType === 'R'){
-	                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-	                        extraAddr += data.bname;
-	                    }
-	                    if(data.buildingName !== '' && data.apartment === 'Y'){
-	                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-	                    }
-	                    if(extraAddr !== ''){
-	                        extraAddr = ' (' + extraAddr + ')';
-	                    }
-	                } else {
-	                    document.getElementById("compAddr").value = '';
-	                }
-	
-	                // 선택된 우편번호와 주소 정보를 input 박스에 넣는다.
-	                document.getElementById('compPostCode').value = data.zonecode;
-	                document.getElementById("compAddr").value = addr;
-	                document.getElementById("compAddr").value += extraAddr;
-	                document.getElementById("compAddrde").focus(); // 우편번호 + 주소 입력이 완료되었음으로 상세주소로 포커스 이동
-	            }
-	        }).open();
-	    }
 	</script>
 <style type="text/css">
 	#memId_error, #memPw_error, #memPwCf_error, #memNm_error, #memEmail_error{
@@ -195,7 +182,7 @@ function confirmNext() {
         <div class="location_wrap">
             <div class="location_cont">
                 <em>
-                    <a href="../display/main.wb">Home</a>> 회원가입 > 정보입력
+                    <a href="/greenmall/view/display/main.wb">Home</a>> 회원가입 > 정보입력
                 </em>
             </div>
         </div>
@@ -214,7 +201,7 @@ function confirmNext() {
                     </ol>
                 </div>
                 <div class="member_cont">
-                    <form action="joinAction.wb" class="form_join" method="post" name="frm">
+                    <form action="joinAction.wb" class="form_join" method="post" name="frm" onsubmit="return confirmNext()">
                         <div class="join_type">
                             <h3>가입 종류</h3>
                             <div class="type_select">
@@ -224,10 +211,7 @@ function confirmNext() {
                                             <input type="radio" id="customer" class="radio_btn" value="customer">
                                             <label for="customer" class="choise_on">개인회원</label>
                                         </li>
-                                        <li>
-                                            <input type="radio" id="business" class="radio_btn" value="business">
-                                            <label for="business" class="choise">사업자회원</label>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -336,66 +320,9 @@ function confirmNext() {
                                 </table>
                             </div>
                         </div>
-                        <div class="business_info_box" style="display: none">
-                            <h3>사업자 정보</h3>
-                            <div class="business_info_sec">
-                                <table cellspacing="0" cellpadding="0" border="0">
-                                    <colgroup>
-                                        <col width="25%">
-                                        <col width="75%">
-                                    </colgroup>
-                                    <tbody>
-                                        <tr>
-                                            <th><span class="important">상호</span></th>
-                                            <td>
-                                                <div class="member_warning">
-                                                    <input type="text" name="company" id="company" maxlength="50">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><span class="important">사업자 번호</span></th>
-                                            <td>
-                                                <div class="member_warning">
-                                                    <input type="text" name="busiNo" id="busiNo" maxlength="10"
-                                                        placeholder="-없이 입력하세요.">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><span class="important">대표자명</span></th>
-                                            <td>
-                                                <div class="member_warning">
-                                                    <input type="text" name="ceo" id="ceo" maxlength="20">
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th><span class="important">주소</span></th>
-                                            <td class="member_address">
-                                                <div class="address_postcode">
-                                                    <div class="member_warning">
-                                                        <input type="text" name="comZipCode" id="comZipCode">
-                                                        <button type="submit" id="btn_code" class="btn_post" onclick="execDaumPostcodeComp()">우편번호검색</button>
-                                                    </div>
-                                                </div>
-                                                <div class="address_input">
-                                                    <div class="member_warning">
-                                                        <input type="text" name="comAddress" id="comAddress">
-                                                    </div>
-                                                    <div class="member_warning">
-                                                        <input type="text" name="comAddressSub" id="comAddressSub">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                         <div class="btn_center">
-                            <button type="button" id="btnPrev" class="btn_prev">취소</button>
-                            <button type="submit" id="btnNext" class="btn_next" onclick="confirmNext()">회원가입</button>
+                            <button type="button" id="btnPrev" class="btn_prev" onclick="location.href='/greenmall/view/member/joinAgree.wb'">취소</button>
+                            <button type="submit" id="btnNext" class="btn_next">회원가입</button>
                         </div>
                     </form>
                 </div>

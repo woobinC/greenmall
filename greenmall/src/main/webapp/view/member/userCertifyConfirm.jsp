@@ -57,7 +57,7 @@
         <div class="location_wrap">
             <div class="location_cont">
                 <em>
-                    <a href="#">Home</a>> 본인인증 인증번호 확인
+                    <a href="/greenmall/view/display/main.wb">Home</a>> 본인인증 인증번호 확인
                 </em>
             </div>
         </div>
@@ -87,7 +87,7 @@
                             <div class="btn_center">
                                 <ul>
                                     <li>
-                                        <button type="button" id="btnCancle" class="btn_prev">이전</button>
+                                        <button type="button" id="btnCancle" class="btn_prev" onclick="location.href='/greenmall/view/member/userCertification.wb'">이전</button>
                                         <button type="submit" class="btn_next">다음</button>
                                     </li>
                                 </ul>

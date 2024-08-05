@@ -29,7 +29,7 @@
 	<div class="loginForm">
 		<div class="location_wrap">
 			<div class="location_cont">
-				<em> <a href="../display/main.wb">Home</a>> 로그인
+				<em> <a href="/greenmall/view/display/main.wb">Home</a>> 로그인
 				</em>
 			</div>
 		</div>
@@ -74,20 +74,6 @@
 										onclick="location.href='/greenmall/view/member/findPassword.wb'">비밀번호 찾기</button>
 								</li>
 							</ul>
-						</div>
-					</form>
-					<form action="" class="order_form" style="display: none">
-						<div class="non_member">
-							<h3>비회원 주문조회</h3>
-							<div class="order_input">
-								<div>
-									<input type="text" id="orderNm" name="orderNm"
-										placeholder="주문자명"> <input type="text" id="orderNo"
-										name="orderNo" placeholder="주문번호">
-								</div>
-								<button type="submit">확인</button>
-							</div>
-							<p>주문번호, 비밀번호를 잊으신 경우 고객센터로 문의 주시기 바랍니다.</p>
 						</div>
 					</form>
 				</div>

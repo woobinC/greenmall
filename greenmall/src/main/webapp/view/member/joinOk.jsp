@@ -14,7 +14,7 @@
         <div class="location_wrap">
             <div class="location_cont">
                 <em>
-                    <a href="../display/main.wb">Home</a>> 회원가입 > 가입완료
+                    <a href="/greenmall/view/display/main.wb">Home</a>> 회원가입 > 가입완료
                 </em>
             </div>
         </div>

@@ -32,12 +32,14 @@ const checked_box = () =>{
 	let checkbox2 = $("#agree_box2");
 	if(!checkbox1.prop("checked") && !checkbox2.prop("checked")){
 		$(".important_check strong:first").show();
+		return false;
 	}else if(!checkbox1.prop("checked")){
 		$(".important_check strong:first").show();
+		return false;
 	}else if(!checkbox2.prop("checked")){
 		$(".important_check strong:last").show();
-	}else
-	location.href="joinInsert.wb"
+		return false;
+	}
 };
 	
 const strong_none = () =>{
@@ -58,7 +60,7 @@ const strong_none = () =>{
         <div class="location_wrap">
             <div class="location_cont">
                 <em>
-                    <a href="../display/main.wb">Home</a>> 회원가입 > 약관동의
+                    <a href="/greenmall/view/display/main.wb">Home</a>> 회원가입 > 약관동의
                 </em>
             </div>
         </div>
@@ -77,7 +79,7 @@ const strong_none = () =>{
                     </ol>
                 </div>
                 <div class="member_cont">
-                    <form action="#" id="formAgree" name="formAgree" method="post">
+                    <form action="/greenmall/view/member/joinInsert.wb" id="formAgree" name="formAgree" method="post">
                         <h3>약관동의</h3>
                         <div class="join_agree_cont">
                             <div class="join_agree_box">
@@ -558,8 +560,8 @@ const strong_none = () =>{
                             </div>
                         </div>
                         <div class="btn_center">
-                            <button type="button" id="btnPrev" class="btn_prev">이전단계</button>
-                            <button type="button" id="btnNext" class="btn_next" onclick="checked_box()">다음단계</button>
+                            <button type="button" id="btnPrev" class="btn_prev" onclick="location.href='/greenmall/view/member/join.wb'">이전단계</button>
+                            <button type="button" id="btnNext" class="btn_next" onclick="return checked_box()">다음단계</button>
                         </div>
                     </form>
                 </div>
