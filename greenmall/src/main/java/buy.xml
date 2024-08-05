@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="buyns">
+	<resultMap type="buy" id="buyResultMap">
+		<id property="bNum" column="b_num"/>
+		<result property="mId" column="m_id" jdbcType="VARCHAR"/>
+		<result property="totalPrice" column="totalPrice" jdbcType="INTEGER"/>
+		<result property="bRdate" column="b_rdate" jdbcType="DATE"/>
+		<result property="bSatus" column="b_Satus" jdbcType="VARCHAR"/>
+		<result property="bName" column="b_name" jdbcType="VARCHAR"/>
+		<result property="bPostCode" column="b_postCode" jdbcType="VARCHAR"/>
+		<result property="bAddr" column="b_addr" jdbcType="VARCHAR"/>
+		<result property="bAddrDe" column="b_addrDe" jdbcType="VARCHAR"/>
+		<result property="bTel" column="b_tel" jdbcType="VARCHAR"/>
+		<result property="bRequest" column="b_request" jdbcType="DATE"/>
+		<result property="bCnt" column="b_cnt" jdbcType="INTEGER"/>
+	</resultMap>
+	<select id="select" parameterType="integer" resultType="buy" resultMap="buyResultMap">
+		select * from buy where b_num = #{bNum}
+	</select>
+    <select id="getTotal" resultType="integer">
+		select count(*) from buy
+	</select>
+	<select id="list" parameterType="map" resultMap="buyResultMap">
+		select * from (select rowNum rn, a.* from
+				(select * from buy order by b_rdate desc)a) 
+				where rn between #{startRow} and #{endRow}
+	</select>
+	<update id="update" parameterType="buy">
+		update buy set totalPrice=#{totalPrice}, b_Satus=#{bSatus}, b_name=#{bName},b_cnt=#{bCnt} where b_num =#{bNum}
+	</update>
+	<delete id="delete" parameterType="integer">
+		delete from buy where b_num=#{bNum}
+	</delete>
+</mapper>

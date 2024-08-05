@@ -27,7 +27,7 @@
         </div>
         <div class="admin-menu">
         <c:if test="${adminId != null}">
-          <a href="#">주문 관리</a>
+          <a href="/greenmall/view/admin/adminBuyList.wb">주문 관리</a>
           <a href="/greenmall/view/admin/adminGoodsList.wb">상품 관리</a>
           <a href="/greenmall/view/admin/adminMemberList.wb">고객 관리</a>
           <a href="#">게시판 관리</a>

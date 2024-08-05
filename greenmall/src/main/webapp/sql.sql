@@ -38,7 +38,7 @@ select * from member;
 select * from member where m_id = 'qwe';
 select * from member where m_name = 'test2' and m_email = 'test2@test2.com';
 
-
+delete from buy;
 -- 회원(member) 1
 create table member (
 m_id VARCHAR2(20) primary key,   	 	-- 회원 번호(PK)
@@ -71,6 +71,7 @@ b_request VARCHAR2(50),     			-- 요청사항
 b_cnt number,							-- 주문 상품 개수
 foreign key(m_id) references member(m_id)
 );
+	
 -- 주문(buy) 2 시퀀스
 create sequence order_seq start with 1 increment by 1 maxvalue 9999;
 
@@ -322,3 +323,19 @@ insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
 	'0.jpg', '1.jpg', 50, sysdate);
 insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
 	'0.jpg', '1.jpg', 50, sysdate);
+	
+insert into buy values (order_seq.nextval, 'test1', 10000, sysdate, '배송중', '테스트1' , '15501' ,'경기도 안산시','고잔동', '01011111100', '없음', 1);
+insert into buy values (order_seq.nextval, 'test2', 20000, sysdate, '배송중', '테스트2' , '15502' ,'경기도 안산시','고잔동', '01011111102', '없음', 11);
+insert into buy values (order_seq.nextval, 'test3', 30000, sysdate, '배송중', '테스트3' , '15503' ,'경기도 안산시','고잔동', '01011111103', '없음', 12);
+insert into buy values (order_seq.nextval, 'test4', 40000, sysdate, '배송중', '테스트4' , '15504' ,'경기도 안산시','고잔동', '01011111104', '없음', 13);
+insert into buy values (order_seq.nextval, 'test5', 50000, sysdate, '배송중', '테스트5' , '15505' ,'경기도 안산시','고잔동', '01011111105', '없음', 14);
+insert into buy values (order_seq.nextval, 'test6', 60000, sysdate, '배송중', '테스트6' , '15506' ,'경기도 안산시','고잔동', '01011111106', '없음', 15);
+insert into buy values (order_seq.nextval, 'test7', 70000, sysdate, '배송중', '테스트7' , '15507' ,'경기도 안산시','고잔동', '01011111107', '없음', 16);
+insert into buy values (order_seq.nextval, 'test8', 80000, sysdate, '배송중', '테스트8' , '15508' ,'경기도 안산시','고잔동', '01011111108', '없음', 17);
+insert into buy values (order_seq.nextval, 'test9', 90000, sysdate, '배송중', '테스트9' , '15509' ,'경기도 안산시','고잔동', '01011111109', '없음', 18);
+insert into buy values (order_seq.nextval, 'test10', 100000, sysdate, '배송중', '테스트10' , '15510' ,'경기도 안산시','고잔동', '01011111110', '없음', 119);
+insert into buy values (order_seq.nextval, 'test11', 110000, sysdate, '배송중', '테스트11' , '15511' ,'경기도 안산시','고잔동', '01011111111', '없음', 100);
+insert into buy values (order_seq.nextval, 'test12', 120000, sysdate, '배송중', '테스트12' , '15512' ,'경기도 안산시','고잔동', '01011111112', '없음', 166);
+insert into buy values (order_seq.nextval, 'test13', 130000, sysdate, '배송중', '테스트13' , '15513' ,'경기도 안산시','고잔동', '01011111113', '없음', 145);
+insert into buy values (order_seq.nextval, 'test14', 140000, sysdate, '배송중', '테스트14' , '15514' ,'경기도 안산시','고잔동', '01011111114', '없음', 121);
+insert into buy values (order_seq.nextval, 'test15', 150000, sysdate, '배송중', '테스트15' , '15515' ,'경기도 안산시','고잔동', '01011111115', '없음', 10);

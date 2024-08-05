@@ -41,6 +41,7 @@
 		<mapper resource="member.xml" />
 		<mapper resource="memberAddress.xml" />
 		<mapper resource="basket.xml" />
+		<mapper resource="buy.xml" />
 	</mappers>
 </configuration>
 
