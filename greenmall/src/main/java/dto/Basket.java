@@ -6,7 +6,23 @@ public class Basket {
 	private String mId;
 	private	int cPrice; 
 	private int cCnt;
+	// 상품 table join
+	private String pName;
+	private String pImg1;
 	
+	
+	public String getpName() {
+		return pName;
+	}
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+	public String getpImg1() {
+		return pImg1;
+	}
+	public void setpImg1(String pImg1) {
+		this.pImg1 = pImg1;
+	}
 	public int getCartKey() {
 		return cartKey;
 	}

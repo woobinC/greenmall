@@ -47,8 +47,8 @@ public class AddCart extends HttpServlet {
 		
 		basket.setpNo(pNo);
 		basket.setmId(mId);
-		basket.setcPrice(basket.getcPrice()+ salePrice);
-		basket.setcCnt(basket.getcCnt() + pCnt);
+		basket.setcPrice(salePrice);
+		basket.setcCnt(pCnt);
 		
 		int result1 = bd.insert(basket);
 		int result2 = gd.update(goods);

@@ -28,9 +28,7 @@
                             <c:if test="${mId != null }">
                                 <li><a href="/greenmall/view/member/logout.wb"><i class="xi-log-out"></i>로그아웃</a></li>                           
                             </c:if>
-                                <li><a href="/greenmall/view/mypage/cartList.wb"><span>장바구니(
-                                            <strong>0</strong> )
-                                        </span></a></li>
+                                <li><a href="/greenmall/view/mypage/cartList.wb"><span>장바구니</span></a></li>
                                 <li><a href="/greenmall/view/mypage/tracking.wb"><span>주문배송</span></a></li>
                                 <li><a href="/greenmall/view/mypage/mypage.wb"><span>마이페이지</span></a></li>
                             </ul>

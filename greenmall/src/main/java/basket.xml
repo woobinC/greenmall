@@ -2,8 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="basketns">
+	<resultMap type="basket" id="basketResultMap">
+		<id property="cartKey" column="cartKey" />
+		<result property="pNo" column="p_No" />
+		<result property="mId" column="m_id" />
+		<result property="cPrice" column="c_price"/>
+		<result property="cCnt" column="c_cnt" />
+		<result property="pName" column="p_name" />
+		<result property="pImg1" column="p_img1" />
+	</resultMap>
 	<insert id="insert" parameterType="basket">
-		insert into basket values(basket_seq.nextval, #{pNo}, #{mId},
-			#{cPrice}, #{cCnt})
+		insert into basket
+		values(basket_seq.nextval, #{pNo}, #{mId},
+		#{cPrice}, #{cCnt})
 	</insert>
+	<select id="list" parameterType="string" resultMap="basketResultMap">
+		select b.*,p_Name,p_Img1 from basket b, goods g where b.p_no = g.p_no and m_id=#{mId}
+	</select>
 </mapper>

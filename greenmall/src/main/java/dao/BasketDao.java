@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import dto.Basket;
@@ -19,6 +21,10 @@ public class BasketDao {
 
 	public int insert(Basket basket) {
 		return session.insert("basketns.insert", basket);
+	}
+	
+	public List<Basket> list(String mId) {
+		return session.selectList("basketns.list", mId);
 	}
 
 }
