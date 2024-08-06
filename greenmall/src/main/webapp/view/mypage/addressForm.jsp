@@ -59,13 +59,8 @@
 	<div class="mypage_cont">
 		<div class="my_page">
 			<div class="mypage_zone_tit">
-<<<<<<< HEAD
-				<h2>배송지 변경</h2>
-			</div> 
-=======
 				<h2>배송지 추가</h2>
 			</div>
->>>>>>> branch 'main' of https://github.com/woobinC/greenmall.git
 			<div class="join_base_wrap">
 				<div class="member_cont">
 					<form action="myAddress.wb" method="post">

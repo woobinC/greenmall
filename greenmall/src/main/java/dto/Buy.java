@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class Buy {
 	private int bNum;
-	private String bId;
+	private String mId;
 	private int totalPrice;
 	private Date bRdate;
 	private String bSatus;
@@ -29,11 +29,11 @@ public class Buy {
 	public void setbNum(int bNum) {
 		this.bNum = bNum;
 	}
-	public String getbId() {
-		return bId;
+	public String getmId() {
+		return mId;
 	}
-	public void setbId(String bId) {
-		this.bId = bId;
+	public void setmId(String mId) {
+		this.mId = mId;
 	}
 	public int getTotalPrice() {
 		return totalPrice;

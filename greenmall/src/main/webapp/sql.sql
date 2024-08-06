@@ -213,6 +213,7 @@ select * from member;
 select * from buy;
 select * from admin;
 select * from category;
+select * from detailOrder;
 select * from goods;
 select * from basket;
 select * from member where m_id = 'qwe';

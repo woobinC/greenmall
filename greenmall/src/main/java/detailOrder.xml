@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="detailOrderns">
+	<resultMap type="detailOrder" id="detailOrderResultMap">
+		<id property="orderDetKey" column="orderDetKey" />
+		<result property="bNum" column="b_Num" />
+		<result property="pNo" column="p_no" />
+		<result property="price" column="price"/>
+		<result property="dCnt" column="d_cnt" />
+		<result property="pName" column="p_name" />
+	</resultMap>
+	<insert id="insert" parameterType="detailOrder">
+		insert into detailOrder values(detailorder_seq.nextval, #{bNum},
+			#{pNo}, #{price}, #{dCnt})
+	</insert>
+		<select id="list" parameterType="integer" resultMap="detailOrderResultMap">
+		select b.*,p_Name from detailOrder b, goods g where b.p_no = g.p_no and b_Num=#{maxbNum}
+	</select>
+</mapper>

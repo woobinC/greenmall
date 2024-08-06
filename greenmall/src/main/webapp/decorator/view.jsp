@@ -27,22 +27,6 @@
 						<img alt="" src="/greenmall/images/scroll/btn_scroll_event.jpg">
 					</a>
 				</div>
-				<div class="scroll_right_cont">
-					<h4>TODAY <br>
-					VIEW</h4>
-					<div class="scr_paging" style="display: none;">
-						<button title="최근본 이전 상품">
-							<img alt="" src="/greenmall/images/scroll/btn_scroll_prev.png">
-						</button>
-						<span>
-							<strong class="js_current">0</strong>
-							<span class="js_total" style="float:none;width:auto;">0</span>
-						</span>
-						<button title="최근본 다음 상품">
-							<img alt="" src="/greenmall/images/scroll/btn_scroll_next.png">
-						</button>
-					</div>
-				</div>
 				<span class="btn_scroll_top">
 					<a href="#TOP">
 						<img alt="상단으로 이동" src="/greenmall/images/scroll/btn_scroll_top.png">

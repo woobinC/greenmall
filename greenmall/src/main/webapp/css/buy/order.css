@@ -38,7 +38,6 @@ body, th, td, input, select, textarea, button {
 }
 
 .content_box {
-  float: left;
   width: 100%;
 }
 
@@ -315,7 +314,6 @@ text-align: center;
 }
 .form_element label.check_s {
 min-width: 13px;
-padding: 0 0 0 22px;
 }
 .btn_center_box {
 text-align: center;
@@ -435,4 +433,12 @@ outline: none;
 
 .cart_wrap .content_box {
 	margin-bottom: 30px;
+}
+
+.order_money_use .form_element {
+	padding-left: 20px; 
+}
+
+.order_view_info .payment_final {
+	padding-top: 30px; 
 }

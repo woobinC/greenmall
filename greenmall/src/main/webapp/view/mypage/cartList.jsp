@@ -26,7 +26,7 @@
 					</ol>
 				</div>
 				<div class="cart_content">
-					<form action="orderForm" name="frmCart">
+					<form action="/greenmall/view/buy/orderForm.wb" name="frmCart">
 						<input type="hidden" name="list" value="${list }">
 						<div class="cart_cont_list">
 							<div class="order_table_type">
@@ -110,7 +110,7 @@
 										총<strong id="totalGoodsCnt">${totalGoodsCnt }</strong>개의 상품금액
 									</dt>
 									<dd>
-										<strong id="totalGoodsPrice">${totalGoodsPrice }</strong>원
+										<strong id="totalGoodsPrice">${totalGoodsCnt * totalGoodsPrice }</strong>원
 									</dd>
 								</dl>
 								<span><img src="/greenmall/images/member/order_price_plus.png"

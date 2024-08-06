@@ -27,4 +27,8 @@ public class BasketDao {
 		return session.selectList("basketns.list", mId);
 	}
 
+	public int delete(int cartKey) {
+		return session.delete("basketns.delete", cartKey);
+	}
+
 }

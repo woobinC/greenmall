@@ -19,4 +19,7 @@
 	<select id="list" parameterType="string" resultMap="basketResultMap">
 		select b.*,p_Name,p_Img1 from basket b, goods g where b.p_no = g.p_no and m_id=#{mId}
 	</select>
+	<delete id="delete" parameterType="integer">
+		delete from basket where cartKey = #{cartKey}
+	</delete>
 </mapper>

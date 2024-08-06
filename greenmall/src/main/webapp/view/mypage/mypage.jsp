@@ -169,61 +169,34 @@
                       <col>
                       <col style="width: 15%;">
                       <col style="width: 15%;">
-                      <col style="width: 15%;">
                     </colgroup>
                     <thead>
                       <tr>
-                        <th>날짜/주문번호</th>
-                        <th>상품명/옵션</th>
-                        <th>상품금액/수량</th>
-                        <th>주문상태</th>
-                        <th>확인/리뷰</th>
+                        <th>주문번호</th>
+                        <th>상품명</th>
+                        <th>상품금액</th>
+                        <th>수량</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td colspan="6">
+                       <c:if test="${not empty dolist }">
+                      <c:forEach var="detailOrder" items="${dolist }">
+                   		<tr>
+                   		<td>${detailOrder.bNum }</td>
+                   		<td>${detailOrder.pName }</td>
+                   		<td>${detailOrder.price }</td>
+                   		<td>${detailOrder.dCnt }</td>
+                      </c:forEach>
+                      </c:if>
+                      <c:if test="${empty dolist }"> 
+                        <td colspan="4">
                           <p class="no_data">조회내역이 없습니다.</p>
                         </td>
+                        </c:if> 
                       </tr>
                     </tbody>
                   </table>
-                </div>
-              </div>
-              <a href="#" class="btn_board_more">+ 더보기</a>
-            </div>
-            <div class="mypage_lately_goods">
-              <div class="mypage_zone_title">
-                <h3>
-                  최근 본 상품
-                  <span>${member.mName }님께서 본 최근 상품입니다.</span>
-                </h3>
-              </div>
-              <div class="goods_list_cont">
-                <div class="item_gallery_type">
-                  <ul>
-                    <li>
-                      <div class="item_cont">
-                        <a href="#">
-                          <div class="img-box">
-                            <div class="img-thum">
-                              <div class="img-center">
-                                <img src="/greenmall/images/0.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="item_info_cont">
-                        <div class="item_tit_box">
-                          <span class="item_brand"> 화산마을 </span>
-                          <a href="#">
-                            <strong class="item_name">단단하고 저장성이 좋은 화산마을 양파 10kg(크기혼합)</strong>
-                          </a>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>

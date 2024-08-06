@@ -4,11 +4,17 @@ public class DetailOrder {
 	private int orderDetKey;
 	private int bNum;
 	private int pNo;
-	private int optionNum;
-	private int Price;
+	private int price;
 	private int dCnt;
+	// 조인용
+	private String pName;
 	
-	
+	public String getpName() {
+		return pName;
+	}
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
 	public int getOrderDetKey() {
 		return orderDetKey;
 	}
@@ -27,17 +33,11 @@ public class DetailOrder {
 	public void setpNo(int pNo) {
 		this.pNo = pNo;
 	}
-	public int getOptionNum() {
-		return optionNum;
-	}
-	public void setOptionNum(int optionNum) {
-		this.optionNum = optionNum;
-	}
 	public int getPrice() {
-		return Price;
+		return price;
 	}
 	public void setPrice(int price) {
-		Price = price;
+		this.price = price;
 	}
 	public int getdCnt() {
 		return dCnt;
@@ -46,5 +46,10 @@ public class DetailOrder {
 		this.dCnt = dCnt;
 	}
 	
+	@Override
+	public String toString() {
+		return "DetailOrder [orderDetKey=" + orderDetKey + ", bNum=" + bNum + ", pNo=" + pNo + ", price=" + price
+				+ ", dCnt=" + dCnt + ", pName=" + pName + "]";
+	}
 
 }
