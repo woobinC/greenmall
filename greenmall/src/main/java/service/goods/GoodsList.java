@@ -1,6 +1,8 @@
 package service.goods;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +21,6 @@ public class GoodsList implements CommandProcess{
 		final int PAGE_PER_BLOCK = 10; // 한블록의 페이지 갯수
 		int c_Num = Integer.parseInt(request.getParameter("c_Num"));
 		String pageNum = request.getParameter("pageNum");
-		System.out.println("pageNum :" +pageNum);
 		if (pageNum == null || pageNum.equals("")) {
 			pageNum = "1";
 		}
@@ -44,7 +45,18 @@ public class GoodsList implements CommandProcess{
 			endPage = totalPage;
 		
 		List<Goods> list = gd.select_main1(startRow, endRow, c_Num);
-		
+			String cNumParam = request.getParameter("c_Num");
+	        String prefix = cNumParam != null && !cNumParam.isEmpty() ? cNumParam.substring(0, 1) : "1";
+
+	        CategoryDao categoryDao = CategoryDao.getInstance();
+	        List<Category> cateList = categoryDao.selectByPrefix(prefix);
+	        
+			/*
+			 * int sc = c_Num/100; int ec = c_Num%100; Map<String,Integer> map = new
+			 * HashMap<>(); map.put("sc",sc); map.put("ec",ec); List<Goods> goods =
+			 * gd.selectGoods(map); request.setAttribute("cateList", cateList);
+			 * request.setAttribute("cNumPrefix", prefix);
+			 */
 //		String img = "/highbrix/images/cart.jpg";
 //		String fimg = "/highbrix/images/cart2.jpg";
 //		
@@ -56,12 +68,10 @@ public class GoodsList implements CommandProcess{
 		request.setAttribute("endPage", endPage);
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("currentPage", currentPage);
-		
+		request.setAttribute("cateList", cateList);
 		/*
 		 * request.setAttribute("img", img); request.setAttribute("fimg", fimg);
 		 */
-		System.out.println("list = "+ list);
-		System.out.println("size " + list.size());
 		return "goodsList";
 	}
 

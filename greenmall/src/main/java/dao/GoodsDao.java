@@ -64,7 +64,10 @@ public class GoodsDao {
 	
 			return (Goods) session.selectOne("goodsns.select_no", p_No);
 		}
-
-
+		/*
+		 * public List<Goods> selectGoods(Map<String, Integer> map) { return
+		 * session.selectOne("goodsns.selectGoods", map); }
+		 * 
+		 */
 
 }

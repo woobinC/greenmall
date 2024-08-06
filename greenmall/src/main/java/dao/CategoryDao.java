@@ -6,20 +6,35 @@ import org.apache.ibatis.session.SqlSession;
 
 import dto.Category;
 import mybatis.MyBatisSessionFactory;
+
 public class CategoryDao {
 	// singleton
 	private static CategoryDao Instance = new CategoryDao();
+
 	private CategoryDao() {
 	}
+
 	public static CategoryDao getInstance() {
 		return Instance;
 	}
+
 	private static SqlSession session = MyBatisSessionFactory.getSession(true);
+
 	public List<Category> categoryList() {
 		return session.selectList("categoryns.list");
 	}
+
 	public Category select(int c_Num) {
 		return session.selectOne("categoryns.select", c_Num);
 	}
 
+	public List<Category> selectByPrefix(String prefix) {
+		return session.selectList("categoryns.selectByPrefix", prefix);
+	}
+	
+	public List<Category> topCategory(int c_Num){
+		return session.selectList("categoryns.topCategory",c_Num);
+	}
+	
+	
 }

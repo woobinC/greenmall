@@ -73,8 +73,16 @@
 		p_no) a)
 		where rn between #{startRow} and #{endRow}
 	</select>
-	
 
+
+<!-- 	
+	
+	<select id="selectGoods" resultType="goods" parameterType="map">
+		select * from goods where c_num like concat(#{sc},'%')
+		<if test="ec !=0">
+		 and c_num like concat('%',#{ec})
+		</if>
+	</select> -->
  
 </mapper> 
 
