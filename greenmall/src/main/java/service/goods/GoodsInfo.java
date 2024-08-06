@@ -19,7 +19,7 @@ public class GoodsInfo implements CommandProcess {
 		GoodsDao gd = GoodsDao.getInstance();
 		Goods gs = gd.select_no(p_No); gs.setP_No(p_No);
 		p_No=gs.getP_No();
-
+		
 		int salePrice = gs.getP_Price()- gs.getP_Sale()* gs.getP_Price()/100 ;
 		
 		

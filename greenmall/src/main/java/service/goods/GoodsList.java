@@ -1,6 +1,8 @@
 package service.goods;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -44,6 +46,21 @@ public class GoodsList implements CommandProcess{
 		
 		List<Goods> list = gd.select_main1(startRow, endRow, c_Num);
 		
+			String cNumParam = request.getParameter("c_Num");
+	        String prefix = cNumParam != null && !cNumParam.isEmpty() ? cNumParam.substring(0, 1) : "1";
+
+	        CategoryDao categoryDao = CategoryDao.getInstance();
+	        List<Category> cateList = categoryDao.selectByPrefix(prefix);
+	        
+			/*
+			 * int sc = c_Num/100; int ec = c_Num%100; Map<String,Integer> map = new
+			 * HashMap<>(); map.put("sc",sc); map.put("ec",ec); List<Goods> goods =
+			 * gd.selectGoods(map); request.setAttribute("cateList", cateList);
+			 * request.setAttribute("cNumPrefix", prefix);
+			 */
+//		String img = "/highbrix/images/cart.jpg";
+//		String fimg = "/highbrix/images/cart2.jpg";
+//		
 		request.setAttribute("num", num);
 		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("PAGE_PER_BLOCK", PAGE_PER_BLOCK);
@@ -53,6 +70,10 @@ public class GoodsList implements CommandProcess{
 		request.setAttribute("totalPage", totalPage);
 		request.setAttribute("currentPage", currentPage);
 		
+		request.setAttribute("cateList", cateList);
+		/*
+		 * request.setAttribute("img", img); request.setAttribute("fimg", fimg);
+		 */
 		return "goodsList";
 	}
 

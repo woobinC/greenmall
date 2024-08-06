@@ -49,7 +49,7 @@ a {
 									<a href="#"><span>곡류</span></a>
 								</div>
 								<ul style="display: none">
-									<li><a href="#"><span>곡류</span></a></li>
+									<li><a href="greemall/view/"><span>곡류</span></a></li>
 									<li><a href="#"><span>버섯류</span></a></li>
 									<li><a href="#"><span>과일류</span></a></li>
 									<li><a href="#"><span>채소/나물류</span></a></li>
@@ -149,7 +149,7 @@ a {
 															<td><input type="number" id="quantity"
 																name="p_Cnt" class="form-control" value="1" min="1">
 															</td>
-															<td id="totalPrice">${goods.p_Price - goods.p_Cnt * goods.p_Price / 100}원</td>
+															<td id="totalPrice" >${goods.p_Price}원</td>
 														</tr>
 													</tbody>
 												</table>
@@ -157,19 +157,19 @@ a {
 													<dl class="row">
 														<dt class="col-sm-6">총 상품금액</dt>
 														<dd class="col-sm-6">
-															<strong id="totalProductPrice">${goods.p_Price}원</strong>
+															<strong id="totalProductPrice" >${goods.p_Price}원</strong>
 														</dd>
 													</dl>
 													<dl class="row">
 														<dt class="col-sm-6">총 할인금액</dt>
 														<dd class="col-sm-6">
-															<strong id="totalDiscount">${salePrice - salePrice * goods.p_Sale / 100}원</strong>
+															<strong id="totalDiscount">${goods.p_Price-salePrice}원</strong>
 														</dd>
 													</dl>
 													<dl class="row">
 														<dt class="col-sm-6">총 합계금액</dt>
 														<dd class="col-sm-6">
-															<strong id="totalSum">${goods.p_Price - (goods.p_Price * (goods.p_Sale / 100))}원</strong>
+															<strong id="totalSum">${goods.p_Price - (goods.p_Price-salePrice)}원</strong>
 														</dd>
 													</dl>
 												</div>

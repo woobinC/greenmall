@@ -12,4 +12,14 @@
 	<select id="select" parameterType="integer" resultMap="categoryMap">
 		select * from category where c_Num=#{cnum}
 	</select> 
+<select id="selectByPrefix" parameterType="String" resultMap="categoryMap">
+    SELECT * FROM category
+    WHERE c_num LIKE #{prefix} || '%'
+</select>
+<select id="topCategory" parameterType="integer" resultMap="categoryMap">
+SELECT *
+FROM category
+WHERE SUBSTR(c_Num, 1, 2) = SUBSTR('100', 1, 2);
+</select>
+
 </mapper> 

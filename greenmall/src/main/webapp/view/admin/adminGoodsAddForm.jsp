@@ -74,8 +74,7 @@
 							</div>
 
 							<div class="btn_center_box">
-								<button type="button" class="btn_member_cancel"
-									onclick="location.href='/greenmall/view/admin/adminGoodsList.wb'">취소</button>
+								<button type="button" class="btn_member_cancel" onclick="location.href='/greenmall/view/admin/adminGoodsList.wb'">취소</button>
 								<input type="submit" value="상품 추가"
 									class="btn_comfirm js_btn_join">
 							</div>
