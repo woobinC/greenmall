@@ -1,10 +1,14 @@
 package service.display;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.CategoryDao;
 import dao.MemberDao;
+import dto.Category;
 import dto.Member;
 import service.CommandProcess;
 
@@ -19,6 +23,10 @@ public class Main implements CommandProcess{
 			Member member = md.select(mId);
 			request.setAttribute("member", member);
 		}
+		CategoryDao cd = CategoryDao.getInstance();
+		List<Category> categoryList = cd.categoryList();
+		request.setAttribute("categoryList", categoryList);
+		System.out.println("size = "+categoryList.size());
 		return "main";
 	}
 

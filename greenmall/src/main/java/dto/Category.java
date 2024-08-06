@@ -3,6 +3,7 @@ package dto;
 public class Category {
 	private int cnum;
 	private String cname;
+	private Integer parentCnum;
 	public int getCnum() {
 		return cnum;
 	}
@@ -16,6 +17,6 @@ public class Category {
 		this.cname = cname;
 	}
 
-
+	
 	
 }

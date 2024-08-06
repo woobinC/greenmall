@@ -2,13 +2,12 @@ select * from
 		(select a.* ,rowNum rn from(select g.*,c.c_Name from goods g, category c where g.c_Num=c.c_Num  and g.c_Num=101 order by p_no) a)
 		where rn between 1 and 8; 
 
-
+select * from category order by c_Num;		
 create user greenmall identified by g1234;
 grant dba to greenmall;
-=======
 --create user greenmall identified by g1234;
 --grant dba to greenmall;
-
+select * from category;
 drop sequence basket_seq;
 drop sequence order_seq;
 drop sequence reply_seq;
@@ -80,7 +79,6 @@ create table category (
 c_Num number primary key,				--카테고리번호
 c_Name VARCHAR2(20)						--카테고리명
 );
->>>>>>> branch 'main' of https://github.com/woobinC/greenmall.git
 
 create table category (
 c_num number primary key,				--카테고리번호
@@ -116,6 +114,7 @@ d_cnt number,						  -- 개수
 foreign key(b_Num) references buy(b_Num),
 foreign key(p_no) references goods(p_no)
 );
+
 -- 주문상세(detailorder) 6 시퀀스
 create sequence detailorder_seq start with 1 increment by 1 maxvalue 9999;
 
@@ -220,18 +219,22 @@ select * from member where m_id = 'qwe';
 
 insert into admin values('master', '1234');
 
+insert into category values('100', '곡류');
 insert into category values('101', '쌀');
 insert into category values('102', '잡곡류');
 insert into category values('200', '버섯류');
+insert into category values('300', '과일류');
 insert into category values('301', '사과');
 insert into category values('302', '배');
 insert into category values('303', '딸기');
 insert into category values('304', '기타');
+insert into category values('400', '채소/나물류');
 insert into category values('401', '뿌리채소');
 insert into category values('402', '열매채소');
 insert into category values('403', '잎줄기채소');
 insert into category values('404', '콩류');
 insert into category values('405', '기타');
+insert into category values('500', '건강식품/기타');
 insert into category values('501', '건강즙');
 insert into category values('502', '환/분말/차');
 insert into category values('503', '꿀');
@@ -323,3 +326,4 @@ insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
 	'0.jpg', '1.jpg', 50, sysdate);
 insert into goods values (goods_seq.nextval, 102, '테스트상품', 15000, 10,
 	'0.jpg', '1.jpg', 50, sysdate);
+select * from goods;

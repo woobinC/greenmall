@@ -22,10 +22,6 @@
 </script>
 </head>
 <body>
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'main' of https://github.com/woobinC/greenmall.git
 	<div class="loginForm">
 		<div class="location_wrap">
 			<div class="location_cont">

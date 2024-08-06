@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
@@ -7,102 +6,107 @@
 <head>
 <meta charset="UTF-8">
 <style type="text/css">
-	/* 카드 스타일 */
+/* 카드 스타일 */
 .card {
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	cursor: pointer;
+	transition: box-shadow 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card-img-top {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }
 
 .card-body {
-  padding: 15px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	padding: 15px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .card-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-  color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	color: #333;
 }
 
 .card-text {
-  font-size: 16px;
-  margin: 5px 0;
-  color: #555;
+	font-size: 16px;
+	margin: 5px 0;
+	color: #555;
 }
 
 .card-text del {
-  color: #888;
+	color: #888;
 }
 
 .card-text strong {
-  font-size: 18px;
-  color: #000;
+	font-size: 18px;
+	color: #000;
 }
-#pprice{
-color:#417517;
+
+#pprice {
+	color: #417517;
 }
 /* 레이아웃 스타일 */
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -15px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: -15px;
 }
 
 .col-md-2 {
-  flex: 0 0 16.6667%;
-  max-width: 16.6667%;
-  padding: 15px;
+	flex: 0 0 16.6667%;
+	max-width: 16.6667%;
+	padding: 15px;
 }
 
 .mb-4 {
-  margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 /* 반응형 스타일 */
-@media (max-width: 768px) {
-  .col-md-2 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
+@media ( max-width : 768px) {
+	.col-md-2 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
 }
 
-@media (max-width: 576px) {
-  .col-md-2 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
+.page button {
+	display: block;
+	font-weight: bold;
+	color: #fff;
+	background: #7a7d81;
+	border-radius: 20px;
+	padding: 0 !important;
+	height: 30px;
+	width: 30px;
+	font-size: 17px;
+	line-height: 30px;
+	vertical-align: middle;
+}
 }
 </style>
 
 
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-	crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>
-<link rel="stylesheet" type="text/css"
-	href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+<link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
 <style>
 @import url("/greenmall/css/goods/goods_sell.css");
 </style>
@@ -122,47 +126,28 @@ color:#417517;
 				<!-- //side_cont -->
 				<div class="content" style="padding-top: 80px">
 					<div class="location_wrap">
-						<div class="location_cont">
-							<em><a href="#" class="local_home">HOME</a> &nbsp;</em> <span>&gt;
-							</span>
-							<div class="location_select">
-								<div class="location_tit">
-									<a href="#"><span>곡류</span></a>
-								</div>
-								<ul style="display: none">
-									<li><a href="#"><span>곡류</span></a></li>
-									<li><a href="#"><span>버섯류</span></a></li>
-									<li><a href="#"><span>과일류</span></a></li>
-									<li><a href="#"><span>채소/나물류</span></a></li>
-									<li><a href="#"><span>건강식품/기타</span></a></li>
-									<li><a href="#"><span>기획전</span></a></li>
-								</ul>
-							</div>
-							<span>&gt; </span>
-							<div class="location_select">
-								<div class="location_tit">
-									<a href="#"><span>쌀</span></a>
-								</div>
-								<ul style="display: none;">
-									<li><a href="?cateCd=001001"><span>쌀</span></a></li>
-									<li><a href="?cateCd=001002"><span>잡곡류</span></a></li>
-								</ul>
-							</div>
-						</div>
+	
 						<!-- //location_wrap -->
-
 						<div class="goods_list_item">
-
 							<div class="goods_list_item_tit">
-								<h2>곡류</h2>
+								<c:forEach var="category" items="${cateList}">
+									<c:if test="${category.cnum == param.c_Num}">
+										<h2>${category.cname}</h2>
+									</c:if>
+								</c:forEach>
 							</div>
 							<div class="goods_item_category">
 								<ul>
-									<li class="on"><a href="#"><span>쌀 <!--<em>(6)</em>--></span></a>
-									</li>
-									<li class=""><a href="/goods_sell2.html"><span>잡곡류
-												<!--<em>(3)</em>-->
-										</span></a></li>
+									<c:forEach var="category" items="${cateList}">
+										<c:if test="${category.cnum%100!=0}">
+											<li class="${category.cnum == param.c_Num ? 'on' : ''}">
+												<a href="/greenmall/view/goods/goodsList.gw?c_Num=${category.cnum}">
+													<span>${category.cname}</span>
+												</a>
+											</li>
+
+										</c:if>
+									</c:forEach>
 								</ul>
 							</div>
 
@@ -259,176 +244,18 @@ color:#417517;
 									</c:if>
 								</div>
 				
-							<!-- 								상품 2
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000001583"> <img
-											src="http://moddism.godohosting.com//goods/23/04/16/1000001583/1000001583_main_055.jpg"
-											class="card-img-top"
-											alt="7-8가지의 고품질 곡물로 구성된 구평주안농장 혼합곡 1.5kg/2kg/4kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">7-8가지의 고품질 곡물로 구성된 구평주안농장 혼합곡
-												1.5kg/2kg/4kg</h5>
-											<p class="card-text">
-												<strong>10,500원</strong>
-											</p>
-										</div>
-									</div>
-								</div>
-								상품 3
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000001005"> <img
-											src="http://moddism.godohosting.com//goods/1000001005_main_047.jpg"
-											class="card-img-top" alt="밀알연구회 무농약 밀쌀 2kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">밀알연구회 무농약 밀쌀 2kg</h5>
-											<p class="card-text">
-												<strong>8,000원</strong>
-											</p>
-										</div>
-									</div>
-								</div>
-								상품 4
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000000681"> <img
-											src="http://moddism.godohosting.com//goods/1000000681_main_029.jpg"
-											class="card-img-top" alt="2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 20kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 20kg</h5>
-											<p class="card-text text-muted">
-												<del>94,900원</del>
-											</p>
-											<p class="card-text">
-												<strong>79,500원</strong>
-											</p>
-										</div>
-									</div>
-								</div>
-								상품 5
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000000680"> <img
-											src="http://moddism.godohosting.com//goods/1000000680_main_064.jpg"
-											class="card-img-top" alt="2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 10kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 10kg</h5>
-											<p class="card-text text-muted">
-												<del>51,600원</del>
-											</p>
-											<p class="card-text">
-												<strong>42,900원</strong>
-											</p>
-										</div>
-									</div>
-								</div>
-								상품 1
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000001605"> <img
-											src="http://moddism.godohosting.com//goods/23/10/40/1000001605/1000001605_main_09.jpg"
-											class="card-img-top" alt="2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 4kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 4kg</h5>
-											<p class="card-text text-muted">
-												<del>25,000원</del>
-											</p>
-											<p class="card-text">
-												<strong>16,500원</strong>
-											</p>
-										</div>
-									</div>
-								</div>
-								>
-								상품 2
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000001583"> <img
-											src="http://moddism.godohosting.com//goods/23/04/16/1000001583/1000001583_main_055.jpg"
-											class="card-img-top"
-											alt="7-8가지의 고품질 곡물로 구성된 구평주안농장 혼합곡 1.5kg/2kg/4kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">7-8가지의 고품질 곡물로 구성된 구평주안농장 혼합곡
-												1.5kg/2kg/4kg</h5>
-											<p class="card-text">
-												<strong>10,500원</strong>
-											</p>
-										</div>
-									</div>
-								</div>
-								상품 3
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000001005"> <img
-											src="http://moddism.godohosting.com//goods/1000001005_main_047.jpg"
-											class="card-img-top" alt="밀알연구회 무농약 밀쌀 2kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">밀알연구회 무농약 밀쌀 2kg</h5>
-											<p class="card-text">
-												<strong>8,000원</strong>
-											</p>
-										</div>
-									</div>
-								</div>
-								상품 4
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000000681"> <img
-											src="http://moddism.godohosting.com//goods/1000000681_main_029.jpg"
-											class="card-img-top" alt="2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 20kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 20kg</h5>
-											<p class="card-text text-muted">
-												<del>94,900원</del>
-											</p>
-											<p class="card-text">
-												<strong>79,500원</strong>
-											</p>
-										</div>
-									</div>
-								</div>
-								상품 5
-								<div class="col-md-2 mb-4">
-									<div class="card h-100">
-										<a href="../goods/goods_view.php?goodsNo=1000000680"> <img
-											src="http://moddism.godohosting.com//goods/1000000680_main_064.jpg"
-											class="card-img-top" alt="2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 10kg">
-										</a>
-										<div class="card-body">
-											<h5 class="card-title">2023년 삼기농협 친환경 무농약 신동진 탑마루 쌀 10kg</h5>
-											<p class="card-text text-muted">
-												<del>51,600원</del>
-											</p>
-											<p class="card-text">
-												<strong>42,900원</strong>
-											</p>
-										</div>
-									</div>
-								</div> -->
 						</div>
 					</div>
-				</div>
-				<!--  -->
-				<div class="pagination">
-					<div class="pagination">
-						<ul>
-							<li class="on"><span>1</span></li>
-						</ul>
+
 					</div>
 				</div>
-
 			</div>
-			<!-- //goods_list_item -->
-			<script type="text/javascript">
+			<!--  -->
+
+
+		</div>
+		<!-- //goods_list_item -->
+		<script type="text/javascript">
                         $(document).ready(function () {
 
                             $('form[name=frmList] select[name=pageNum]').change(function () {
@@ -444,17 +271,11 @@ color:#417517;
 
                         });
                     </script>
-		</div>
-	</div>
-	</div>
-	</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script>
         document.querySelectorAll('.location_select').forEach(function (select) {
             select.addEventListener('click', function () {

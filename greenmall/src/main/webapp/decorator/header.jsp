@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
-<c:set var="mId" value="${sessionScope.mId }"></c:set>    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="mId" value="${sessionScope.mId }"></c:set>
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,8 +130,8 @@
                 </div>
             </header>
         </div>
+        </div>
 
-    </div>
 
 </body>
 </html>
